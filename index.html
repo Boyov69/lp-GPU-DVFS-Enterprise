@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Enterprise GPU optimization framework delivering 15-25% energy savings for AI/LLM training, cryptocurrency mining, and HPC workloads. Trusted by Fortune 500 companies.">
+    <meta name="description" content="Enterprise GPU optimization framework delivering 15-25% energy savings for AI/LLM training, cryptocurrency mining, and HPC workloads.">
     <meta name="keywords" content="GPU optimization, AI energy efficiency, LLM cost reduction, crypto mining optimization, NVIDIA H100, A100, RTX 4090, OpenAI, Google DeepMind, Meta AI, GPU power efficiency, DVFS, machine learning infrastructure">
     <title>GPU-DVFS Enterprise | AI-Driven Energy Optimization for LLMs, Mining & HPC</title>
     
@@ -257,7 +257,6 @@
             padding: 1.5rem;
             text-align: center;
             backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
             transition: all 0.3s ease;
         }
 
@@ -546,7 +545,6 @@
             border-radius: 24px;
             padding: 3rem;
             backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
         }
 
         .calc-mode-selector {
@@ -616,6 +614,7 @@
             border-radius: 4px;
             outline: none;
             -webkit-appearance: none;
+            appearance: none;
             position: relative;
             cursor: pointer;
         }
@@ -704,46 +703,6 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-        }
-
-        /* Client Logos */
-        .clients {
-            padding: 4rem 2rem;
-            background: rgba(255, 255, 255, 0.02);
-        }
-
-        .clients-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .client-logos {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-            align-items: center;
-        }
-
-        .client-logo {
-            height: 60px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 1rem;
-            transition: all 0.3s ease;
-            opacity: 0.7;
-            font-weight: 700;
-            color: var(--gray-400);
-        }
-
-        .client-logo:hover {
-            opacity: 1;
-            background: rgba(255, 255, 255, 0.1);
-            transform: scale(1.05);
         }
 
         /* Technical Architecture */
@@ -965,10 +924,6 @@
                 flex-wrap: wrap;
             }
 
-            .client-logos {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
             .architecture-grid {
                 grid-template-columns: 1fr;
             }
@@ -1037,7 +992,6 @@
             padding: 0.5rem;
             border-radius: 30px;
             backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
         }
 
         .lang-btn {
@@ -1080,12 +1034,11 @@
                 <span>GPU-DVFS Enterprise</span>
             </div>
             <ul class="nav-links">
-                <li><a href="#home">Solutions</a></li>
-                <li><a href="#industries">Industries</a></li>
-                <li><a href="#calculator">ROI Calculator</a></li>
-                <li><a href="#architecture">Technology</a></li>
-                <li><a href="#clients">Clients</a></li>
-                <li><a href="#contact" class="nav-cta">Schedule Demo →</a></li>
+                <li><a href="#home" data-translate="nav-solutions">Solutions</a></li>
+                <li><a href="#industries" data-translate="nav-industries">Industries</a></li>
+                <li><a href="#calculator" data-translate="nav-calculator">ROI Calculator</a></li>
+                <li><a href="#architecture" data-translate="nav-technology">Technology</a></li>
+                <li><a href="#contact" class="nav-cta" data-translate="nav-demo">Schedule Demo →</a></li>
             </ul>
         </div>
     </nav>
@@ -1094,32 +1047,32 @@
     <section class="hero" id="home">
         <div class="hero-container">
             <div class="hero-content fade-in">
-                <h1>Enterprise GPU Optimization for AI & Crypto Workloads</h1>
-                <p class="hero-subtitle">
+                <h1 data-translate="hero-title">Enterprise GPU Optimization for AI & Crypto Workloads</h1>
+                <p class="hero-subtitle" data-translate="hero-subtitle">
                     Revolutionary ML-driven DVFS framework delivering 15-25% energy savings across LLM training, 
-                    cryptocurrency mining, and HPC workloads. Trusted by Fortune 500 companies and leading AI labs.
+                    cryptocurrency mining, and HPC workloads.
                 </p>
                 
                 <div class="hero-stats">
                     <div class="stat-card">
                         <div class="stat-number">25%</div>
-                        <div class="stat-label">Energy Reduction</div>
+                        <div class="stat-label" data-translate="stat-energy">Energy Reduction</div>
                     </div>
                     <div class="stat-card">
-                        <div class="stat-number"><5%</div>
-                        <div class="stat-label">Performance Impact</div>
+                        <div class="stat-number">&lt;5%</div>
+                        <div class="stat-label" data-translate="stat-performance">Performance Impact</div>
                     </div>
                     <div class="stat-card">
                         <div class="stat-number">€71k</div>
-                        <div class="stat-label">Saved per GPT Run</div>
+                        <div class="stat-label" data-translate="stat-saved">Saved per GPT Run</div>
                     </div>
                 </div>
 
                 <div class="hero-cta">
-                    <a href="#calculator" class="btn btn-primary">
+                    <a href="#calculator" class="btn btn-primary" data-translate="btn-calculate">
                         Calculate Your Savings →
                     </a>
-                    <a href="#demo" class="btn btn-secondary">
+                    <a href="#demo" class="btn btn-secondary" data-translate="btn-pilot">
                         Request Pilot Program
                     </a>
                 </div>
@@ -1142,16 +1095,16 @@
     <!-- Industry Selector -->
     <section class="industry-selector" id="industries">
         <div class="industry-container">
-            <h2 class="section-title">Tailored Solutions Across Industries</h2>
-            <p class="section-subtitle">
+            <h2 class="section-title" data-translate="industry-title">Tailored Solutions Across Industries</h2>
+            <p class="section-subtitle" data-translate="industry-subtitle">
                 Our adaptive framework optimizes GPU performance for diverse computational workloads
             </p>
 
             <div class="industry-tabs">
-                <div class="industry-tab active" onclick="switchIndustry('ai', event)">AI & LLMs</div>
-                <div class="industry-tab" onclick="switchIndustry('crypto', event)">Crypto Mining</div>
-                <div class="industry-tab" onclick="switchIndustry('hpc', event)">HPC & Research</div>
-                <div class="industry-tab" onclick="switchIndustry('cloud', event)">Cloud Providers</div>
+                <div class="industry-tab active" onclick="switchIndustry('ai', event)" data-translate="tab-ai">AI & LLMs</div>
+                <div class="industry-tab" onclick="switchIndustry('crypto', event)" data-translate="tab-crypto">Crypto Mining</div>
+                <div class="industry-tab" onclick="switchIndustry('hpc', event)" data-translate="tab-hpc">HPC & Research</div>
+                <div class="industry-tab" onclick="switchIndustry('cloud', event)" data-translate="tab-cloud">Cloud Providers</div>
             </div>
 
             <!-- AI & LLMs Content -->
@@ -1159,30 +1112,30 @@
                 <div class="use-cases">
                     <div class="use-case-card">
                         <div class="use-case-icon">🤖</div>
-                        <h3 class="use-case-title">LLM Training Optimization</h3>
-                        <p class="use-case-description">
+                        <h3 class="use-case-title" data-translate="ai-case1-title">LLM Training Optimization</h3>
+                        <p class="use-case-description" data-translate="ai-case1-desc">
                             Reduce energy consumption for training models like GPT-4, Claude, and Llama. 
                             Save millions in electricity costs per training run.
                         </p>
-                        <div class="use-case-savings">Save €42,600-71,000 per GPT-3 run</div>
+                        <div class="use-case-savings" data-translate="ai-case1-savings">Save €42,600-71,000 per GPT-3 run</div>
                     </div>
                     <div class="use-case-card">
                         <div class="use-case-icon">⚡</div>
-                        <h3 class="use-case-title">Inference Acceleration</h3>
-                        <p class="use-case-description">
+                        <h3 class="use-case-title" data-translate="ai-case2-title">Inference Acceleration</h3>
+                        <p class="use-case-description" data-translate="ai-case2-desc">
                             Optimize GPU clusters for real-time inference, reducing operational costs 
                             while maintaining sub-millisecond latency.
                         </p>
-                        <div class="use-case-savings">20% reduction in inference costs</div>
+                        <div class="use-case-savings" data-translate="ai-case2-savings">20% reduction in inference costs</div>
                     </div>
                     <div class="use-case-card">
                         <div class="use-case-icon">📊</div>
-                        <h3 class="use-case-title">Multi-GPU Scaling</h3>
-                        <p class="use-case-description">
+                        <h3 class="use-case-title" data-translate="ai-case3-title">Multi-GPU Scaling</h3>
+                        <p class="use-case-description" data-translate="ai-case3-desc">
                             Intelligent power distribution across DGX H100 clusters and A100 pods. 
                             Maximize throughput per watt.
                         </p>
-                        <div class="use-case-savings">15-25% energy savings at scale</div>
+                        <div class="use-case-savings" data-translate="ai-case3-savings">15-25% energy savings at scale</div>
                     </div>
                 </div>
             </div>
@@ -1192,30 +1145,30 @@
                 <div class="use-cases">
                     <div class="use-case-card">
                         <div class="use-case-icon">₿</div>
-                        <h3 class="use-case-title">Bitcoin Mining (SHA-256)</h3>
-                        <p class="use-case-description">
+                        <h3 class="use-case-title" data-translate="crypto-case1-title">Bitcoin Mining (SHA-256)</h3>
+                        <p class="use-case-description" data-translate="crypto-case1-desc">
                             Optimize ASIC and GPU mining operations for maximum efficiency. 
                             Perfect for large-scale mining farms.
                         </p>
-                        <div class="use-case-savings">15-20% energy reduction</div>
+                        <div class="use-case-savings" data-translate="crypto-case1-savings">15-20% energy reduction</div>
                     </div>
                     <div class="use-case-card">
                         <div class="use-case-icon">Ł</div>
-                        <h3 class="use-case-title">Scrypt Algorithm Mining</h3>
-                        <p class="use-case-description">
+                        <h3 class="use-case-title" data-translate="crypto-case2-title">Scrypt Algorithm Mining</h3>
+                        <p class="use-case-description" data-translate="crypto-case2-desc">
                             Enhanced performance for Litecoin and other Scrypt-based cryptocurrencies. 
                             Maintain hash rates while cutting power.
                         </p>
-                        <div class="use-case-savings">18-22% savings achieved</div>
+                        <div class="use-case-savings" data-translate="crypto-case2-savings">18-22% savings achieved</div>
                     </div>
                     <div class="use-case-card">
                         <div class="use-case-icon">🔒</div>
-                        <h3 class="use-case-title">Privacy Coins (RandomX)</h3>
-                        <p class="use-case-description">
+                        <h3 class="use-case-title" data-translate="crypto-case3-title">Privacy Coins (RandomX)</h3>
+                        <p class="use-case-description" data-translate="crypto-case3-desc">
                             Specialized optimization for Monero and privacy-focused mining. 
                             CPU and GPU efficiency improvements.
                         </p>
-                        <div class="use-case-savings">15-18% power reduction</div>
+                        <div class="use-case-savings" data-translate="crypto-case3-savings">15-18% power reduction</div>
                     </div>
                 </div>
             </div>
@@ -1225,30 +1178,30 @@
                 <div class="use-cases">
                     <div class="use-case-card">
                         <div class="use-case-icon">🧬</div>
-                        <h3 class="use-case-title">Genomic Analysis</h3>
-                        <p class="use-case-description">
+                        <h3 class="use-case-title" data-translate="hpc-case1-title">Genomic Analysis</h3>
+                        <p class="use-case-description" data-translate="hpc-case1-desc">
                             Accelerate drug discovery and genomic research while reducing 
                             computational costs with NVIDIA Clara optimization.
                         </p>
-                        <div class="use-case-savings">100-600 TFLOPS efficiency</div>
+                        <div class="use-case-savings" data-translate="hpc-case1-savings">100-600 TFLOPS efficiency</div>
                     </div>
                     <div class="use-case-card">
                         <div class="use-case-icon">🚗</div>
-                        <h3 class="use-case-title">Autonomous Driving</h3>
-                        <p class="use-case-description">
+                        <h3 class="use-case-title" data-translate="hpc-case2-title">Autonomous Driving</h3>
+                        <p class="use-case-description" data-translate="hpc-case2-desc">
                             Optimize NVIDIA DRIVE simulations for autonomous vehicle development. 
                             Real-time processing with lower energy footprint.
                         </p>
-                        <div class="use-case-savings">4x energy reduction</div>
+                        <div class="use-case-savings" data-translate="hpc-case2-savings">4x energy reduction</div>
                     </div>
                     <div class="use-case-card">
                         <div class="use-case-icon">🌍</div>
-                        <h3 class="use-case-title">Climate Modeling</h3>
-                        <p class="use-case-description">
+                        <h3 class="use-case-title" data-translate="hpc-case3-title">Climate Modeling</h3>
+                        <p class="use-case-description" data-translate="hpc-case3-desc">
                             Enable more extensive climate simulations with existing infrastructure. 
                             127 GWh saved annually across systems.
                         </p>
-                        <div class="use-case-savings">50x speedup potential</div>
+                        <div class="use-case-savings" data-translate="hpc-case3-savings">50x speedup potential</div>
                     </div>
                 </div>
             </div>
@@ -1258,30 +1211,30 @@
                 <div class="use-cases">
                     <div class="use-case-card">
                         <div class="use-case-icon">☁️</div>
-                        <h3 class="use-case-title">GPU-as-a-Service</h3>
-                        <p class="use-case-description">
+                        <h3 class="use-case-title" data-translate="cloud-case1-title">GPU-as-a-Service</h3>
+                        <p class="use-case-description" data-translate="cloud-case1-desc">
                             Reduce operational costs for GPU cloud services. Compatible with 
                             AWS, Google Cloud, and Azure GPU instances.
                         </p>
-                        <div class="use-case-savings">Lower TCO by 20%</div>
+                        <div class="use-case-savings" data-translate="cloud-case1-savings">Lower TCO by 20%</div>
                     </div>
                     <div class="use-case-card">
                         <div class="use-case-icon">🏢</div>
-                        <h3 class="use-case-title">Data Center Efficiency</h3>
-                        <p class="use-case-description">
+                        <h3 class="use-case-title" data-translate="cloud-case2-title">Data Center Efficiency</h3>
+                        <p class="use-case-description" data-translate="cloud-case2-desc">
                             Meet sustainability goals while expanding GPU capacity. 
                             Perfect for Equinix, Digital Realty operations.
                         </p>
-                        <div class="use-case-savings">Improve PUE metrics</div>
+                        <div class="use-case-savings" data-translate="cloud-case2-savings">Improve PUE metrics</div>
                     </div>
                     <div class="use-case-card">
                         <div class="use-case-icon">🌱</div>
-                        <h3 class="use-case-title">Carbon Footprint</h3>
-                        <p class="use-case-description">
+                        <h3 class="use-case-title" data-translate="cloud-case3-title">Carbon Footprint</h3>
+                        <p class="use-case-description" data-translate="cloud-case3-desc">
                             Align with ESG commitments and renewable energy initiatives. 
                             Reduce CO2 emissions significantly.
                         </p>
-                        <div class="use-case-savings">500 tonnes CO2 saved</div>
+                        <div class="use-case-savings" data-translate="cloud-case3-savings">500 tonnes CO2 saved</div>
                     </div>
                 </div>
             </div>
@@ -1292,17 +1245,17 @@
     <section class="calculator" id="calculator">
         <div class="calculator-container">
             <div class="section-header">
-                <h2 class="section-title">Calculate Your ROI</h2>
-                <p class="section-subtitle">
+                <h2 class="section-title" data-translate="calc-title">Calculate Your ROI</h2>
+                <p class="section-subtitle" data-translate="calc-subtitle">
                     Real-time pricing data • Instant savings projection • Industry-specific calculations
                 </p>
             </div>
 
             <div class="calculator-wrapper">
                 <div class="calc-mode-selector">
-                    <div class="calc-mode active" onclick="switchCalcMode('ai', event)">AI/LLM Training</div>
-                    <div class="calc-mode" onclick="switchCalcMode('crypto', event)">Crypto Mining</div>
-                    <div class="calc-mode" onclick="switchCalcMode('custom', event)">Custom Workload</div>
+                    <div class="calc-mode active" onclick="switchCalcMode('ai', event)" data-translate="calc-mode-ai">AI/LLM Training</div>
+                    <div class="calc-mode" onclick="switchCalcMode('crypto', event)" data-translate="calc-mode-crypto">Crypto Mining</div>
+                    <div class="calc-mode" onclick="switchCalcMode('custom', event)" data-translate="calc-mode-custom">Custom Workload</div>
                 </div>
 
                 <!-- AI/LLM Calculator -->
@@ -1310,10 +1263,10 @@
                     <div class="calc-inputs">
                         <div class="input-group">
                             <label class="input-label">
-                                <span>GPU Model</span>
+                                <span data-translate="calc-gpu-model">GPU Model</span>
                                 <span class="input-value" id="ai-gpu-model">NVIDIA H100</span>
                             </label>
-                            <select id="ai-gpu-select" class="input-slider" style="height: 40px; padding: 0 1rem; border-radius: 8px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: var(--light);" title="GPU Model" aria-label="GPU Model">
+                            <select id="ai-gpu-select" class="input-slider" style="height: 40px; padding: 0 1rem; border-radius: 8px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: var(--light);">
                                 <option value="h100">NVIDIA H100 (700W)</option>
                                 <option value="a100">NVIDIA A100 (400W)</option>
                                 <option value="rtx4090">RTX 4090 (450W)</option>
@@ -1323,33 +1276,33 @@
 
                         <div class="input-group">
                             <label class="input-label">
-                                <span>Number of GPUs</span>
+                                <span data-translate="calc-gpu-count">Number of GPUs</span>
                                 <span class="input-value" id="ai-gpu-count">1000</span>
                             </label>
                             <div style="position: relative;">
-                                <input type="range" class="input-slider" id="ai-gpu-slider" min="100" max="10000" value="1000" step="100" title="Number of GPUs" aria-label="Number of GPUs">
+                                <input type="range" class="input-slider" id="ai-gpu-slider" min="100" max="10000" value="1000" step="100">
                                 <div class="slider-track" id="ai-gpu-track"></div>
                             </div>
                         </div>
 
                         <div class="input-group">
                             <label class="input-label">
-                                <span>Training Duration (days)</span>
+                                <span data-translate="calc-duration">Training Duration (days)</span>
                                 <span class="input-value" id="ai-duration">90</span>
                             </label>
                             <div style="position: relative;">
-                                <input type="range" class="input-slider" id="ai-duration-slider" min="7" max="365" value="90" title="Training Duration" aria-label="Training Duration">
+                                <input type="range" class="input-slider" id="ai-duration-slider" min="7" max="365" value="90">
                                 <div class="slider-track" id="ai-duration-track"></div>
                             </div>
                         </div>
 
                         <div class="input-group">
                             <label class="input-label">
-                                <span>Energy Cost (€/kWh)</span>
+                                <span data-translate="calc-energy-cost">Energy Cost (€/kWh)</span>
                                 <span class="input-value" id="ai-cost">€0.30</span>
                             </label>
                             <div style="position: relative;">
-                                <input type="range" class="input-slider" id="ai-cost-slider" min="0.10" max="0.50" value="0.30" step="0.01" title="Energy Cost" aria-label="Energy Cost">
+                                <input type="range" class="input-slider" id="ai-cost-slider" min="0.10" max="0.50" value="0.30" step="0.01">
                                 <div class="slider-track" id="ai-cost-track"></div>
                             </div>
                         </div>
@@ -1358,27 +1311,27 @@
                     <div class="calc-results">
                         <div class="result-glow"></div>
                         <div class="result-item">
-                            <span class="result-label">Energy Consumption (Base)</span>
+                            <span class="result-label" data-translate="result-base-consumption">Energy Consumption (Base)</span>
                             <span class="result-value" id="ai-base-consumption">15,120 MWh</span>
                         </div>
                         <div class="result-item">
-                            <span class="result-label">Optimized Consumption</span>
+                            <span class="result-label" data-translate="result-opt-consumption">Optimized Consumption</span>
                             <span class="result-value" id="ai-opt-consumption">12,096 MWh</span>
                         </div>
                         <div class="result-item">
-                            <span class="result-label">Energy Saved</span>
+                            <span class="result-label" data-translate="result-energy-saved">Energy Saved</span>
                             <span class="result-value" id="ai-energy-saved">3,024 MWh</span>
                         </div>
                         <div class="result-item">
-                            <span class="result-label">Cost Savings</span>
+                            <span class="result-label" data-translate="result-cost-savings">Cost Savings</span>
                             <span class="result-value large" id="ai-cost-savings">€907,200</span>
                         </div>
                         <div class="result-item">
-                            <span class="result-label">CO2 Reduction</span>
+                            <span class="result-label" data-translate="result-co2">CO2 Reduction</span>
                             <span class="result-value" id="ai-co2-saved">1,512 tonnes</span>
                         </div>
                         <div class="result-item">
-                            <span class="result-label">ROI Period</span>
+                            <span class="result-label" data-translate="result-roi">ROI Period</span>
                             <span class="result-value" id="ai-roi">< 3 months</span>
                         </div>
                     </div>
@@ -1389,10 +1342,10 @@
                     <div class="calc-inputs">
                         <div class="input-group">
                             <label class="input-label">
-                                <span>Cryptocurrency</span>
+                                <span data-translate="calc-cryptocurrency">Cryptocurrency</span>
                                 <span class="input-value" id="crypto-coin">Bitcoin</span>
                             </label>
-                            <select id="crypto-select" class="input-slider" style="height: 40px; padding: 0 1rem; border-radius: 8px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: var(--light);" title="Cryptocurrency" aria-label="Cryptocurrency">
+                            <select id="crypto-select" class="input-slider" style="height: 40px; padding: 0 1rem; border-radius: 8px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: var(--light);">
                                 <option value="btc">Bitcoin (BTC) - $107,000</option>
                                 <option value="eth">Ethereum (ETH) - $2,450</option>
                                 <option value="ltc">Litecoin (LTC) - $85</option>
@@ -1403,33 +1356,33 @@
 
                         <div class="input-group">
                             <label class="input-label">
-                                <span>Number of GPUs</span>
+                                <span data-translate="calc-gpu-count">Number of GPUs</span>
                                 <span class="input-value" id="crypto-gpu-count">500</span>
                             </label>
                             <div style="position: relative;">
-                                <input type="range" class="input-slider" id="crypto-gpu-slider" min="10" max="5000" value="500" step="10" title="Number of GPUs" aria-label="Number of GPUs">
+                                <input type="range" class="input-slider" id="crypto-gpu-slider" min="10" max="5000" value="500" step="10">
                                 <div class="slider-track" id="crypto-gpu-track"></div>
                             </div>
                         </div>
 
                         <div class="input-group">
                             <label class="input-label">
-                                <span>Average Hash Rate (TH/s)</span>
+                                <span data-translate="calc-hashrate">Average Hash Rate (TH/s)</span>
                                 <span class="input-value" id="crypto-hashrate">100</span>
                             </label>
                             <div style="position: relative;">
-                                <input type="range" class="input-slider" id="crypto-hash-slider" min="10" max="1000" value="100" step="10" title="Average Hash Rate" aria-label="Average Hash Rate">
+                                <input type="range" class="input-slider" id="crypto-hash-slider" min="10" max="1000" value="100" step="10">
                                 <div class="slider-track" id="crypto-hash-track"></div>
                             </div>
                         </div>
 
                         <div class="input-group">
                             <label class="input-label">
-                                <span>Energy Cost (€/kWh)</span>
+                                <span data-translate="calc-energy-cost">Energy Cost (€/kWh)</span>
                                 <span class="input-value" id="crypto-cost">€0.15</span>
                             </label>
                             <div style="position: relative;">
-                                <input type="range" class="input-slider" id="crypto-cost-slider" min="0.05" max="0.40" value="0.15" step="0.01" title="Energy Cost" aria-label="Energy Cost">
+                                <input type="range" class="input-slider" id="crypto-cost-slider" min="0.05" max="0.40" value="0.15" step="0.01">
                                 <div class="slider-track" id="crypto-cost-track"></div>
                             </div>
                         </div>
@@ -1438,27 +1391,27 @@
                     <div class="calc-results">
                         <div class="result-glow"></div>
                         <div class="result-item">
-                            <span class="result-label">Monthly Energy Cost</span>
+                            <span class="result-label" data-translate="result-monthly-cost">Monthly Energy Cost</span>
                             <span class="result-value" id="crypto-monthly-cost">€48,600</span>
                         </div>
                         <div class="result-item">
-                            <span class="result-label">Optimized Cost</span>
+                            <span class="result-label" data-translate="result-opt-cost">Optimized Cost</span>
                             <span class="result-value" id="crypto-opt-cost">€38,880</span>
                         </div>
                         <div class="result-item">
-                            <span class="result-label">Monthly Savings</span>
+                            <span class="result-label" data-translate="result-monthly-savings">Monthly Savings</span>
                             <span class="result-value" id="crypto-monthly-savings">€9,720</span>
                         </div>
                         <div class="result-item">
-                            <span class="result-label">Annual Savings</span>
+                            <span class="result-label" data-translate="result-annual-savings">Annual Savings</span>
                             <span class="result-value large" id="crypto-annual-savings">€116,640</span>
                         </div>
                         <div class="result-item">
-                            <span class="result-label">5-Year Savings</span>
+                            <span class="result-label" data-translate="result-5year">5-Year Savings</span>
                             <span class="result-value" id="crypto-5year-savings">€583,200</span>
                         </div>
                         <div class="result-item">
-                            <span class="result-label">Break-Even</span>
+                            <span class="result-label" data-translate="result-breakeven">Break-Even</span>
                             <span class="result-value" id="crypto-breakeven">4.3 months</span>
                         </div>
                     </div>
@@ -1469,47 +1422,47 @@
                     <div class="calc-inputs">
                         <div class="input-group">
                             <label class="input-label">
-                                <span>Workload Type</span>
-                                <span class="input-value">Custom Configuration</span>
+                                <span data-translate="calc-workload-type">Workload Type</span>
+                                <span class="input-value" data-translate="calc-custom-config">Custom Configuration</span>
                             </label>
-                            <select class="input-slider" style="height: 40px; padding: 0 1rem; border-radius: 8px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: var(--light);" title="Workload Type" aria-label="Workload Type">
-                                <option>Genomic Analysis</option>
-                                <option>Climate Modeling</option>
-                                <option>Financial Modeling</option>
-                                <option>Rendering Farm</option>
-                                <option>Custom HPC</option>
+                            <select class="input-slider" style="height: 40px; padding: 0 1rem; border-radius: 8px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: var(--light);">
+                                <option data-translate="workload-genomic">Genomic Analysis</option>
+                                <option data-translate="workload-climate">Climate Modeling</option>
+                                <option data-translate="workload-financial">Financial Modeling</option>
+                                <option data-translate="workload-rendering">Rendering Farm</option>
+                                <option data-translate="workload-custom">Custom HPC</option>
                             </select>
                         </div>
 
                         <div class="input-group">
                             <label class="input-label">
-                                <span>Total GPU Power (kW)</span>
+                                <span data-translate="calc-total-power">Total GPU Power (kW)</span>
                                 <span class="input-value" id="custom-power">500</span>
                             </label>
                             <div style="position: relative;">
-                                <input type="range" class="input-slider" id="custom-power-slider" min="50" max="5000" value="500" step="50" title="Total GPU Power" aria-label="Total GPU Power">
+                                <input type="range" class="input-slider" id="custom-power-slider" min="50" max="5000" value="500" step="50">
                                 <div class="slider-track" id="custom-power-track"></div>
                             </div>
                         </div>
 
                         <div class="input-group">
                             <label class="input-label">
-                                <span>Operating Hours/Day</span>
+                                <span data-translate="calc-operating-hours">Operating Hours/Day</span>
                                 <span class="input-value" id="custom-hours">24</span>
                             </label>
                             <div style="position: relative;">
-                                <input type="range" class="input-slider" id="custom-hours-slider" min="8" max="24" value="24" title="Operating Hours Per Day" aria-label="Operating Hours Per Day">
+                                <input type="range" class="input-slider" id="custom-hours-slider" min="8" max="24" value="24">
                                 <div class="slider-track" id="custom-hours-track"></div>
                             </div>
                         </div>
 
                         <div class="input-group">
                             <label class="input-label">
-                                <span>Energy Cost (€/kWh)</span>
+                                <span data-translate="calc-energy-cost">Energy Cost (€/kWh)</span>
                                 <span class="input-value" id="custom-cost">€0.25</span>
                             </label>
                             <div style="position: relative;">
-                                <input type="range" class="input-slider" id="custom-cost-slider" min="0.05" max="0.50" value="0.25" step="0.01" title="Energy Cost" aria-label="Energy Cost">
+                                <input type="range" class="input-slider" id="custom-cost-slider" min="0.05" max="0.50" value="0.25" step="0.01">
                                 <div class="slider-track" id="custom-cost-track"></div>
                             </div>
                         </div>
@@ -1518,27 +1471,27 @@
                     <div class="calc-results">
                         <div class="result-glow"></div>
                         <div class="result-item">
-                            <span class="result-label">Daily Energy Cost</span>
+                            <span class="result-label" data-translate="result-daily-cost">Daily Energy Cost</span>
                             <span class="result-value" id="custom-daily">€3,000</span>
                         </div>
                         <div class="result-item">
-                            <span class="result-label">Monthly Cost</span>
+                            <span class="result-label" data-translate="result-monthly-cost">Monthly Cost</span>
                             <span class="result-value" id="custom-monthly">€90,000</span>
                         </div>
                         <div class="result-item">
-                            <span class="result-label">Optimized Monthly</span>
+                            <span class="result-label" data-translate="result-opt-monthly">Optimized Monthly</span>
                             <span class="result-value" id="custom-opt-monthly">€72,000</span>
                         </div>
                         <div class="result-item">
-                            <span class="result-label">Annual Savings</span>
+                            <span class="result-label" data-translate="result-annual-savings">Annual Savings</span>
                             <span class="result-value large" id="custom-annual">€216,000</span>
                         </div>
                         <div class="result-item">
-                            <span class="result-label">TCO Reduction</span>
+                            <span class="result-label" data-translate="result-tco">TCO Reduction</span>
                             <span class="result-value" id="custom-tco">20%</span>
                         </div>
                         <div class="result-item">
-                            <span class="result-label">Payback Period</span>
+                            <span class="result-label" data-translate="result-payback">Payback Period</span>
                             <span class="result-value" id="custom-payback">5.6 months</span>
                         </div>
                     </div>
@@ -1547,35 +1500,12 @@
         </div>
     </section>
 
-    <!-- Client Logos -->
-    <section class="clients" id="clients">
-        <div class="clients-container">
-            <div class="section-header">
-                <h2 class="section-title">Trusted by Industry Leaders</h2>
-                <p class="section-subtitle">
-                    From AI pioneers to mining operations, leading organizations rely on our technology
-                </p>
-            </div>
-
-            <div class="client-logos">
-                <div class="client-logo">OpenAI</div>
-                <div class="client-logo">Google DeepMind</div>
-                <div class="client-logo">Meta AI</div>
-                <div class="client-logo">Anthropic</div>
-                <div class="client-logo">NVIDIA</div>
-                <div class="client-logo">Cohere</div>
-                <div class="client-logo">Bitfury</div>
-                <div class="client-logo">Oracle Cloud</div>
-            </div>
-        </div>
-    </section>
-
     <!-- Technical Architecture -->
     <section class="architecture" id="architecture">
         <div class="architecture-container">
             <div class="section-header">
-                <h2 class="section-title">Enterprise-Grade Technology Stack</h2>
-                <p class="section-subtitle">
+                <h2 class="section-title" data-translate="arch-title">Enterprise-Grade Technology Stack</h2>
+                <p class="section-subtitle" data-translate="arch-subtitle">
                     Built on proven ML algorithms and optimized for production environments
                 </p>
             </div>
@@ -1583,8 +1513,8 @@
             <div class="architecture-grid">
                 <div class="arch-card">
                     <div class="arch-icon">🧠</div>
-                    <h3 class="arch-title">ML-Driven Optimization</h3>
-                    <p class="arch-description">
+                    <h3 class="arch-title" data-translate="arch-ml-title">ML-Driven Optimization</h3>
+                    <p class="arch-description" data-translate="arch-ml-desc">
                         Self-learning algorithms adapt to workload patterns in real-time, 
                         continuously improving efficiency without manual intervention.
                     </p>
@@ -1597,8 +1527,8 @@
 
                 <div class="arch-card">
                     <div class="arch-icon">⚡</div>
-                    <h3 class="arch-title">Dynamic DVFS Control</h3>
-                    <p class="arch-description">
+                    <h3 class="arch-title" data-translate="arch-dvfs-title">Dynamic DVFS Control</h3>
+                    <p class="arch-description" data-translate="arch-dvfs-desc">
                         Microsecond-level voltage and frequency adjustments based on 
                         workload characteristics and thermal conditions.
                     </p>
@@ -1611,8 +1541,8 @@
 
                 <div class="arch-card">
                     <div class="arch-icon">🔌</div>
-                    <h3 class="arch-title">Universal Compatibility</h3>
-                    <p class="arch-description">
+                    <h3 class="arch-title" data-translate="arch-compat-title">Universal Compatibility</h3>
+                    <p class="arch-description" data-translate="arch-compat-desc">
                         Seamless integration with existing infrastructure. Works with all 
                         major GPU models and software frameworks.
                     </p>
@@ -1625,8 +1555,8 @@
 
                 <div class="arch-card">
                     <div class="arch-icon">📊</div>
-                    <h3 class="arch-title">Real-Time Analytics</h3>
-                    <p class="arch-description">
+                    <h3 class="arch-title" data-translate="arch-analytics-title">Real-Time Analytics</h3>
+                    <p class="arch-description" data-translate="arch-analytics-desc">
                         Comprehensive monitoring dashboard with predictive analytics 
                         and anomaly detection capabilities.
                     </p>
@@ -1639,8 +1569,8 @@
 
                 <div class="arch-card">
                     <div class="arch-icon">🔒</div>
-                    <h3 class="arch-title">Enterprise Security</h3>
-                    <p class="arch-description">
+                    <h3 class="arch-title" data-translate="arch-security-title">Enterprise Security</h3>
+                    <p class="arch-description" data-translate="arch-security-desc">
                         SOC 2 Type II compliant with end-to-end encryption and 
                         role-based access control.
                     </p>
@@ -1653,8 +1583,8 @@
 
                 <div class="arch-card">
                     <div class="arch-icon">🌐</div>
-                    <h3 class="arch-title">API-First Design</h3>
-                    <p class="arch-description">
+                    <h3 class="arch-title" data-translate="arch-api-title">API-First Design</h3>
+                    <p class="arch-description" data-translate="arch-api-desc">
                         RESTful and gRPC APIs for seamless integration with existing 
                         orchestration and monitoring systems.
                     </p>
@@ -1671,15 +1601,15 @@
     <!-- CTA Section -->
     <section class="cta-section" id="contact">
         <div class="cta-content">
-            <h2 class="cta-title">Transform Your GPU Infrastructure Today</h2>
-            <p class="cta-text">
+            <h2 class="cta-title" data-translate="cta-title">Transform Your GPU Infrastructure Today</h2>
+            <p class="cta-text" data-translate="cta-text">
                 Join industry leaders saving millions on energy costs while advancing AI and computational research
             </p>
             <div class="cta-buttons">
-                <a href="mailto:enterprise@gpu-dvfs.com" class="btn btn-dark">
+                <a href="mailto:arturgabrielian4@gmail.com" class="btn btn-dark" data-translate="cta-demo">
                     Schedule Enterprise Demo →
                 </a>
-                <a href="#calculator" class="btn btn-secondary" style="background: rgba(255,255,255,0.2); border-color: var(--dark);">
+                <a href="#calculator" class="btn btn-secondary" style="background: rgba(255,255,255,0.2); border-color: var(--dark);" data-translate="cta-calculate">
                     Calculate ROI
                 </a>
             </div>
@@ -1691,41 +1621,41 @@
         <div class="footer-container">
             <div class="footer-brand">
                 <h3>GPU-DVFS Enterprise</h3>
-                <p>
+                <p data-translate="footer-desc">
                     Revolutionary GPU optimization technology delivering 15-25% energy savings 
                     for AI, cryptocurrency mining, and HPC workloads.
                 </p>
             </div>
             <div class="footer-section">
-                <h4>Solutions</h4>
+                <h4 data-translate="footer-solutions">Solutions</h4>
                 <ul class="footer-links">
-                    <li><a href="#ai">AI & LLM Training</a></li>
-                    <li><a href="#crypto">Crypto Mining</a></li>
-                    <li><a href="#hpc">HPC & Research</a></li>
-                    <li><a href="#cloud">Cloud Providers</a></li>
+                    <li><a href="#ai" data-translate="footer-ai">AI & LLM Training</a></li>
+                    <li><a href="#crypto" data-translate="footer-crypto">Crypto Mining</a></li>
+                    <li><a href="#hpc" data-translate="footer-hpc">HPC & Research</a></li>
+                    <li><a href="#cloud" data-translate="footer-cloud">Cloud Providers</a></li>
                 </ul>
             </div>
             <div class="footer-section">
-                <h4>Resources</h4>
+                <h4 data-translate="footer-resources">Resources</h4>
                 <ul class="footer-links">
-                    <li><a href="#">Documentation</a></li>
-                    <li><a href="#">API Reference</a></li>
-                    <li><a href="#">Case Studies</a></li>
-                    <li><a href="#">Whitepaper</a></li>
+                    <li><a href="#" data-translate="footer-docs">Documentation</a></li>
+                    <li><a href="#" data-translate="footer-api">API Reference</a></li>
+                    <li><a href="#" data-translate="footer-case">Case Studies</a></li>
+                    <li><a href="#" data-translate="footer-whitepaper">Whitepaper</a></li>
                 </ul>
             </div>
             <div class="footer-section">
-                <h4>Company</h4>
+                <h4 data-translate="footer-company">Company</h4>
                 <ul class="footer-links">
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Careers</a></li>
-                    <li><a href="#">Partners</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="#" data-translate="footer-about">About Us</a></li>
+                    <li><a href="#" data-translate="footer-careers">Careers</a></li>
+                    <li><a href="#" data-translate="footer-partners">Partners</a></li>
+                    <li><a href="#" data-translate="footer-contact">Contact</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2025 GPU-DVFS Enterprise. All rights reserved. | Privacy Policy | Terms of Service</p>
+            <p data-translate="footer-copyright">&copy; 2025 GPU-DVFS Enterprise. All rights reserved. | Privacy Policy | Terms of Service</p>
         </div>
     </footer>
 
@@ -1739,51 +1669,607 @@
             rvn: 0.014
         };
 
-        // Language translations
+        // Complete translations for all languages
         const translations = {
             en: {
-                heroTitle: "Enterprise GPU Optimization for AI & Crypto Workloads",
-                heroSubtitle: "Revolutionary ML-driven DVFS framework delivering 15-25% energy savings across LLM training, cryptocurrency mining, and HPC workloads. Trusted by Fortune 500 companies and leading AI labs.",
-                energyReduction: "Energy Reduction",
-                performanceImpact: "Performance Impact",
-                savedPerRun: "Saved per GPT Run",
-                calculateSavings: "Calculate Your Savings",
-                requestPilot: "Request Pilot Program",
-                tailoredSolutions: "Tailored Solutions Across Industries",
-                adaptiveFramework: "Our adaptive framework optimizes GPU performance for diverse computational workloads"
+                // Navigation
+                "nav-solutions": "Solutions",
+                "nav-industries": "Industries",
+                "nav-calculator": "ROI Calculator",
+                "nav-technology": "Technology",
+                "nav-demo": "Schedule Demo →",
+                
+                // Hero Section
+                "hero-title": "Enterprise GPU Optimization for AI & Crypto Workloads",
+                "hero-subtitle": "Revolutionary ML-driven DVFS framework delivering 15-25% energy savings across LLM training, cryptocurrency mining, and HPC workloads.",
+                "stat-energy": "Energy Reduction",
+                "stat-performance": "Performance Impact",
+                "stat-saved": "Saved per GPT Run",
+                "btn-calculate": "Calculate Your Savings →",
+                "btn-pilot": "Request Pilot Program",
+                
+                // Industry Section
+                "industry-title": "Tailored Solutions Across Industries",
+                "industry-subtitle": "Our adaptive framework optimizes GPU performance for diverse computational workloads",
+                "tab-ai": "AI & LLMs",
+                "tab-crypto": "Crypto Mining",
+                "tab-hpc": "HPC & Research",
+                "tab-cloud": "Cloud Providers",
+                
+                // AI Use Cases
+                "ai-case1-title": "LLM Training Optimization",
+                "ai-case1-desc": "Reduce energy consumption for training models like GPT-4, Claude, and Llama. Save millions in electricity costs per training run.",
+                "ai-case1-savings": "Save €42,600-71,000 per GPT-3 run",
+                "ai-case2-title": "Inference Acceleration",
+                "ai-case2-desc": "Optimize GPU clusters for real-time inference, reducing operational costs while maintaining sub-millisecond latency.",
+                "ai-case2-savings": "20% reduction in inference costs",
+                "ai-case3-title": "Multi-GPU Scaling",
+                "ai-case3-desc": "Intelligent power distribution across DGX H100 clusters and A100 pods. Maximize throughput per watt.",
+                "ai-case3-savings": "15-25% energy savings at scale",
+                
+                // Crypto Use Cases
+                "crypto-case1-title": "Bitcoin Mining (SHA-256)",
+                "crypto-case1-desc": "Optimize ASIC and GPU mining operations for maximum efficiency. Perfect for large-scale mining farms.",
+                "crypto-case1-savings": "15-20% energy reduction",
+                "crypto-case2-title": "Scrypt Algorithm Mining",
+                "crypto-case2-desc": "Enhanced performance for Litecoin and other Scrypt-based cryptocurrencies. Maintain hash rates while cutting power.",
+                "crypto-case2-savings": "18-22% savings achieved",
+                "crypto-case3-title": "Privacy Coins (RandomX)",
+                "crypto-case3-desc": "Specialized optimization for Monero and privacy-focused mining. CPU and GPU efficiency improvements.",
+                "crypto-case3-savings": "15-18% power reduction",
+                
+                // HPC Use Cases
+                "hpc-case1-title": "Genomic Analysis",
+                "hpc-case1-desc": "Accelerate drug discovery and genomic research while reducing computational costs with NVIDIA Clara optimization.",
+                "hpc-case1-savings": "100-600 TFLOPS efficiency",
+                "hpc-case2-title": "Autonomous Driving",
+                "hpc-case2-desc": "Optimize NVIDIA DRIVE simulations for autonomous vehicle development. Real-time processing with lower energy footprint.",
+                "hpc-case2-savings": "4x energy reduction",
+                "hpc-case3-title": "Climate Modeling",
+                "hpc-case3-desc": "Enable more extensive climate simulations with existing infrastructure. 127 GWh saved annually across systems.",
+                "hpc-case3-savings": "50x speedup potential",
+                
+                // Cloud Use Cases
+                "cloud-case1-title": "GPU-as-a-Service",
+                "cloud-case1-desc": "Reduce operational costs for GPU cloud services. Compatible with AWS, Google Cloud, and Azure GPU instances.",
+                "cloud-case1-savings": "Lower TCO by 20%",
+                "cloud-case2-title": "Data Center Efficiency",
+                "cloud-case2-desc": "Meet sustainability goals while expanding GPU capacity. Perfect for Equinix, Digital Realty operations.",
+                "cloud-case2-savings": "Improve PUE metrics",
+                "cloud-case3-title": "Carbon Footprint",
+                "cloud-case3-desc": "Align with ESG commitments and renewable energy initiatives. Reduce CO2 emissions significantly.",
+                "cloud-case3-savings": "500 tonnes CO2 saved",
+                
+                // Calculator
+                "calc-title": "Calculate Your ROI",
+                "calc-subtitle": "Real-time pricing data • Instant savings projection • Industry-specific calculations",
+                "calc-mode-ai": "AI/LLM Training",
+                "calc-mode-crypto": "Crypto Mining",
+                "calc-mode-custom": "Custom Workload",
+                "calc-gpu-model": "GPU Model",
+                "calc-gpu-count": "Number of GPUs",
+                "calc-duration": "Training Duration (days)",
+                "calc-energy-cost": "Energy Cost (€/kWh)",
+                "calc-cryptocurrency": "Cryptocurrency",
+                "calc-hashrate": "Average Hash Rate (TH/s)",
+                "calc-workload-type": "Workload Type",
+                "calc-custom-config": "Custom Configuration",
+                "calc-total-power": "Total GPU Power (kW)",
+                "calc-operating-hours": "Operating Hours/Day",
+                "workload-genomic": "Genomic Analysis",
+                "workload-climate": "Climate Modeling",
+                "workload-financial": "Financial Modeling",
+                "workload-rendering": "Rendering Farm",
+                "workload-custom": "Custom HPC",
+                
+                // Results
+                "result-base-consumption": "Energy Consumption (Base)",
+                "result-opt-consumption": "Optimized Consumption",
+                "result-energy-saved": "Energy Saved",
+                "result-cost-savings": "Cost Savings",
+                "result-co2": "CO2 Reduction",
+                "result-roi": "ROI Period",
+                "result-monthly-cost": "Monthly Energy Cost",
+                "result-opt-cost": "Optimized Cost",
+                "result-monthly-savings": "Monthly Savings",
+                "result-annual-savings": "Annual Savings",
+                "result-5year": "5-Year Savings",
+                "result-breakeven": "Break-Even",
+                "result-daily-cost": "Daily Energy Cost",
+                "result-opt-monthly": "Optimized Monthly",
+                "result-tco": "TCO Reduction",
+                "result-payback": "Payback Period",
+                
+                // Architecture
+                "arch-title": "Enterprise-Grade Technology Stack",
+                "arch-subtitle": "Built on proven ML algorithms and optimized for production environments",
+                "arch-ml-title": "ML-Driven Optimization",
+                "arch-ml-desc": "Self-learning algorithms adapt to workload patterns in real-time, continuously improving efficiency without manual intervention.",
+                "arch-dvfs-title": "Dynamic DVFS Control",
+                "arch-dvfs-desc": "Microsecond-level voltage and frequency adjustments based on workload characteristics and thermal conditions.",
+                "arch-compat-title": "Universal Compatibility",
+                "arch-compat-desc": "Seamless integration with existing infrastructure. Works with all major GPU models and software frameworks.",
+                "arch-analytics-title": "Real-Time Analytics",
+                "arch-analytics-desc": "Comprehensive monitoring dashboard with predictive analytics and anomaly detection capabilities.",
+                "arch-security-title": "Enterprise Security",
+                "arch-security-desc": "SOC 2 Type II compliant with end-to-end encryption and role-based access control.",
+                "arch-api-title": "API-First Design",
+                "arch-api-desc": "RESTful and gRPC APIs for seamless integration with existing orchestration and monitoring systems.",
+                
+                // CTA
+                "cta-title": "Transform Your GPU Infrastructure Today",
+                "cta-text": "Join industry leaders saving millions on energy costs while advancing AI and computational research",
+                "cta-demo": "Schedule Enterprise Demo →",
+                "cta-calculate": "Calculate ROI",
+                
+                // Footer
+                "footer-desc": "Revolutionary GPU optimization technology delivering 15-25% energy savings for AI, cryptocurrency mining, and HPC workloads.",
+                "footer-solutions": "Solutions",
+                "footer-ai": "AI & LLM Training",
+                "footer-crypto": "Crypto Mining",
+                "footer-hpc": "HPC & Research",
+                "footer-cloud": "Cloud Providers",
+                "footer-resources": "Resources",
+                "footer-docs": "Documentation",
+                "footer-api": "API Reference",
+                "footer-case": "Case Studies",
+                "footer-whitepaper": "Whitepaper",
+                "footer-company": "Company",
+                "footer-about": "About Us",
+                "footer-careers": "Careers",
+                "footer-partners": "Partners",
+                "footer-contact": "Contact",
+                "footer-copyright": "© 2025 GPU-DVFS Enterprise. All rights reserved. | Privacy Policy | Terms of Service"
             },
             nl: {
-                heroTitle: "Enterprise GPU-optimalisatie voor AI & Crypto Workloads",
-                heroSubtitle: "Revolutionair ML-gestuurd DVFS-framework dat 15-25% energiebesparing levert voor LLM-training, cryptocurrency mining en HPC-workloads. Vertrouwd door Fortune 500-bedrijven en toonaangevende AI-labs.",
-                energyReduction: "Energievermindering",
-                performanceImpact: "Prestatie-impact",
-                savedPerRun: "Bespaard per GPT Run",
-                calculateSavings: "Bereken Uw Besparingen",
-                requestPilot: "Vraag Pilotprogramma Aan",
-                tailoredSolutions: "Op Maat Gemaakte Oplossingen voor Alle Sectoren",
-                adaptiveFramework: "Ons adaptieve framework optimaliseert GPU-prestaties voor diverse computationele workloads"
+                // Navigation
+                "nav-solutions": "Oplossingen",
+                "nav-industries": "Industrieën",
+                "nav-calculator": "ROI Calculator",
+                "nav-technology": "Technologie",
+                "nav-demo": "Demo Plannen →",
+                
+                // Hero Section
+                "hero-title": "Enterprise GPU-optimalisatie voor AI & Crypto Workloads",
+                "hero-subtitle": "Revolutionair ML-gestuurd DVFS-framework dat 15-25% energiebesparing levert voor LLM-training, cryptocurrency mining en HPC-workloads.",
+                "stat-energy": "Energievermindering",
+                "stat-performance": "Prestatie-impact",
+                "stat-saved": "Bespaard per GPT Run",
+                "btn-calculate": "Bereken Uw Besparingen →",
+                "btn-pilot": "Vraag Pilotprogramma Aan",
+                
+                // Industry Section
+                "industry-title": "Op Maat Gemaakte Oplossingen voor Alle Sectoren",
+                "industry-subtitle": "Ons adaptieve framework optimaliseert GPU-prestaties voor diverse computationele workloads",
+                "tab-ai": "AI & LLM's",
+                "tab-crypto": "Crypto Mining",
+                "tab-hpc": "HPC & Onderzoek",
+                "tab-cloud": "Cloud Providers",
+                
+                // AI Use Cases
+                "ai-case1-title": "LLM Training Optimalisatie",
+                "ai-case1-desc": "Verminder energieverbruik voor het trainen van modellen zoals GPT-4, Claude en Llama. Bespaar miljoenen op elektriciteitskosten per training.",
+                "ai-case1-savings": "Bespaar €42.600-71.000 per GPT-3 run",
+                "ai-case2-title": "Inference Versnelling",
+                "ai-case2-desc": "Optimaliseer GPU-clusters voor real-time inference, verlaag operationele kosten met behoud van sub-milliseconde latentie.",
+                "ai-case2-savings": "20% reductie in inference kosten",
+                "ai-case3-title": "Multi-GPU Schaling",
+                "ai-case3-desc": "Intelligente stroomverdeling over DGX H100 clusters en A100 pods. Maximaliseer doorvoer per watt.",
+                "ai-case3-savings": "15-25% energiebesparing op schaal",
+                
+                // Crypto Use Cases
+                "crypto-case1-title": "Bitcoin Mining (SHA-256)",
+                "crypto-case1-desc": "Optimaliseer ASIC en GPU mining operaties voor maximale efficiëntie. Perfect voor grootschalige mining farms.",
+                "crypto-case1-savings": "15-20% energiereductie",
+                "crypto-case2-title": "Scrypt Algoritme Mining",
+                "crypto-case2-desc": "Verbeterde prestaties voor Litecoin en andere Scrypt-gebaseerde cryptocurrencies. Behoud hash rates terwijl stroom wordt bespaard.",
+                "crypto-case2-savings": "18-22% besparing behaald",
+                "crypto-case3-title": "Privacy Coins (RandomX)",
+                "crypto-case3-desc": "Gespecialiseerde optimalisatie voor Monero en privacy-gerichte mining. CPU en GPU efficiëntieverbeteringen.",
+                "crypto-case3-savings": "15-18% stroomreductie",
+                
+                // HPC Use Cases
+                "hpc-case1-title": "Genomische Analyse",
+                "hpc-case1-desc": "Versnel medicijnontdekking en genomisch onderzoek terwijl computationele kosten worden verlaagd met NVIDIA Clara optimalisatie.",
+                "hpc-case1-savings": "100-600 TFLOPS efficiëntie",
+                "hpc-case2-title": "Autonoom Rijden",
+                "hpc-case2-desc": "Optimaliseer NVIDIA DRIVE simulaties voor ontwikkeling van autonome voertuigen. Real-time verwerking met lagere energie footprint.",
+                "hpc-case2-savings": "4x energiereductie",
+                "hpc-case3-title": "Klimaatmodellering",
+                "hpc-case3-desc": "Maak uitgebreidere klimaatsimulaties mogelijk met bestaande infrastructuur. 127 GWh jaarlijks bespaard over systemen.",
+                "hpc-case3-savings": "50x versnellingspotentieel",
+                
+                // Cloud Use Cases
+                "cloud-case1-title": "GPU-as-a-Service",
+                "cloud-case1-desc": "Verlaag operationele kosten voor GPU cloud services. Compatibel met AWS, Google Cloud en Azure GPU instances.",
+                "cloud-case1-savings": "Verlaag TCO met 20%",
+                "cloud-case2-title": "Datacenter Efficiëntie",
+                "cloud-case2-desc": "Haal duurzaamheidsdoelen terwijl GPU-capaciteit wordt uitgebreid. Perfect voor Equinix, Digital Realty operaties.",
+                "cloud-case2-savings": "Verbeter PUE metrics",
+                "cloud-case3-title": "CO2 Voetafdruk",
+                "cloud-case3-desc": "Stem af met ESG-verplichtingen en hernieuwbare energie-initiatieven. Verminder CO2-uitstoot aanzienlijk.",
+                "cloud-case3-savings": "500 ton CO2 bespaard",
+                
+                // Calculator
+                "calc-title": "Bereken Uw ROI",
+                "calc-subtitle": "Real-time prijsgegevens • Directe besparingsprojectie • Industrie-specifieke berekeningen",
+                "calc-mode-ai": "AI/LLM Training",
+                "calc-mode-crypto": "Crypto Mining",
+                "calc-mode-custom": "Aangepaste Workload",
+                "calc-gpu-model": "GPU Model",
+                "calc-gpu-count": "Aantal GPU's",
+                "calc-duration": "Trainingsduur (dagen)",
+                "calc-energy-cost": "Energiekosten (€/kWh)",
+                "calc-cryptocurrency": "Cryptocurrency",
+                "calc-hashrate": "Gemiddelde Hash Rate (TH/s)",
+                "calc-workload-type": "Workload Type",
+                "calc-custom-config": "Aangepaste Configuratie",
+                "calc-total-power": "Totaal GPU Vermogen (kW)",
+                "calc-operating-hours": "Bedrijfsuren/Dag",
+                "workload-genomic": "Genomische Analyse",
+                "workload-climate": "Klimaatmodellering",
+                "workload-financial": "Financiële Modellering",
+                "workload-rendering": "Rendering Farm",
+                "workload-custom": "Aangepaste HPC",
+                
+                // Results
+                "result-base-consumption": "Energieverbruik (Basis)",
+                "result-opt-consumption": "Geoptimaliseerd Verbruik",
+                "result-energy-saved": "Energie Bespaard",
+                "result-cost-savings": "Kostenbesparing",
+                "result-co2": "CO2 Reductie",
+                "result-roi": "ROI Periode",
+                "result-monthly-cost": "Maandelijkse Energiekosten",
+                "result-opt-cost": "Geoptimaliseerde Kosten",
+                "result-monthly-savings": "Maandelijkse Besparingen",
+                "result-annual-savings": "Jaarlijkse Besparingen",
+                "result-5year": "5-Jaar Besparingen",
+                "result-breakeven": "Break-Even",
+                "result-daily-cost": "Dagelijkse Energiekosten",
+                "result-opt-monthly": "Geoptimaliseerd Maandelijks",
+                "result-tco": "TCO Reductie",
+                "result-payback": "Terugverdientijd",
+                
+                // Architecture
+                "arch-title": "Enterprise-Grade Technologie Stack",
+                "arch-subtitle": "Gebouwd op bewezen ML-algoritmen en geoptimaliseerd voor productieomgevingen",
+                "arch-ml-title": "ML-Gestuurde Optimalisatie",
+                "arch-ml-desc": "Zelflerende algoritmen passen zich in real-time aan werkbelastingpatronen aan, continu de efficiëntie verbeteren zonder handmatige interventie.",
+                "arch-dvfs-title": "Dynamische DVFS Controle",
+                "arch-dvfs-desc": "Microseconde-niveau spanning en frequentie aanpassingen gebaseerd op werkbelasting kenmerken en thermische condities.",
+                "arch-compat-title": "Universele Compatibiliteit",
+                "arch-compat-desc": "Naadloze integratie met bestaande infrastructuur. Werkt met alle grote GPU-modellen en software frameworks.",
+                "arch-analytics-title": "Real-Time Analytics",
+                "arch-analytics-desc": "Uitgebreid monitoring dashboard met voorspellende analyses en anomalie detectie mogelijkheden.",
+                "arch-security-title": "Enterprise Beveiliging",
+                "arch-security-desc": "SOC 2 Type II compliant met end-to-end encryptie en rol-gebaseerde toegangscontrole.",
+                "arch-api-title": "API-First Ontwerp",
+                "arch-api-desc": "RESTful en gRPC API's voor naadloze integratie met bestaande orchestratie en monitoring systemen.",
+                
+                // CTA
+                "cta-title": "Transformeer Uw GPU Infrastructuur Vandaag",
+                "cta-text": "Sluit u aan bij industrieleiders die miljoenen besparen op energiekosten terwijl ze AI en computationeel onderzoek vooruithelpen",
+                "cta-demo": "Plan Enterprise Demo →",
+                "cta-calculate": "Bereken ROI",
+                
+                // Footer
+                "footer-desc": "Revolutionaire GPU-optimalisatietechnologie die 15-25% energiebesparing levert voor AI, cryptocurrency mining en HPC-workloads.",
+                "footer-solutions": "Oplossingen",
+                "footer-ai": "AI & LLM Training",
+                "footer-crypto": "Crypto Mining",
+                "footer-hpc": "HPC & Onderzoek",
+                "footer-cloud": "Cloud Providers",
+                "footer-resources": "Bronnen",
+                "footer-docs": "Documentatie",
+                "footer-api": "API Referentie",
+                "footer-case": "Case Studies",
+                "footer-whitepaper": "Whitepaper",
+                "footer-company": "Bedrijf",
+                "footer-about": "Over Ons",
+                "footer-careers": "Carrières",
+                "footer-partners": "Partners",
+                "footer-contact": "Contact",
+                "footer-copyright": "© 2025 GPU-DVFS Enterprise. Alle rechten voorbehouden. | Privacybeleid | Servicevoorwaarden"
             },
             de: {
-                heroTitle: "Enterprise GPU-Optimierung für KI & Krypto-Workloads",
-                heroSubtitle: "Revolutionäres ML-gesteuertes DVFS-Framework mit 15-25% Energieeinsparungen für LLM-Training, Kryptowährungs-Mining und HPC-Workloads. Vertraut von Fortune 500-Unternehmen und führenden KI-Laboren.",
-                energyReduction: "Energiereduzierung",
-                performanceImpact: "Leistungseinfluss",
-                savedPerRun: "Gespart pro GPT-Lauf",
-                calculateSavings: "Berechnen Sie Ihre Einsparungen",
-                requestPilot: "Pilotprogramm Anfordern",
-                tailoredSolutions: "Maßgeschneiderte Lösungen für Alle Branchen",
-                adaptiveFramework: "Unser adaptives Framework optimiert die GPU-Leistung für verschiedene Rechenlasten"
+                // Navigation
+                "nav-solutions": "Lösungen",
+                "nav-industries": "Branchen",
+                "nav-calculator": "ROI-Rechner",
+                "nav-technology": "Technologie",
+                "nav-demo": "Demo Planen →",
+                
+                // Hero Section
+                "hero-title": "Enterprise GPU-Optimierung für KI & Krypto-Workloads",
+                "hero-subtitle": "Revolutionäres ML-gesteuertes DVFS-Framework mit 15-25% Energieeinsparungen für LLM-Training, Kryptowährungs-Mining und HPC-Workloads.",
+                "stat-energy": "Energiereduzierung",
+                "stat-performance": "Leistungseinfluss",
+                "stat-saved": "Gespart pro GPT-Lauf",
+                "btn-calculate": "Berechnen Sie Ihre Einsparungen →",
+                "btn-pilot": "Pilotprogramm Anfordern",
+                
+                // Industry Section
+                "industry-title": "Maßgeschneiderte Lösungen für Alle Branchen",
+                "industry-subtitle": "Unser adaptives Framework optimiert die GPU-Leistung für verschiedene Rechenlasten",
+                "tab-ai": "KI & LLMs",
+                "tab-crypto": "Krypto-Mining",
+                "tab-hpc": "HPC & Forschung",
+                "tab-cloud": "Cloud-Anbieter",
+                
+                // AI Use Cases
+                "ai-case1-title": "LLM-Training-Optimierung",
+                "ai-case1-desc": "Reduzieren Sie den Energieverbrauch für das Training von Modellen wie GPT-4, Claude und Llama. Sparen Sie Millionen bei Stromkosten pro Trainingslauf.",
+                "ai-case1-savings": "Sparen Sie €42.600-71.000 pro GPT-3 Lauf",
+                "ai-case2-title": "Inferenz-Beschleunigung",
+                "ai-case2-desc": "Optimieren Sie GPU-Cluster für Echtzeit-Inferenz, reduzieren Sie Betriebskosten bei Beibehaltung von Sub-Millisekunden-Latenz.",
+                "ai-case2-savings": "20% Reduktion der Inferenzkosten",
+                "ai-case3-title": "Multi-GPU-Skalierung",
+                "ai-case3-desc": "Intelligente Stromverteilung über DGX H100-Cluster und A100-Pods. Maximieren Sie den Durchsatz pro Watt.",
+                "ai-case3-savings": "15-25% Energieeinsparungen im Maßstab",
+                
+                // Crypto Use Cases
+                "crypto-case1-title": "Bitcoin-Mining (SHA-256)",
+                "crypto-case1-desc": "Optimieren Sie ASIC- und GPU-Mining-Operationen für maximale Effizienz. Perfekt für große Mining-Farmen.",
+                "crypto-case1-savings": "15-20% Energiereduktion",
+                "crypto-case2-title": "Scrypt-Algorithmus-Mining",
+                "crypto-case2-desc": "Verbesserte Leistung für Litecoin und andere Scrypt-basierte Kryptowährungen. Behalten Sie Hash-Raten bei und senken Sie den Stromverbrauch.",
+                "crypto-case2-savings": "18-22% Einsparungen erreicht",
+                "crypto-case3-title": "Privacy Coins (RandomX)",
+                "crypto-case3-desc": "Spezialisierte Optimierung für Monero und datenschutzorientiertes Mining. CPU- und GPU-Effizienzverbesserungen.",
+                "crypto-case3-savings": "15-18% Stromreduktion",
+                
+                // HPC Use Cases
+                "hpc-case1-title": "Genomische Analyse",
+                "hpc-case1-desc": "Beschleunigen Sie die Arzneimittelentdeckung und genomische Forschung bei gleichzeitiger Reduzierung der Rechenkosten mit NVIDIA Clara-Optimierung.",
+                "hpc-case1-savings": "100-600 TFLOPS Effizienz",
+                "hpc-case2-title": "Autonomes Fahren",
+                "hpc-case2-desc": "Optimieren Sie NVIDIA DRIVE-Simulationen für die Entwicklung autonomer Fahrzeuge. Echtzeitverarbeitung mit geringerem Energie-Fußabdruck.",
+                "hpc-case2-savings": "4x Energiereduktion",
+                "hpc-case3-title": "Klimamodellierung",
+                "hpc-case3-desc": "Ermöglichen Sie umfangreichere Klimasimulationen mit vorhandener Infrastruktur. 127 GWh jährlich über Systeme gespart.",
+                "hpc-case3-savings": "50x Beschleunigungspotenzial",
+                
+                // Cloud Use Cases
+                "cloud-case1-title": "GPU-as-a-Service",
+                "cloud-case1-desc": "Reduzieren Sie Betriebskosten für GPU-Cloud-Services. Kompatibel mit AWS, Google Cloud und Azure GPU-Instanzen.",
+                "cloud-case1-savings": "TCO um 20% senken",
+                "cloud-case2-title": "Rechenzentrum-Effizienz",
+                "cloud-case2-desc": "Erfüllen Sie Nachhaltigkeitsziele bei gleichzeitiger Erweiterung der GPU-Kapazität. Perfekt für Equinix, Digital Realty Operationen.",
+                "cloud-case2-savings": "PUE-Metriken verbessern",
+                "cloud-case3-title": "CO2-Fußabdruck",
+                "cloud-case3-desc": "Abstimmung mit ESG-Verpflichtungen und Initiativen für erneuerbare Energien. Reduzieren Sie CO2-Emissionen erheblich.",
+                "cloud-case3-savings": "500 Tonnen CO2 gespart",
+                
+                // Calculator
+                "calc-title": "Berechnen Sie Ihren ROI",
+                "calc-subtitle": "Echtzeit-Preisdaten • Sofortige Sparprojektion • Branchenspezifische Berechnungen",
+                "calc-mode-ai": "KI/LLM-Training",
+                "calc-mode-crypto": "Krypto-Mining",
+                "calc-mode-custom": "Benutzerdefinierte Workload",
+                "calc-gpu-model": "GPU-Modell",
+                "calc-gpu-count": "Anzahl der GPUs",
+                "calc-duration": "Trainingsdauer (Tage)",
+                "calc-energy-cost": "Energiekosten (€/kWh)",
+                "calc-cryptocurrency": "Kryptowährung",
+                "calc-hashrate": "Durchschnittliche Hash-Rate (TH/s)",
+                "calc-workload-type": "Workload-Typ",
+                "calc-custom-config": "Benutzerdefinierte Konfiguration",
+                "calc-total-power": "Gesamt-GPU-Leistung (kW)",
+                "calc-operating-hours": "Betriebsstunden/Tag",
+                "workload-genomic": "Genomische Analyse",
+                "workload-climate": "Klimamodellierung",
+                "workload-financial": "Finanzmodellierung",
+                "workload-rendering": "Rendering-Farm",
+                "workload-custom": "Benutzerdefiniertes HPC",
+                
+                // Results
+                "result-base-consumption": "Energieverbrauch (Basis)",
+                "result-opt-consumption": "Optimierter Verbrauch",
+                "result-energy-saved": "Eingesparte Energie",
+                "result-cost-savings": "Kosteneinsparungen",
+                "result-co2": "CO2-Reduktion",
+                "result-roi": "ROI-Zeitraum",
+                "result-monthly-cost": "Monatliche Energiekosten",
+                "result-opt-cost": "Optimierte Kosten",
+                "result-monthly-savings": "Monatliche Einsparungen",
+                "result-annual-savings": "Jährliche Einsparungen",
+                "result-5year": "5-Jahres-Einsparungen",
+                "result-breakeven": "Break-Even",
+                "result-daily-cost": "Tägliche Energiekosten",
+                "result-opt-monthly": "Optimiert Monatlich",
+                "result-tco": "TCO-Reduktion",
+                "result-payback": "Amortisationszeit",
+                
+                // Architecture
+                "arch-title": "Enterprise-Grade Technologie-Stack",
+                "arch-subtitle": "Aufgebaut auf bewährten ML-Algorithmen und optimiert für Produktionsumgebungen",
+                "arch-ml-title": "ML-gesteuerte Optimierung",
+                "arch-ml-desc": "Selbstlernende Algorithmen passen sich in Echtzeit an Arbeitslastmuster an und verbessern kontinuierlich die Effizienz ohne manuelle Eingriffe.",
+                "arch-dvfs-title": "Dynamische DVFS-Steuerung",
+                "arch-dvfs-desc": "Spannungs- und Frequenzanpassungen auf Mikrosekundenebene basierend auf Arbeitslastmerkmalen und thermischen Bedingungen.",
+                "arch-compat-title": "Universelle Kompatibilität",
+                "arch-compat-desc": "Nahtlose Integration in bestehende Infrastruktur. Funktioniert mit allen wichtigen GPU-Modellen und Software-Frameworks.",
+                "arch-analytics-title": "Echtzeit-Analytik",
+                "arch-analytics-desc": "Umfassendes Überwachungs-Dashboard mit prädiktiven Analysen und Anomalie-Erkennungsfunktionen.",
+                "arch-security-title": "Enterprise-Sicherheit",
+                "arch-security-desc": "SOC 2 Type II-konform mit End-to-End-Verschlüsselung und rollenbasierter Zugriffskontrolle.",
+                "arch-api-title": "API-First-Design",
+                "arch-api-desc": "RESTful- und gRPC-APIs für nahtlose Integration in bestehende Orchestrierungs- und Überwachungssysteme.",
+                
+                // CTA
+                "cta-title": "Transformieren Sie Ihre GPU-Infrastruktur Heute",
+                "cta-text": "Schließen Sie sich Branchenführern an, die Millionen bei Energiekosten sparen und gleichzeitig KI und Rechenforschung vorantreiben",
+                "cta-demo": "Enterprise-Demo Planen →",
+                "cta-calculate": "ROI Berechnen",
+                
+                // Footer
+                "footer-desc": "Revolutionäre GPU-Optimierungstechnologie mit 15-25% Energieeinsparungen für KI, Kryptowährungs-Mining und HPC-Workloads.",
+                "footer-solutions": "Lösungen",
+                "footer-ai": "KI & LLM-Training",
+                "footer-crypto": "Krypto-Mining",
+                "footer-hpc": "HPC & Forschung",
+                "footer-cloud": "Cloud-Anbieter",
+                "footer-resources": "Ressourcen",
+                "footer-docs": "Dokumentation",
+                "footer-api": "API-Referenz",
+                "footer-case": "Fallstudien",
+                "footer-whitepaper": "Whitepaper",
+                "footer-company": "Unternehmen",
+                "footer-about": "Über Uns",
+                "footer-careers": "Karriere",
+                "footer-partners": "Partner",
+                "footer-contact": "Kontakt",
+                "footer-copyright": "© 2025 GPU-DVFS Enterprise. Alle Rechte vorbehalten. | Datenschutzrichtlinie | Nutzungsbedingungen"
             },
             fr: {
-                heroTitle: "Optimisation GPU d'Entreprise pour l'IA et les Charges Crypto",
-                heroSubtitle: "Framework DVFS révolutionnaire piloté par ML offrant 15-25% d'économies d'énergie pour la formation LLM, le minage de crypto-monnaies et les charges HPC. Approuvé par les entreprises Fortune 500 et les principaux laboratoires d'IA.",
-                energyReduction: "Réduction d'Énergie",
-                performanceImpact: "Impact sur les Performances",
-                savedPerRun: "Économisé par Exécution GPT",
-                calculateSavings: "Calculez Vos Économies",
-                requestPilot: "Demander un Programme Pilote",
-                tailoredSolutions: "Solutions Sur Mesure pour Toutes les Industries",
-                adaptiveFramework: "Notre framework adaptatif optimise les performances GPU pour diverses charges de calcul"
+                // Navigation
+                "nav-solutions": "Solutions",
+                "nav-industries": "Industries",
+                "nav-calculator": "Calculateur ROI",
+                "nav-technology": "Technologie",
+                "nav-demo": "Planifier une Démo →",
+                
+                // Hero Section
+                "hero-title": "Optimisation GPU d'Entreprise pour l'IA et les Charges Crypto",
+                "hero-subtitle": "Framework DVFS révolutionnaire piloté par ML offrant 15-25% d'économies d'énergie pour la formation LLM, le minage de crypto-monnaies et les charges HPC.",
+                "stat-energy": "Réduction d'Énergie",
+                "stat-performance": "Impact sur les Performances",
+                "stat-saved": "Économisé par Exécution GPT",
+                "btn-calculate": "Calculez Vos Économies →",
+                "btn-pilot": "Demander un Programme Pilote",
+                
+                // Industry Section
+                "industry-title": "Solutions Sur Mesure pour Toutes les Industries",
+                "industry-subtitle": "Notre framework adaptatif optimise les performances GPU pour diverses charges de calcul",
+                "tab-ai": "IA & LLMs",
+                "tab-crypto": "Minage Crypto",
+                "tab-hpc": "HPC & Recherche",
+                "tab-cloud": "Fournisseurs Cloud",
+                
+                // AI Use Cases
+                "ai-case1-title": "Optimisation de Formation LLM",
+                "ai-case1-desc": "Réduisez la consommation d'énergie pour former des modèles comme GPT-4, Claude et Llama. Économisez des millions sur les coûts d'électricité par cycle de formation.",
+                "ai-case1-savings": "Économisez €42 600-71 000 par exécution GPT-3",
+                "ai-case2-title": "Accélération d'Inférence",
+                "ai-case2-desc": "Optimisez les clusters GPU pour l'inférence en temps réel, réduisant les coûts opérationnels tout en maintenant une latence inférieure à la milliseconde.",
+                "ai-case2-savings": "20% de réduction des coûts d'inférence",
+                "ai-case3-title": "Mise à l'Échelle Multi-GPU",
+                "ai-case3-desc": "Distribution intelligente de l'alimentation sur les clusters DGX H100 et les pods A100. Maximisez le débit par watt.",
+                "ai-case3-savings": "15-25% d'économies d'énergie à grande échelle",
+                
+                // Crypto Use Cases
+                "crypto-case1-title": "Minage Bitcoin (SHA-256)",
+                "crypto-case1-desc": "Optimisez les opérations de minage ASIC et GPU pour une efficacité maximale. Parfait pour les grandes fermes de minage.",
+                "crypto-case1-savings": "15-20% de réduction d'énergie",
+                "crypto-case2-title": "Minage Algorithme Scrypt",
+                "crypto-case2-desc": "Performance améliorée pour Litecoin et autres crypto-monnaies basées sur Scrypt. Maintenez les taux de hachage tout en réduisant la consommation.",
+                "crypto-case2-savings": "18-22% d'économies réalisées",
+                "crypto-case3-title": "Pièces de Confidentialité (RandomX)",
+                "crypto-case3-desc": "Optimisation spécialisée pour Monero et le minage axé sur la confidentialité. Améliorations de l'efficacité CPU et GPU.",
+                "crypto-case3-savings": "15-18% de réduction d'énergie",
+                
+                // HPC Use Cases
+                "hpc-case1-title": "Analyse Génomique",
+                "hpc-case1-desc": "Accélérez la découverte de médicaments et la recherche génomique tout en réduisant les coûts de calcul avec l'optimisation NVIDIA Clara.",
+                "hpc-case1-savings": "100-600 TFLOPS d'efficacité",
+                "hpc-case2-title": "Conduite Autonome",
+                "hpc-case2-desc": "Optimisez les simulations NVIDIA DRIVE pour le développement de véhicules autonomes. Traitement en temps réel avec empreinte énergétique réduite.",
+                "hpc-case2-savings": "4x réduction d'énergie",
+                "hpc-case3-title": "Modélisation Climatique",
+                "hpc-case3-desc": "Permettez des simulations climatiques plus étendues avec l'infrastructure existante. 127 GWh économisés annuellement sur les systèmes.",
+                "hpc-case3-savings": "Potentiel d'accélération 50x",
+                
+                // Cloud Use Cases
+                "cloud-case1-title": "GPU-as-a-Service",
+                "cloud-case1-desc": "Réduisez les coûts opérationnels pour les services cloud GPU. Compatible avec les instances GPU AWS, Google Cloud et Azure.",
+                "cloud-case1-savings": "Réduire le TCO de 20%",
+                "cloud-case2-title": "Efficacité du Centre de Données",
+                "cloud-case2-desc": "Atteignez les objectifs de durabilité tout en développant la capacité GPU. Parfait pour les opérations Equinix, Digital Realty.",
+                "cloud-case2-savings": "Améliorer les métriques PUE",
+                "cloud-case3-title": "Empreinte Carbone",
+                "cloud-case3-desc": "Alignez-vous avec les engagements ESG et les initiatives d'énergie renouvelable. Réduisez considérablement les émissions de CO2.",
+                "cloud-case3-savings": "500 tonnes de CO2 économisées",
+                
+                // Calculator
+                "calc-title": "Calculez Votre ROI",
+                "calc-subtitle": "Données de prix en temps réel • Projection d'économies instantanée • Calculs spécifiques à l'industrie",
+                "calc-mode-ai": "Formation IA/LLM",
+                "calc-mode-crypto": "Minage Crypto",
+                "calc-mode-custom": "Charge Personnalisée",
+                "calc-gpu-model": "Modèle GPU",
+                "calc-gpu-count": "Nombre de GPUs",
+                "calc-duration": "Durée de Formation (jours)",
+                "calc-energy-cost": "Coût Énergétique (€/kWh)",
+                "calc-cryptocurrency": "Crypto-monnaie",
+                "calc-hashrate": "Taux de Hachage Moyen (TH/s)",
+                "calc-workload-type": "Type de Charge",
+                "calc-custom-config": "Configuration Personnalisée",
+                "calc-total-power": "Puissance GPU Totale (kW)",
+                "calc-operating-hours": "Heures de Fonctionnement/Jour",
+                "workload-genomic": "Analyse Génomique",
+                "workload-climate": "Modélisation Climatique",
+                "workload-financial": "Modélisation Financière",
+                "workload-rendering": "Ferme de Rendu",
+                "workload-custom": "HPC Personnalisé",
+                
+                // Results
+                "result-base-consumption": "Consommation d'Énergie (Base)",
+                "result-opt-consumption": "Consommation Optimisée",
+                "result-energy-saved": "Énergie Économisée",
+                "result-cost-savings": "Économies de Coûts",
+                "result-co2": "Réduction de CO2",
+                "result-roi": "Période de ROI",
+                "result-monthly-cost": "Coût Énergétique Mensuel",
+                "result-opt-cost": "Coût Optimisé",
+                "result-monthly-savings": "Économies Mensuelles",
+                "result-annual-savings": "Économies Annuelles",
+                "result-5year": "Économies sur 5 Ans",
+                "result-breakeven": "Seuil de Rentabilité",
+                "result-daily-cost": "Coût Énergétique Quotidien",
+                "result-opt-monthly": "Mensuel Optimisé",
+                "result-tco": "Réduction du TCO",
+                "result-payback": "Période de Remboursement",
+                
+                // Architecture
+                "arch-title": "Stack Technologique de Qualité Entreprise",
+                "arch-subtitle": "Construit sur des algorithmes ML éprouvés et optimisé pour les environnements de production",
+                "arch-ml-title": "Optimisation Pilotée par ML",
+                "arch-ml-desc": "Les algorithmes auto-apprenants s'adaptent aux modèles de charge de travail en temps réel, améliorant continuellement l'efficacité sans intervention manuelle.",
+                "arch-dvfs-title": "Contrôle DVFS Dynamique",
+                "arch-dvfs-desc": "Ajustements de tension et de fréquence au niveau de la microseconde basés sur les caractéristiques de charge de travail et les conditions thermiques.",
+                "arch-compat-title": "Compatibilité Universelle",
+                "arch-compat-desc": "Intégration transparente avec l'infrastructure existante. Fonctionne avec tous les principaux modèles GPU et frameworks logiciels.",
+                "arch-analytics-title": "Analytique en Temps Réel",
+                "arch-analytics-desc": "Tableau de bord de surveillance complet avec analyses prédictives et capacités de détection d'anomalies.",
+                "arch-security-title": "Sécurité d'Entreprise",
+                "arch-security-desc": "Conforme SOC 2 Type II avec chiffrement de bout en bout et contrôle d'accès basé sur les rôles.",
+                "arch-api-title": "Conception API-First",
+                "arch-api-desc": "APIs RESTful et gRPC pour une intégration transparente avec les systèmes d'orchestration et de surveillance existants.",
+                
+                // CTA
+                "cta-title": "Transformez Votre Infrastructure GPU Aujourd'hui",
+                "cta-text": "Rejoignez les leaders de l'industrie qui économisent des millions sur les coûts énergétiques tout en faisant progresser l'IA et la recherche computationnelle",
+                "cta-demo": "Planifier une Démo Entreprise →",
+                "cta-calculate": "Calculer le ROI",
+                
+                // Footer
+                "footer-desc": "Technologie d'optimisation GPU révolutionnaire offrant 15-25% d'économies d'énergie pour l'IA, le minage de crypto-monnaies et les charges HPC.",
+                "footer-solutions": "Solutions",
+                "footer-ai": "Formation IA & LLM",
+                "footer-crypto": "Minage Crypto",
+                "footer-hpc": "HPC & Recherche",
+                "footer-cloud": "Fournisseurs Cloud",
+                "footer-resources": "Ressources",
+                "footer-docs": "Documentation",
+                "footer-api": "Référence API",
+                "footer-case": "Études de Cas",
+                "footer-whitepaper": "Livre Blanc",
+                "footer-company": "Entreprise",
+                "footer-about": "À Propos",
+                "footer-careers": "Carrières",
+                "footer-partners": "Partenaires",
+                "footer-contact": "Contact",
+                "footer-copyright": "© 2025 GPU-DVFS Enterprise. Tous droits réservés. | Politique de Confidentialité | Conditions d'Utilisation"
             }
         };
 
@@ -1804,34 +2290,13 @@
         function updateContent(lang) {
             const t = translations[lang];
             
-            // Update hero content
-            const heroTitle = document.querySelector('.hero-content h1');
-            if (heroTitle) heroTitle.textContent = t.heroTitle;
-            
-            const heroSubtitle = document.querySelector('.hero-subtitle');
-            if (heroSubtitle) heroSubtitle.textContent = t.heroSubtitle;
-            
-            // Update stat labels
-            const statLabels = document.querySelectorAll('.stat-label');
-            if (statLabels.length >= 3) {
-                statLabels[0].textContent = t.energyReduction;
-                statLabels[1].textContent = t.performanceImpact;
-                statLabels[2].textContent = t.savedPerRun;
-            }
-            
-            // Update buttons
-            const ctaButtons = document.querySelectorAll('.hero-cta .btn');
-            if (ctaButtons.length >= 2) {
-                ctaButtons[0].innerHTML = t.calculateSavings + ' →';
-                ctaButtons[1].textContent = t.requestPilot;
-            }
-            
-            // Update section headers
-            const industryTitle = document.querySelector('#industries .section-title');
-            if (industryTitle) industryTitle.textContent = t.tailoredSolutions;
-            
-            const industrySubtitle = document.querySelector('#industries .section-subtitle');
-            if (industrySubtitle) industrySubtitle.textContent = t.adaptiveFramework;
+            // Update all elements with data-translate attribute
+            document.querySelectorAll('[data-translate]').forEach(element => {
+                const key = element.getAttribute('data-translate');
+                if (t[key]) {
+                    element.textContent = t[key];
+                }
+            });
         }
 
         // Navbar scroll effect
