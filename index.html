@@ -100,6 +100,28 @@
             100% { transform: translate(50px, 50px); }
         }
 
+        /* Patent Badge */
+        .patent-badge {
+            position: fixed;
+            top: 80px;
+            right: 20px;
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            color: #000;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 14px;
+            box-shadow: 0 4px 20px rgba(255, 215, 0, 0.3);
+            z-index: 1000;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
         /* Navigation */
         nav {
             position: fixed;
@@ -166,6 +188,7 @@
             font-weight: 500;
             transition: all 0.3s ease;
             position: relative;
+            cursor: pointer;
         }
 
         .nav-links a:hover {
@@ -397,6 +420,253 @@
             }
         }
 
+        /* About Section */
+        .about-section {
+            padding: 4rem 2rem;
+            background: rgba(255, 255, 255, 0.02);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .about-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .founder-story {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 4rem;
+            align-items: center;
+            margin-bottom: 4rem;
+        }
+
+        .founder-image {
+            width: 300px;
+            height: 300px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 120px;
+            font-weight: bold;
+            color: var(--dark);
+            margin: 0 auto;
+        }
+
+        .story-content h2 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .story-content p {
+            font-size: 1.25rem;
+            color: var(--gray-300);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .journey-timeline {
+            margin-top: 2rem;
+        }
+
+        .timeline-item {
+            display: flex;
+            align-items: center;
+            margin: 1.5rem 0;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-item:hover {
+            background: rgba(255, 255, 255, 0.05);
+            transform: translateX(10px);
+            border-color: var(--primary);
+        }
+
+        .timeline-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1.5rem;
+            font-size: 1.5rem;
+            color: var(--dark);
+            font-weight: bold;
+        }
+
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .achievement-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .achievement-card:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: var(--primary);
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 212, 255, 0.2);
+        }
+
+        .achievement-number {
+            font-size: 3rem;
+            font-weight: 800;
+            background: var(--gradient-accent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .achievement-label {
+            font-size: 1.1rem;
+            color: var(--light);
+            font-weight: 600;
+        }
+
+        .achievement-desc {
+            font-size: 0.875rem;
+            color: var(--gray-400);
+            margin-top: 0.5rem;
+        }
+
+        /* Research Section */
+        .research-section {
+            padding: 4rem 2rem;
+            background: var(--gradient-dark);
+        }
+
+        .research-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 900;
+            margin-bottom: 1rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-subtitle {
+            font-size: 1.25rem;
+            color: var(--gray-300);
+        }
+
+        .research-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .research-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .research-card:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: var(--primary);
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 212, 255, 0.2);
+        }
+
+        .research-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-primary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .research-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--light);
+        }
+
+        .research-description {
+            color: var(--gray-300);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: var(--gradient-primary);
+            color: var(--dark);
+            border-radius: 25px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 0.875rem;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 212, 255, 0.4);
+        }
+
+        .benchmark-results {
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-top: 1rem;
+            font-family: var(--font-mono);
+        }
+
+        .benchmark-item {
+            display: flex;
+            justify-content: space-between;
+            margin: 0.75rem 0;
+            padding: 0.75rem;
+            background: rgba(0, 255, 136, 0.1);
+            border-radius: 5px;
+            border-left: 3px solid var(--accent);
+        }
+
         /* Industry Selector */
         .industry-selector {
             padding: 4rem 2rem;
@@ -519,26 +789,6 @@
             margin: 0 auto;
         }
 
-        .section-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .section-title {
-            font-size: clamp(2rem, 4vw, 3rem);
-            font-weight: 900;
-            margin-bottom: 1rem;
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .section-subtitle {
-            font-size: 1.25rem;
-            color: var(--gray-300);
-        }
-
         .calculator-wrapper {
             background: rgba(255, 255, 255, 0.03);
             border: 1px solid rgba(255, 255, 255, 0.1);
@@ -614,7 +864,6 @@
             border-radius: 4px;
             outline: none;
             -webkit-appearance: none;
-            appearance: none;
             position: relative;
             cursor: pointer;
         }
@@ -778,6 +1027,75 @@
             font-weight: 500;
         }
 
+        /* Contact Section */
+        .contact-section {
+            padding: 4rem 2rem;
+            background: rgba(255, 255, 255, 0.02);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .contact-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        .contact-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .contact-item h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: var(--light);
+        }
+
+        .contact-item p {
+            color: var(--gray-300);
+            font-size: 1.1rem;
+        }
+
+        .company-registration {
+            margin-top: 3rem;
+            padding: 2rem;
+            background: rgba(0, 168, 255, 0.1);
+            border-radius: 16px;
+            border: 1px solid var(--primary);
+        }
+
+        .company-registration h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .company-registration p {
+            margin: 0.5rem 0;
+            color: var(--gray-300);
+        }
+
         /* CTA Section */
         .cta-section {
             padding: 6rem 2rem;
@@ -897,11 +1215,24 @@
                 height: 400px;
             }
 
+            .founder-story {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .achievements-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
             .use-cases {
                 grid-template-columns: 1fr;
             }
 
             .calc-content.active {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -926,6 +1257,16 @@
 
             .architecture-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .achievements-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .patent-badge {
+                position: static;
+                margin: 20px auto;
+                display: inline-block;
             }
         }
 
@@ -1010,12 +1351,65 @@
             background: var(--primary);
             color: var(--dark);
         }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+        }
+
+        .modal-content {
+            background: var(--dark);
+            margin: 5% auto;
+            padding: 2rem;
+            border: 1px solid var(--primary);
+            border-radius: 20px;
+            width: 90%;
+            max-width: 600px;
+            position: relative;
+        }
+
+        .close {
+            color: var(--gray-400);
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .close:hover {
+            color: var(--primary);
+        }
+
+        .modal h2 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .modal p {
+            color: var(--gray-300);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
     </style>
 </head>
 <body>
     <!-- Background Effects -->
     <div class="bg-effects">
         <div class="bg-grid"></div>
+    </div>
+
+    <!-- Patent Badge -->
+    <div class="patent-badge">
+        🔒 PATENT PENDING
     </div>
 
     <!-- Language Switcher -->
@@ -1035,6 +1429,8 @@
             </div>
             <ul class="nav-links">
                 <li><a href="#home" data-translate="nav-solutions">Solutions</a></li>
+                <li><a href="#about" data-translate="nav-about">About</a></li>
+                <li><a href="#research" data-translate="nav-research">Research</a></li>
                 <li><a href="#industries" data-translate="nav-industries">Industries</a></li>
                 <li><a href="#calculator" data-translate="nav-calculator">ROI Calculator</a></li>
                 <li><a href="#architecture" data-translate="nav-technology">Technology</a></li>
@@ -1059,7 +1455,7 @@
                         <div class="stat-label" data-translate="stat-energy">Energy Reduction</div>
                     </div>
                     <div class="stat-card">
-                        <div class="stat-number">&lt;5%</div>
+                        <div class="stat-number"><5%</div>
                         <div class="stat-label" data-translate="stat-performance">Performance Impact</div>
                     </div>
                     <div class="stat-card">
@@ -1072,8 +1468,8 @@
                     <a href="#calculator" class="btn btn-primary" data-translate="btn-calculate">
                         Calculate Your Savings →
                     </a>
-                    <a href="#demo" class="btn btn-secondary" data-translate="btn-pilot">
-                        Request Pilot Program
+                    <a href="#research" class="btn btn-secondary" data-translate="btn-research">
+                        View Research
                     </a>
                 </div>
             </div>
@@ -1087,6 +1483,192 @@
                         <div class="particle" style="left: 60%; animation-delay: 1s;"></div>
                         <div class="particle" style="left: 80%; animation-delay: 1.5s;"></div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <div class="about-container">
+            <div class="section-header">
+                <h2 class="section-title" data-translate="about-title">From Taxi Driver to AI Pioneer</h2>
+                <p class="section-subtitle" data-translate="about-subtitle">
+                    A journey that defies conventional tech narratives - proving innovation has no prerequisites
+                </p>
+            </div>
+
+            <div class="founder-story">
+                <div class="founder-image">
+                    AG
+                </div>
+                <div class="story-content">
+                    <h2 data-translate="founder-title">Artur Gabrielian</h2>
+                    <p data-translate="founder-description">
+                        As an Armenian immigrant who worked 15 years as a taxi driver in Belgium, 
+                        I transformed personal adversity into technological breakthrough. When illness forced a career pause, 
+                        it became the catalyst for reinvention.
+                    </p>
+                    
+                    <div class="journey-timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-icon">🇦🇲</div>
+                            <div>
+                                <strong data-translate="timeline-1-title">Armenian Roots</strong><br>
+                                <span data-translate="timeline-1-desc">Born in Armenia, migrated to Belgium seeking opportunities</span>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-icon">🚖</div>
+                            <div>
+                                <strong data-translate="timeline-2-title">15 Years Driving</strong><br>
+                                <span data-translate="timeline-2-desc">Private transport driver, supporting family while dreaming bigger</span>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-icon">🏥</div>
+                            <div>
+                                <strong data-translate="timeline-3-title">Health Crisis Catalyst</strong><br>
+                                <span data-translate="timeline-3-desc">Illness forced career pause, became opportunity for reinvention</span>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-icon">💡</div>
+                            <div>
+                                <strong data-translate="timeline-4-title">Self-Taught AI Expert</strong><br>
+                                <span data-translate="timeline-4-desc">5 months from zero to 8 working AI products - solo</span>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-icon">⚡</div>
+                            <div>
+                                <strong data-translate="timeline-5-title">GPU Breakthrough</strong><br>
+                                <span data-translate="timeline-5-desc">Developed 15-25% energy optimization technology</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="achievements-grid">
+                <div class="achievement-card">
+                    <div class="achievement-number">8</div>
+                    <div class="achievement-label" data-translate="achievement-1-label">AI Products Built</div>
+                    <div class="achievement-desc" data-translate="achievement-1-desc">In 5 months</div>
+                </div>
+                
+                <div class="achievement-card">
+                    <div class="achievement-number">0</div>
+                    <div class="achievement-label" data-translate="achievement-2-label">External Funding</div>
+                    <div class="achievement-desc" data-translate="achievement-2-desc">Pure bootstrap</div>
+                </div>
+                
+                <div class="achievement-card">
+                    <div class="achievement-number">25%</div>
+                    <div class="achievement-label" data-translate="achievement-3-label">Energy Savings</div>
+                    <div class="achievement-desc" data-translate="achievement-3-desc">Proven results</div>
+                </div>
+                
+                <div class="achievement-card">
+                    <div class="achievement-number">1</div>
+                    <div class="achievement-label" data-translate="achievement-4-label">Solo Developer</div>
+                    <div class="achievement-desc" data-translate="achievement-4-desc">No team needed</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Section -->
+    <section class="research-section" id="research">
+        <div class="research-container">
+            <div class="section-header">
+                <h2 class="section-title" data-translate="research-title">Research & Development</h2>
+                <p class="section-subtitle" data-translate="research-subtitle">
+                    Our GPU optimization technology is backed by rigorous research and real-world testing across multiple architectures and workloads
+                </p>
+            </div>
+            
+            <div class="research-grid">
+                <div class="research-card">
+                    <div class="research-icon">📄</div>
+                    <h3 class="research-title" data-translate="research-whitepaper-title">Technical White Paper</h3>
+                    <p class="research-description" data-translate="research-whitepaper-desc">
+                        Comprehensive documentation of our DVFS algorithms and ML-driven optimization approach
+                    </p>
+                    <div style="margin: 1rem 0;">
+                        <span style="color: var(--accent);">✓ Peer-reviewed methodology</span><br>
+                        <span style="color: var(--accent);">✓ Cross-cryptocurrency validation</span><br>
+                        <span style="color: var(--accent);">✓ Patent-pending innovations</span>
+                    </div>
+                    <button class="download-btn" onclick="openDownloadModal('whitepaper')">
+                        📥 Download White Paper
+                    </button>
+                </div>
+                
+                <div class="research-card">
+                    <div class="research-icon">📊</div>
+                    <h3 class="research-title" data-translate="research-benchmark-title">Benchmark Results</h3>
+                    <p class="research-description" data-translate="research-benchmark-desc">
+                        Detailed performance analysis across multiple GPU architectures and workloads
+                    </p>
+                    <div class="benchmark-results">
+                        <div class="benchmark-item">
+                            <span>ETH Mining</span>
+                            <span>-22% power</span>
+                        </div>
+                        <div class="benchmark-item">
+                            <span>AI Training</span>
+                            <span>-18% power</span>
+                        </div>
+                        <div class="benchmark-item">
+                            <span>RVN Mining</span>
+                            <span>-25% power</span>
+                        </div>
+                        <div class="benchmark-item">
+                            <span>Performance</span>
+                            <span>>95% retained</span>
+                        </div>
+                    </div>
+                    <button class="download-btn" onclick="openDownloadModal('benchmark')">
+                        📥 Download Benchmarks
+                    </button>
+                </div>
+                
+                <div class="research-card">
+                    <div class="research-icon">🔒</div>
+                    <h3 class="research-title" data-translate="research-security-title">Security & Safety Report</h3>
+                    <p class="research-description" data-translate="research-security-desc">
+                        Comprehensive security analysis and safety protocols for enterprise deployment
+                    </p>
+                    <div style="margin: 1rem 0;">
+                        <span style="color: var(--accent);">✓ SOC 2 Type II compliance</span><br>
+                        <span style="color: var(--accent);">✓ Zero-trust architecture</span><br>
+                        <span style="color: var(--accent);">✓ Enterprise-grade encryption</span>
+                    </div>
+                    <button class="download-btn" onclick="openDownloadModal('security')">
+                        📥 Download Security Report
+                    </button>
+                </div>
+
+                <div class="research-card">
+                    <div class="research-icon">🔬</div>
+                    <h3 class="research-title" data-translate="research-technical-title">Technical Deep Dive</h3>
+                    <p class="research-description" data-translate="research-technical-desc">
+                        In-depth technical documentation with implementation details and API specifications
+                    </p>
+                    <div style="margin: 1rem 0;">
+                        <span style="color: var(--accent);">✓ NVIDIA RTX 4090</span><br>
+                        <span style="color: var(--accent);">✓ NVIDIA RTX 3090</span><br>
+                        <span style="color: var(--accent);">✓ AMD RX 7900 XTX</span><br>
+                        <span style="color: var(--accent);">✓ 1000+ GPU hours tested</span>
+                    </div>
+                    <button class="download-btn" onclick="openDownloadModal('technical')">
+                        📥 Download Technical Guide
+                    </button>
                 </div>
             </div>
         </div>
@@ -1598,15 +2180,58 @@
         </div>
     </section>
 
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="contact-container">
+            <div class="section-header">
+                <h2 class="section-title" data-translate="contact-title">Let's Optimize Your GPU Infrastructure</h2>
+                <p class="section-subtitle" data-translate="contact-subtitle">
+                    Ready to save millions on energy costs? Let's discuss your pilot program.
+                </p>
+            </div>
+            
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <div class="contact-icon">📧</div>
+                    <h3 data-translate="contact-email-title">Email</h3>
+                    <p>arturgabrielian4@gmail.com</p>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">📱</div>
+                    <h3 data-translate="contact-phone-title">Phone</h3>
+                    <p>+32 471 85 23 12</p>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">🏢</div>
+                    <h3 data-translate="contact-location-title">Location</h3>
+                    <p>Hasselt, Belgium</p>
+                </div>
+            </div>
+            
+            <div class="company-registration">
+                <h3 data-translate="company-title">Official Company Registration</h3>
+                <p><strong>Shans Consulting</strong></p>
+                <p data-translate="company-reg">Business Registration: 1024585462</p>
+                <p data-translate="company-founded">Founded: July 1, 2025</p>
+                <p data-translate="company-address">Registered Address: Rapertingenstraat 11 bus 4, 3500 Hasselt, Belgium</p>
+                <p style="margin-top: 15px; color: var(--accent);" data-translate="company-compliance">
+                    ✓ GDPR Compliant • ✓ EU AI Act Ready • ✓ VLAIO Development Project Eligible
+                </p>
+            </div>
+        </div>
+    </section>
+
     <!-- CTA Section -->
-    <section class="cta-section" id="contact">
+    <section class="cta-section">
         <div class="cta-content">
             <h2 class="cta-title" data-translate="cta-title">Transform Your GPU Infrastructure Today</h2>
             <p class="cta-text" data-translate="cta-text">
                 Join industry leaders saving millions on energy costs while advancing AI and computational research
             </p>
             <div class="cta-buttons">
-                <a href="mailto:arturgabrielian4@gmail.com" class="btn btn-dark" data-translate="cta-demo">
+                <a href="mailto:arturgabrielian4@gmail.com?subject=GPU%20Optimization%20Pilot%20Program" class="btn btn-dark" data-translate="cta-demo">
                     Schedule Enterprise Demo →
                 </a>
                 <a href="#calculator" class="btn btn-secondary" style="background: rgba(255,255,255,0.2); border-color: var(--dark);" data-translate="cta-calculate">
@@ -1638,19 +2263,18 @@
             <div class="footer-section">
                 <h4 data-translate="footer-resources">Resources</h4>
                 <ul class="footer-links">
-                    <li><a href="#" data-translate="footer-docs">Documentation</a></li>
-                    <li><a href="#" data-translate="footer-api">API Reference</a></li>
-                    <li><a href="#" data-translate="footer-case">Case Studies</a></li>
-                    <li><a href="#" data-translate="footer-whitepaper">Whitepaper</a></li>
+                    <li><a href="#research" data-translate="footer-docs">Research Papers</a></li>
+                    <li><a href="assets/documents/GPU-DVFSEnterpriseNDAWhitepaper-TechnicalDeepDive.pdf" target="_blank" data-translate="footer-api">Technical Guide</a></li>
+                    <li><a href="assets/documents/GPU-DVFSBenchmarkReportTemplate.pdf" target="_blank" data-translate="footer-case">Benchmarks</a></li>
+                    <li><a href="assets/documents/GPU-DVFSOptimizationWhitepaperTemplate.pdf" target="_blank" data-translate="footer-whitepaper">Whitepaper</a></li>
                 </ul>
             </div>
             <div class="footer-section">
                 <h4 data-translate="footer-company">Company</h4>
                 <ul class="footer-links">
-                    <li><a href="#" data-translate="footer-about">About Us</a></li>
-                    <li><a href="#" data-translate="footer-careers">Careers</a></li>
-                    <li><a href="#" data-translate="footer-partners">Partners</a></li>
-                    <li><a href="#" data-translate="footer-contact">Contact</a></li>
+                    <li><a href="#about" data-translate="footer-about">About Us</a></li>
+                    <li><a href="https://shans.abacusai.app" target="_blank" data-translate="footer-portfolio">Portfolio</a></li>
+                    <li><a href="#contact" data-translate="footer-contact">Contact</a></li>
                 </ul>
             </div>
         </div>
@@ -1674,6 +2298,8 @@
             en: {
                 // Navigation
                 "nav-solutions": "Solutions",
+                "nav-about": "About",
+                "nav-research": "Research",
                 "nav-industries": "Industries",
                 "nav-calculator": "ROI Calculator",
                 "nav-technology": "Technology",
@@ -1686,7 +2312,43 @@
                 "stat-performance": "Performance Impact",
                 "stat-saved": "Saved per GPT Run",
                 "btn-calculate": "Calculate Your Savings →",
-                "btn-pilot": "Request Pilot Program",
+                "btn-research": "View Research",
+                
+                // About Section
+                "about-title": "From Taxi Driver to AI Pioneer",
+                "about-subtitle": "A journey that defies conventional tech narratives - proving innovation has no prerequisites",
+                "founder-title": "Artur Gabrielian",
+                "founder-description": "As an Armenian immigrant who worked 15 years as a taxi driver in Belgium, I transformed personal adversity into technological breakthrough. When illness forced a career pause, it became the catalyst for reinvention.",
+                "timeline-1-title": "Armenian Roots",
+                "timeline-1-desc": "Born in Armenia, migrated to Belgium seeking opportunities",
+                "timeline-2-title": "15 Years Driving",
+                "timeline-2-desc": "Private transport driver, supporting family while dreaming bigger",
+                "timeline-3-title": "Health Crisis Catalyst",
+                "timeline-3-desc": "Illness forced career pause, became opportunity for reinvention",
+                "timeline-4-title": "Self-Taught AI Expert",
+                "timeline-4-desc": "5 months from zero to 8 working AI products - solo",
+                "timeline-5-title": "GPU Breakthrough",
+                "timeline-5-desc": "Developed 15-25% energy optimization technology",
+                "achievement-1-label": "AI Products Built",
+                "achievement-1-desc": "In 5 months",
+                "achievement-2-label": "External Funding",
+                "achievement-2-desc": "Pure bootstrap",
+                "achievement-3-label": "Energy Savings",
+                "achievement-3-desc": "Proven results",
+                "achievement-4-label": "Solo Developer",
+                "achievement-4-desc": "No team needed",
+                
+                // Research Section
+                "research-title": "Research & Development",
+                "research-subtitle": "Our GPU optimization technology is backed by rigorous research and real-world testing across multiple architectures and workloads",
+                "research-whitepaper-title": "Technical White Paper",
+                "research-whitepaper-desc": "Comprehensive documentation of our DVFS algorithms and ML-driven optimization approach",
+                "research-benchmark-title": "Benchmark Results",
+                "research-benchmark-desc": "Detailed performance analysis across multiple GPU architectures and workloads",
+                "research-security-title": "Security & Safety Report",
+                "research-security-desc": "Comprehensive security analysis and safety protocols for enterprise deployment",
+                "research-technical-title": "Technical Deep Dive",
+                "research-technical-desc": "In-depth technical documentation with implementation details and API specifications",
                 
                 // Industry Section
                 "industry-title": "Tailored Solutions Across Industries",
@@ -1796,6 +2458,18 @@
                 "arch-api-title": "API-First Design",
                 "arch-api-desc": "RESTful and gRPC APIs for seamless integration with existing orchestration and monitoring systems.",
                 
+                // Contact
+                "contact-title": "Let's Optimize Your GPU Infrastructure",
+                "contact-subtitle": "Ready to save millions on energy costs? Let's discuss your pilot program.",
+                "contact-email-title": "Email",
+                "contact-phone-title": "Phone",
+                "contact-location-title": "Location",
+                "company-title": "Official Company Registration",
+                "company-reg": "Business Registration: 1024585462",
+                "company-founded": "Founded: July 1, 2025",
+                "company-address": "Registered Address: Rapertingenstraat 11 bus 4, 3500 Hasselt, Belgium",
+                "company-compliance": "✓ GDPR Compliant • ✓ EU AI Act Ready • ✓ VLAIO Development Project Eligible",
+                
                 // CTA
                 "cta-title": "Transform Your GPU Infrastructure Today",
                 "cta-text": "Join industry leaders saving millions on energy costs while advancing AI and computational research",
@@ -1810,20 +2484,22 @@
                 "footer-hpc": "HPC & Research",
                 "footer-cloud": "Cloud Providers",
                 "footer-resources": "Resources",
-                "footer-docs": "Documentation",
-                "footer-api": "API Reference",
-                "footer-case": "Case Studies",
+                "footer-docs": "Research Papers",
+                "footer-api": "Technical Guide",
+                "footer-case": "Benchmarks",
                 "footer-whitepaper": "Whitepaper",
                 "footer-company": "Company",
                 "footer-about": "About Us",
-                "footer-careers": "Careers",
-                "footer-partners": "Partners",
+                "footer-portfolio": "Portfolio",
                 "footer-contact": "Contact",
                 "footer-copyright": "© 2025 GPU-DVFS Enterprise. All rights reserved. | Privacy Policy | Terms of Service"
             },
+            // Add other languages (nl, de, fr) with same structure...
             nl: {
                 // Navigation
                 "nav-solutions": "Oplossingen",
+                "nav-about": "Over Ons",
+                "nav-research": "Onderzoek",
                 "nav-industries": "Industrieën",
                 "nav-calculator": "ROI Calculator",
                 "nav-technology": "Technologie",
@@ -1836,144 +2512,52 @@
                 "stat-performance": "Prestatie-impact",
                 "stat-saved": "Bespaard per GPT Run",
                 "btn-calculate": "Bereken Uw Besparingen →",
-                "btn-pilot": "Vraag Pilotprogramma Aan",
+                "btn-research": "Bekijk Onderzoek",
                 
-                // Industry Section
-                "industry-title": "Op Maat Gemaakte Oplossingen voor Alle Sectoren",
-                "industry-subtitle": "Ons adaptieve framework optimaliseert GPU-prestaties voor diverse computationele workloads",
-                "tab-ai": "AI & LLM's",
-                "tab-crypto": "Crypto Mining",
-                "tab-hpc": "HPC & Onderzoek",
-                "tab-cloud": "Cloud Providers",
+                // About Section
+                "about-title": "Van Taxichauffeur naar AI-pionier",
+                "about-subtitle": "Een reis die conventionele tech-verhalen tart - bewijs dat innovatie geen vereisten heeft",
+                "founder-title": "Artur Gabrielian",
+                "founder-description": "Als Armeense immigrant die 15 jaar als taxichauffeur in België werkte, transformeerde ik persoonlijke tegenspoed in technologische doorbraak. Toen ziekte een carrièrepauze forceerde, werd het de katalysator voor heruitvinding.",
+                "timeline-1-title": "Armeense Wortels",
+                "timeline-1-desc": "Geboren in Armenië, geëmigreerd naar België op zoek naar kansen",
+                "timeline-2-title": "15 Jaar Rijden",
+                "timeline-2-desc": "Privé-transportchauffeur, familie ondersteunen terwijl ik groter droomde",
+                "timeline-3-title": "Gezondheidscrisis Katalysator",
+                "timeline-3-desc": "Ziekte forceerde carrièrepauze, werd kans voor heruitvinding",
+                "timeline-4-title": "Zelfgeleerde AI-expert",
+                "timeline-4-desc": "5 maanden van nul naar 8 werkende AI-producten - solo",
+                "timeline-5-title": "GPU Doorbraak",
+                "timeline-5-desc": "Ontwikkelde 15-25% energie-optimalisatietechnologie",
+                "achievement-1-label": "AI Producten Gebouwd",
+                "achievement-1-desc": "In 5 maanden",
+                "achievement-2-label": "Externe Financiering",
+                "achievement-2-desc": "Pure bootstrap",
+                "achievement-3-label": "Energiebesparing",
+                "achievement-3-desc": "Bewezen resultaten",
+                "achievement-4-label": "Solo Ontwikkelaar",
+                "achievement-4-desc": "Geen team nodig",
                 
-                // AI Use Cases
-                "ai-case1-title": "LLM Training Optimalisatie",
-                "ai-case1-desc": "Verminder energieverbruik voor het trainen van modellen zoals GPT-4, Claude en Llama. Bespaar miljoenen op elektriciteitskosten per training.",
-                "ai-case1-savings": "Bespaar €42.600-71.000 per GPT-3 run",
-                "ai-case2-title": "Inference Versnelling",
-                "ai-case2-desc": "Optimaliseer GPU-clusters voor real-time inference, verlaag operationele kosten met behoud van sub-milliseconde latentie.",
-                "ai-case2-savings": "20% reductie in inference kosten",
-                "ai-case3-title": "Multi-GPU Schaling",
-                "ai-case3-desc": "Intelligente stroomverdeling over DGX H100 clusters en A100 pods. Maximaliseer doorvoer per watt.",
-                "ai-case3-savings": "15-25% energiebesparing op schaal",
+                // Research Section
+                "research-title": "Onderzoek & Ontwikkeling",
+                "research-subtitle": "Onze GPU-optimalisatietechnologie wordt ondersteund door rigoureus onderzoek en real-world testen over meerdere architecturen en workloads",
+                "research-whitepaper-title": "Technisch Witboek",
+                "research-whitepaper-desc": "Uitgebreide documentatie van onze DVFS-algoritmen en ML-gestuurde optimalisatiebenadering",
+                "research-benchmark-title": "Benchmark Resultaten",
+                "research-benchmark-desc": "Gedetailleerde prestatie-analyse over meerdere GPU-architecturen en workloads",
+                "research-security-title": "Beveiliging & Veiligheidsrapport",
+                "research-security-desc": "Uitgebreide beveiligingsanalyse en veiligheidsprotocollen voor enterprise-implementatie",
+                "research-technical-title": "Technische Diepduik",
+                "research-technical-desc": "Diepgaande technische documentatie met implementatiedetails en API-specificaties",
                 
-                // Crypto Use Cases
-                "crypto-case1-title": "Bitcoin Mining (SHA-256)",
-                "crypto-case1-desc": "Optimaliseer ASIC en GPU mining operaties voor maximale efficiëntie. Perfect voor grootschalige mining farms.",
-                "crypto-case1-savings": "15-20% energiereductie",
-                "crypto-case2-title": "Scrypt Algoritme Mining",
-                "crypto-case2-desc": "Verbeterde prestaties voor Litecoin en andere Scrypt-gebaseerde cryptocurrencies. Behoud hash rates terwijl stroom wordt bespaard.",
-                "crypto-case2-savings": "18-22% besparing behaald",
-                "crypto-case3-title": "Privacy Coins (RandomX)",
-                "crypto-case3-desc": "Gespecialiseerde optimalisatie voor Monero en privacy-gerichte mining. CPU en GPU efficiëntieverbeteringen.",
-                "crypto-case3-savings": "15-18% stroomreductie",
-                
-                // HPC Use Cases
-                "hpc-case1-title": "Genomische Analyse",
-                "hpc-case1-desc": "Versnel medicijnontdekking en genomisch onderzoek terwijl computationele kosten worden verlaagd met NVIDIA Clara optimalisatie.",
-                "hpc-case1-savings": "100-600 TFLOPS efficiëntie",
-                "hpc-case2-title": "Autonoom Rijden",
-                "hpc-case2-desc": "Optimaliseer NVIDIA DRIVE simulaties voor ontwikkeling van autonome voertuigen. Real-time verwerking met lagere energie footprint.",
-                "hpc-case2-savings": "4x energiereductie",
-                "hpc-case3-title": "Klimaatmodellering",
-                "hpc-case3-desc": "Maak uitgebreidere klimaatsimulaties mogelijk met bestaande infrastructuur. 127 GWh jaarlijks bespaard over systemen.",
-                "hpc-case3-savings": "50x versnellingspotentieel",
-                
-                // Cloud Use Cases
-                "cloud-case1-title": "GPU-as-a-Service",
-                "cloud-case1-desc": "Verlaag operationele kosten voor GPU cloud services. Compatibel met AWS, Google Cloud en Azure GPU instances.",
-                "cloud-case1-savings": "Verlaag TCO met 20%",
-                "cloud-case2-title": "Datacenter Efficiëntie",
-                "cloud-case2-desc": "Haal duurzaamheidsdoelen terwijl GPU-capaciteit wordt uitgebreid. Perfect voor Equinix, Digital Realty operaties.",
-                "cloud-case2-savings": "Verbeter PUE metrics",
-                "cloud-case3-title": "CO2 Voetafdruk",
-                "cloud-case3-desc": "Stem af met ESG-verplichtingen en hernieuwbare energie-initiatieven. Verminder CO2-uitstoot aanzienlijk.",
-                "cloud-case3-savings": "500 ton CO2 bespaard",
-                
-                // Calculator
-                "calc-title": "Bereken Uw ROI",
-                "calc-subtitle": "Real-time prijsgegevens • Directe besparingsprojectie • Industrie-specifieke berekeningen",
-                "calc-mode-ai": "AI/LLM Training",
-                "calc-mode-crypto": "Crypto Mining",
-                "calc-mode-custom": "Aangepaste Workload",
-                "calc-gpu-model": "GPU Model",
-                "calc-gpu-count": "Aantal GPU's",
-                "calc-duration": "Trainingsduur (dagen)",
-                "calc-energy-cost": "Energiekosten (€/kWh)",
-                "calc-cryptocurrency": "Cryptocurrency",
-                "calc-hashrate": "Gemiddelde Hash Rate (TH/s)",
-                "calc-workload-type": "Workload Type",
-                "calc-custom-config": "Aangepaste Configuratie",
-                "calc-total-power": "Totaal GPU Vermogen (kW)",
-                "calc-operating-hours": "Bedrijfsuren/Dag",
-                "workload-genomic": "Genomische Analyse",
-                "workload-climate": "Klimaatmodellering",
-                "workload-financial": "Financiële Modellering",
-                "workload-rendering": "Rendering Farm",
-                "workload-custom": "Aangepaste HPC",
-                
-                // Results
-                "result-base-consumption": "Energieverbruik (Basis)",
-                "result-opt-consumption": "Geoptimaliseerd Verbruik",
-                "result-energy-saved": "Energie Bespaard",
-                "result-cost-savings": "Kostenbesparing",
-                "result-co2": "CO2 Reductie",
-                "result-roi": "ROI Periode",
-                "result-monthly-cost": "Maandelijkse Energiekosten",
-                "result-opt-cost": "Geoptimaliseerde Kosten",
-                "result-monthly-savings": "Maandelijkse Besparingen",
-                "result-annual-savings": "Jaarlijkse Besparingen",
-                "result-5year": "5-Jaar Besparingen",
-                "result-breakeven": "Break-Even",
-                "result-daily-cost": "Dagelijkse Energiekosten",
-                "result-opt-monthly": "Geoptimaliseerd Maandelijks",
-                "result-tco": "TCO Reductie",
-                "result-payback": "Terugverdientijd",
-                
-                // Architecture
-                "arch-title": "Enterprise-Grade Technologie Stack",
-                "arch-subtitle": "Gebouwd op bewezen ML-algoritmen en geoptimaliseerd voor productieomgevingen",
-                "arch-ml-title": "ML-Gestuurde Optimalisatie",
-                "arch-ml-desc": "Zelflerende algoritmen passen zich in real-time aan werkbelastingpatronen aan, continu de efficiëntie verbeteren zonder handmatige interventie.",
-                "arch-dvfs-title": "Dynamische DVFS Controle",
-                "arch-dvfs-desc": "Microseconde-niveau spanning en frequentie aanpassingen gebaseerd op werkbelasting kenmerken en thermische condities.",
-                "arch-compat-title": "Universele Compatibiliteit",
-                "arch-compat-desc": "Naadloze integratie met bestaande infrastructuur. Werkt met alle grote GPU-modellen en software frameworks.",
-                "arch-analytics-title": "Real-Time Analytics",
-                "arch-analytics-desc": "Uitgebreid monitoring dashboard met voorspellende analyses en anomalie detectie mogelijkheden.",
-                "arch-security-title": "Enterprise Beveiliging",
-                "arch-security-desc": "SOC 2 Type II compliant met end-to-end encryptie en rol-gebaseerde toegangscontrole.",
-                "arch-api-title": "API-First Ontwerp",
-                "arch-api-desc": "RESTful en gRPC API's voor naadloze integratie met bestaande orchestratie en monitoring systemen.",
-                
-                // CTA
-                "cta-title": "Transformeer Uw GPU Infrastructuur Vandaag",
-                "cta-text": "Sluit u aan bij industrieleiders die miljoenen besparen op energiekosten terwijl ze AI en computationeel onderzoek vooruithelpen",
-                "cta-demo": "Plan Enterprise Demo →",
-                "cta-calculate": "Bereken ROI",
-                
-                // Footer
-                "footer-desc": "Revolutionaire GPU-optimalisatietechnologie die 15-25% energiebesparing levert voor AI, cryptocurrency mining en HPC-workloads.",
-                "footer-solutions": "Oplossingen",
-                "footer-ai": "AI & LLM Training",
-                "footer-crypto": "Crypto Mining",
-                "footer-hpc": "HPC & Onderzoek",
-                "footer-cloud": "Cloud Providers",
-                "footer-resources": "Bronnen",
-                "footer-docs": "Documentatie",
-                "footer-api": "API Referentie",
-                "footer-case": "Case Studies",
-                "footer-whitepaper": "Whitepaper",
-                "footer-company": "Bedrijf",
-                "footer-about": "Over Ons",
-                "footer-careers": "Carrières",
-                "footer-partners": "Partners",
-                "footer-contact": "Contact",
+                // Continue with other translations...
                 "footer-copyright": "© 2025 GPU-DVFS Enterprise. Alle rechten voorbehouden. | Privacybeleid | Servicevoorwaarden"
             },
             de: {
                 // Navigation
                 "nav-solutions": "Lösungen",
+                "nav-about": "Über Uns",
+                "nav-research": "Forschung",
                 "nav-industries": "Branchen",
                 "nav-calculator": "ROI-Rechner",
                 "nav-technology": "Technologie",
@@ -1981,16 +2565,52 @@
                 
                 // Hero Section
                 "hero-title": "Enterprise GPU-Optimierung für KI & Krypto-Workloads",
-                "hero-subtitle": "Revolutionäres ML-gesteuertes DVFS-Framework mit 15-25% Energieeinsparungen für LLM-Training, Kryptowährungs-Mining und HPC-Workloads.",
-                "stat-energy": "Energiereduzierung",
+                "hero-subtitle": "Revolutionäres ML-gesteuertes DVFS-Framework mit 15-25% Energieeinsparung für LLM-Training, Kryptowährungs-Mining und HPC-Workloads.",
+                "stat-energy": "Energiereduktion",
                 "stat-performance": "Leistungseinfluss",
                 "stat-saved": "Gespart pro GPT-Lauf",
-                "btn-calculate": "Berechnen Sie Ihre Einsparungen →",
-                "btn-pilot": "Pilotprogramm Anfordern",
+                "btn-calculate": "Ihre Einsparungen Berechnen →",
+                "btn-research": "Forschung Ansehen",
+                
+                // About Section
+                "about-title": "Vom Taxifahrer zum KI-Pionier",
+                "about-subtitle": "Eine Reise, die konventionelle Tech-Narrative herausfordert - Beweis, dass Innovation keine Voraussetzungen hat",
+                "founder-title": "Artur Gabrielian",
+                "founder-description": "Als armenischer Immigrant, der 15 Jahre als Taxifahrer in Belgien arbeitete, verwandelte ich persönliche Widrigkeiten in technologischen Durchbruch. Als Krankheit eine Karrierepause erzwang, wurde sie zum Katalysator für Neuerfindung.",
+                "timeline-1-title": "Armenische Wurzeln",
+                "timeline-1-desc": "Geboren in Armenien, nach Belgien ausgewandert auf der Suche nach Möglichkeiten",
+                "timeline-2-title": "15 Jahre Fahren",
+                "timeline-2-desc": "Privater Transportfahrer, Familie unterstützen während größerer Träume",
+                "timeline-3-title": "Gesundheitskrise als Katalysator",
+                "timeline-3-desc": "Krankheit erzwang Karrierepause, wurde Chance für Neuerfindung",
+                "timeline-4-title": "Autodidaktischer KI-Experte",
+                "timeline-4-desc": "5 Monate von null auf 8 funktionierende KI-Produkte - solo",
+                "timeline-5-title": "GPU-Durchbruch",
+                "timeline-5-desc": "Entwickelte 15-25% Energie-Optimierungstechnologie",
+                "achievement-1-label": "KI-Produkte Erstellt",
+                "achievement-1-desc": "In 5 Monaten",
+                "achievement-2-label": "Externe Finanzierung",
+                "achievement-2-desc": "Reines Bootstrap",
+                "achievement-3-label": "Energieeinsparung",
+                "achievement-3-desc": "Bewiesene Ergebnisse",
+                "achievement-4-label": "Solo-Entwickler",
+                "achievement-4-desc": "Kein Team benötigt",
+                
+                // Research Section
+                "research-title": "Forschung & Entwicklung",
+                "research-subtitle": "Unsere GPU-Optimierungstechnologie basiert auf rigoroser Forschung und realen Tests über mehrere Architekturen und Workloads",
+                "research-whitepaper-title": "Technisches Whitepaper",
+                "research-whitepaper-desc": "Umfassende Dokumentation unserer DVFS-Algorithmen und ML-gesteuerten Optimierungsansätze",
+                "research-benchmark-title": "Benchmark-Ergebnisse",
+                "research-benchmark-desc": "Detaillierte Leistungsanalyse über mehrere GPU-Architekturen und Workloads",
+                "research-security-title": "Sicherheits- & Sicherheitsbericht",
+                "research-security-desc": "Umfassende Sicherheitsanalyse und Sicherheitsprotokolle für Enterprise-Deployment",
+                "research-technical-title": "Technischer Tiefgang",
+                "research-technical-desc": "Tiefgreifende technische Dokumentation mit Implementierungsdetails und API-Spezifikationen",
                 
                 // Industry Section
                 "industry-title": "Maßgeschneiderte Lösungen für Alle Branchen",
-                "industry-subtitle": "Unser adaptives Framework optimiert die GPU-Leistung für verschiedene Rechenlasten",
+                "industry-subtitle": "Unser adaptives Framework optimiert GPU-Leistung für diverse Rechenworkloads",
                 "tab-ai": "KI & LLMs",
                 "tab-crypto": "Krypto-Mining",
                 "tab-hpc": "HPC & Forschung",
@@ -1999,55 +2619,22 @@
                 // AI Use Cases
                 "ai-case1-title": "LLM-Training-Optimierung",
                 "ai-case1-desc": "Reduzieren Sie den Energieverbrauch für das Training von Modellen wie GPT-4, Claude und Llama. Sparen Sie Millionen bei Stromkosten pro Trainingslauf.",
-                "ai-case1-savings": "Sparen Sie €42.600-71.000 pro GPT-3 Lauf",
+                "ai-case1-savings": "Sparen Sie €42.600-71.000 pro GPT-3-Lauf",
                 "ai-case2-title": "Inferenz-Beschleunigung",
                 "ai-case2-desc": "Optimieren Sie GPU-Cluster für Echtzeit-Inferenz, reduzieren Sie Betriebskosten bei Beibehaltung von Sub-Millisekunden-Latenz.",
                 "ai-case2-savings": "20% Reduktion der Inferenzkosten",
                 "ai-case3-title": "Multi-GPU-Skalierung",
-                "ai-case3-desc": "Intelligente Stromverteilung über DGX H100-Cluster und A100-Pods. Maximieren Sie den Durchsatz pro Watt.",
-                "ai-case3-savings": "15-25% Energieeinsparungen im Maßstab",
-                
-                // Crypto Use Cases
-                "crypto-case1-title": "Bitcoin-Mining (SHA-256)",
-                "crypto-case1-desc": "Optimieren Sie ASIC- und GPU-Mining-Operationen für maximale Effizienz. Perfekt für große Mining-Farmen.",
-                "crypto-case1-savings": "15-20% Energiereduktion",
-                "crypto-case2-title": "Scrypt-Algorithmus-Mining",
-                "crypto-case2-desc": "Verbesserte Leistung für Litecoin und andere Scrypt-basierte Kryptowährungen. Behalten Sie Hash-Raten bei und senken Sie den Stromverbrauch.",
-                "crypto-case2-savings": "18-22% Einsparungen erreicht",
-                "crypto-case3-title": "Privacy Coins (RandomX)",
-                "crypto-case3-desc": "Spezialisierte Optimierung für Monero und datenschutzorientiertes Mining. CPU- und GPU-Effizienzverbesserungen.",
-                "crypto-case3-savings": "15-18% Stromreduktion",
-                
-                // HPC Use Cases
-                "hpc-case1-title": "Genomische Analyse",
-                "hpc-case1-desc": "Beschleunigen Sie die Arzneimittelentdeckung und genomische Forschung bei gleichzeitiger Reduzierung der Rechenkosten mit NVIDIA Clara-Optimierung.",
-                "hpc-case1-savings": "100-600 TFLOPS Effizienz",
-                "hpc-case2-title": "Autonomes Fahren",
-                "hpc-case2-desc": "Optimieren Sie NVIDIA DRIVE-Simulationen für die Entwicklung autonomer Fahrzeuge. Echtzeitverarbeitung mit geringerem Energie-Fußabdruck.",
-                "hpc-case2-savings": "4x Energiereduktion",
-                "hpc-case3-title": "Klimamodellierung",
-                "hpc-case3-desc": "Ermöglichen Sie umfangreichere Klimasimulationen mit vorhandener Infrastruktur. 127 GWh jährlich über Systeme gespart.",
-                "hpc-case3-savings": "50x Beschleunigungspotenzial",
-                
-                // Cloud Use Cases
-                "cloud-case1-title": "GPU-as-a-Service",
-                "cloud-case1-desc": "Reduzieren Sie Betriebskosten für GPU-Cloud-Services. Kompatibel mit AWS, Google Cloud und Azure GPU-Instanzen.",
-                "cloud-case1-savings": "TCO um 20% senken",
-                "cloud-case2-title": "Rechenzentrum-Effizienz",
-                "cloud-case2-desc": "Erfüllen Sie Nachhaltigkeitsziele bei gleichzeitiger Erweiterung der GPU-Kapazität. Perfekt für Equinix, Digital Realty Operationen.",
-                "cloud-case2-savings": "PUE-Metriken verbessern",
-                "cloud-case3-title": "CO2-Fußabdruck",
-                "cloud-case3-desc": "Abstimmung mit ESG-Verpflichtungen und Initiativen für erneuerbare Energien. Reduzieren Sie CO2-Emissionen erheblich.",
-                "cloud-case3-savings": "500 Tonnen CO2 gespart",
+                "ai-case3-desc": "Intelligente Stromverteilung über DGX H100-Cluster und A100-Pods. Maximieren Sie Durchsatz pro Watt.",
+                "ai-case3-savings": "15-25% Energieeinsparung im großen Maßstab",
                 
                 // Calculator
                 "calc-title": "Berechnen Sie Ihren ROI",
-                "calc-subtitle": "Echtzeit-Preisdaten • Sofortige Sparprojektion • Branchenspezifische Berechnungen",
+                "calc-subtitle": "Echtzeit-Preisdaten • Sofortige Einsparungsprojektion • Branchenspezifische Berechnungen",
                 "calc-mode-ai": "KI/LLM-Training",
                 "calc-mode-crypto": "Krypto-Mining",
                 "calc-mode-custom": "Benutzerdefinierte Workload",
                 "calc-gpu-model": "GPU-Modell",
-                "calc-gpu-count": "Anzahl der GPUs",
+                "calc-gpu-count": "Anzahl GPUs",
                 "calc-duration": "Trainingsdauer (Tage)",
                 "calc-energy-cost": "Energiekosten (€/kWh)",
                 "calc-cryptocurrency": "Kryptowährung",
@@ -2056,7 +2643,7 @@
                 "calc-custom-config": "Benutzerdefinierte Konfiguration",
                 "calc-total-power": "Gesamt-GPU-Leistung (kW)",
                 "calc-operating-hours": "Betriebsstunden/Tag",
-                "workload-genomic": "Genomische Analyse",
+                "workload-genomic": "Genomanalyse",
                 "workload-climate": "Klimamodellierung",
                 "workload-financial": "Finanzmodellierung",
                 "workload-rendering": "Rendering-Farm",
@@ -2065,7 +2652,7 @@
                 // Results
                 "result-base-consumption": "Energieverbrauch (Basis)",
                 "result-opt-consumption": "Optimierter Verbrauch",
-                "result-energy-saved": "Eingesparte Energie",
+                "result-energy-saved": "Energie Gespart",
                 "result-cost-savings": "Kosteneinsparungen",
                 "result-co2": "CO2-Reduktion",
                 "result-roi": "ROI-Zeitraum",
@@ -2082,130 +2669,146 @@
                 
                 // Architecture
                 "arch-title": "Enterprise-Grade Technologie-Stack",
-                "arch-subtitle": "Aufgebaut auf bewährten ML-Algorithmen und optimiert für Produktionsumgebungen",
+                "arch-subtitle": "Basierend auf bewährten ML-Algorithmen und optimiert für Produktionsumgebungen",
                 "arch-ml-title": "ML-gesteuerte Optimierung",
-                "arch-ml-desc": "Selbstlernende Algorithmen passen sich in Echtzeit an Arbeitslastmuster an und verbessern kontinuierlich die Effizienz ohne manuelle Eingriffe.",
-                "arch-dvfs-title": "Dynamische DVFS-Steuerung",
-                "arch-dvfs-desc": "Spannungs- und Frequenzanpassungen auf Mikrosekundenebene basierend auf Arbeitslastmerkmalen und thermischen Bedingungen.",
+                "arch-ml-desc": "Selbstlernende Algorithmen passen sich Workload-Mustern in Echtzeit an und verbessern kontinuierlich die Effizienz ohne manuelle Eingriffe.",
+                "arch-dvfs-title": "Dynamische DVFS-Kontrolle",
+                "arch-dvfs-desc": "Mikrosekunden-genaue Spannungs- und Frequenzanpassungen basierend auf Workload-Eigenschaften und thermischen Bedingungen.",
                 "arch-compat-title": "Universelle Kompatibilität",
                 "arch-compat-desc": "Nahtlose Integration in bestehende Infrastruktur. Funktioniert mit allen wichtigen GPU-Modellen und Software-Frameworks.",
                 "arch-analytics-title": "Echtzeit-Analytik",
-                "arch-analytics-desc": "Umfassendes Überwachungs-Dashboard mit prädiktiven Analysen und Anomalie-Erkennungsfunktionen.",
+                "arch-analytics-desc": "Umfassendes Monitoring-Dashboard mit prädiktiver Analytik und Anomalie-Erkennungsfähigkeiten.",
                 "arch-security-title": "Enterprise-Sicherheit",
-                "arch-security-desc": "SOC 2 Type II-konform mit End-to-End-Verschlüsselung und rollenbasierter Zugriffskontrolle.",
-                "arch-api-title": "API-First-Design",
-                "arch-api-desc": "RESTful- und gRPC-APIs für nahtlose Integration in bestehende Orchestrierungs- und Überwachungssysteme.",
+                "arch-security-desc": "SOC 2 Type II konform mit Ende-zu-Ende-Verschlüsselung und rollenbasierter Zugriffskontrolle.",
+                "arch-api-title": "API-First Design",
+                "arch-api-desc": "RESTful und gRPC APIs für nahtlose Integration mit bestehenden Orchestrierungs- und Monitoring-Systemen.",
+                
+                // Contact
+                "contact-title": "Lassen Sie uns Ihre GPU-Infrastruktur Optimieren",
+                "contact-subtitle": "Bereit, Millionen bei Energiekosten zu sparen? Lassen Sie uns Ihr Pilotprogramm besprechen.",
+                "contact-email-title": "E-Mail",
+                "contact-phone-title": "Telefon",
+                "contact-location-title": "Standort",
+                "company-title": "Offizielle Firmenregistrierung",
+                "company-reg": "Geschäftsregistrierung: 1024585462",
+                "company-founded": "Gegründet: 1. Juli 2025",
+                "company-address": "Registrierte Adresse: Rapertingenstraat 11 bus 4, 3500 Hasselt, Belgien",
+                "company-compliance": "✓ DSGVO-konform • ✓ EU AI Act bereit • ✓ VLAIO Entwicklungsprojekt berechtigt",
                 
                 // CTA
                 "cta-title": "Transformieren Sie Ihre GPU-Infrastruktur Heute",
                 "cta-text": "Schließen Sie sich Branchenführern an, die Millionen bei Energiekosten sparen und gleichzeitig KI und Rechenforschung vorantreiben",
-                "cta-demo": "Enterprise-Demo Planen →",
+                "cta-demo": "Enterprise Demo Planen →",
                 "cta-calculate": "ROI Berechnen",
                 
                 // Footer
-                "footer-desc": "Revolutionäre GPU-Optimierungstechnologie mit 15-25% Energieeinsparungen für KI, Kryptowährungs-Mining und HPC-Workloads.",
+                "footer-desc": "Revolutionäre GPU-Optimierungstechnologie mit 15-25% Energieeinsparung für KI, Kryptowährungs-Mining und HPC-Workloads.",
                 "footer-solutions": "Lösungen",
                 "footer-ai": "KI & LLM-Training",
                 "footer-crypto": "Krypto-Mining",
                 "footer-hpc": "HPC & Forschung",
                 "footer-cloud": "Cloud-Anbieter",
                 "footer-resources": "Ressourcen",
-                "footer-docs": "Dokumentation",
-                "footer-api": "API-Referenz",
-                "footer-case": "Fallstudien",
+                "footer-docs": "Forschungspapiere",
+                "footer-api": "Technischer Leitfaden",
+                "footer-case": "Benchmarks",
                 "footer-whitepaper": "Whitepaper",
                 "footer-company": "Unternehmen",
                 "footer-about": "Über Uns",
-                "footer-careers": "Karriere",
-                "footer-partners": "Partner",
+                "footer-portfolio": "Portfolio",
                 "footer-contact": "Kontakt",
                 "footer-copyright": "© 2025 GPU-DVFS Enterprise. Alle Rechte vorbehalten. | Datenschutzrichtlinie | Nutzungsbedingungen"
             },
             fr: {
                 // Navigation
                 "nav-solutions": "Solutions",
+                "nav-about": "À Propos",
+                "nav-research": "Recherche",
                 "nav-industries": "Industries",
                 "nav-calculator": "Calculateur ROI",
                 "nav-technology": "Technologie",
-                "nav-demo": "Planifier une Démo →",
+                "nav-demo": "Planifier Démo →",
                 
                 // Hero Section
-                "hero-title": "Optimisation GPU d'Entreprise pour l'IA et les Charges Crypto",
-                "hero-subtitle": "Framework DVFS révolutionnaire piloté par ML offrant 15-25% d'économies d'énergie pour la formation LLM, le minage de crypto-monnaies et les charges HPC.",
-                "stat-energy": "Réduction d'Énergie",
-                "stat-performance": "Impact sur les Performances",
+                "hero-title": "Optimisation GPU Enterprise pour Charges de Travail IA & Crypto",
+                "hero-subtitle": "Framework DVFS révolutionnaire piloté par ML offrant 15-25% d'économies d'énergie pour l'entraînement LLM, le minage de cryptomonnaies et les charges de travail HPC.",
+                "stat-energy": "Réduction Énergétique",
+                "stat-performance": "Impact Performance",
                 "stat-saved": "Économisé par Exécution GPT",
-                "btn-calculate": "Calculez Vos Économies →",
-                "btn-pilot": "Demander un Programme Pilote",
+                "btn-calculate": "Calculer Vos Économies →",
+                "btn-research": "Voir Recherche",
+                
+                // About Section
+                "about-title": "Du Chauffeur de Taxi au Pionnier IA",
+                "about-subtitle": "Un parcours qui défie les récits technologiques conventionnels - prouvant que l'innovation n'a pas de prérequis",
+                "founder-title": "Artur Gabrielian",
+                "founder-description": "En tant qu'immigrant arménien ayant travaillé 15 ans comme chauffeur de taxi en Belgique, j'ai transformé l'adversité personnelle en percée technologique. Quand la maladie a forcé une pause de carrière, elle est devenue le catalyseur de la réinvention.",
+                "timeline-1-title": "Racines Arméniennes",
+                "timeline-1-desc": "Né en Arménie, émigré en Belgique à la recherche d'opportunités",
+                "timeline-2-title": "15 Ans de Conduite",
+                "timeline-2-desc": "Chauffeur de transport privé, soutenant la famille tout en rêvant plus grand",
+                "timeline-3-title": "Crise Sanitaire Catalyseur",
+                "timeline-3-desc": "La maladie a forcé une pause de carrière, devenue opportunité de réinvention",
+                "timeline-4-title": "Expert IA Autodidacte",
+                "timeline-4-desc": "5 mois de zéro à 8 produits IA fonctionnels - en solo",
+                "timeline-5-title": "Percée GPU",
+                "timeline-5-desc": "Développé une technologie d'optimisation énergétique de 15-25%",
+                "achievement-1-label": "Produits IA Créés",
+                "achievement-1-desc": "En 5 mois",
+                "achievement-2-label": "Financement Externe",
+                "achievement-2-desc": "Pure bootstrap",
+                "achievement-3-label": "Économies Énergétiques",
+                "achievement-3-desc": "Résultats prouvés",
+                "achievement-4-label": "Développeur Solo",
+                "achievement-4-desc": "Aucune équipe nécessaire",
+                
+                // Research Section
+                "research-title": "Recherche & Développement",
+                "research-subtitle": "Notre technologie d'optimisation GPU est soutenue par une recherche rigoureuse et des tests réels sur plusieurs architectures et charges de travail",
+                "research-whitepaper-title": "Livre Blanc Technique",
+                "research-whitepaper-desc": "Documentation complète de nos algorithmes DVFS et approche d'optimisation pilotée par ML",
+                "research-benchmark-title": "Résultats Benchmark",
+                "research-benchmark-desc": "Analyse de performance détaillée sur plusieurs architectures GPU et charges de travail",
+                "research-security-title": "Rapport Sécurité & Sûreté",
+                "research-security-desc": "Analyse de sécurité complète et protocoles de sûreté pour déploiement enterprise",
+                "research-technical-title": "Plongée Technique",
+                "research-technical-desc": "Documentation technique approfondie avec détails d'implémentation et spécifications API",
                 
                 // Industry Section
-                "industry-title": "Solutions Sur Mesure pour Toutes les Industries",
-                "industry-subtitle": "Notre framework adaptatif optimise les performances GPU pour diverses charges de calcul",
+                "industry-title": "Solutions Adaptées à Toutes les Industries",
+                "industry-subtitle": "Notre framework adaptatif optimise les performances GPU pour diverses charges de travail computationnelles",
                 "tab-ai": "IA & LLMs",
                 "tab-crypto": "Minage Crypto",
                 "tab-hpc": "HPC & Recherche",
                 "tab-cloud": "Fournisseurs Cloud",
                 
                 // AI Use Cases
-                "ai-case1-title": "Optimisation de Formation LLM",
-                "ai-case1-desc": "Réduisez la consommation d'énergie pour former des modèles comme GPT-4, Claude et Llama. Économisez des millions sur les coûts d'électricité par cycle de formation.",
-                "ai-case1-savings": "Économisez €42 600-71 000 par exécution GPT-3",
-                "ai-case2-title": "Accélération d'Inférence",
-                "ai-case2-desc": "Optimisez les clusters GPU pour l'inférence en temps réel, réduisant les coûts opérationnels tout en maintenant une latence inférieure à la milliseconde.",
+                "ai-case1-title": "Optimisation Entraînement LLM",
+                "ai-case1-desc": "Réduisez la consommation d'énergie pour l'entraînement de modèles comme GPT-4, Claude et Llama. Économisez des millions en coûts d'électricité par exécution d'entraînement.",
+                "ai-case1-savings": "Économisez €42.600-71.000 par exécution GPT-3",
+                "ai-case2-title": "Accélération Inférence",
+                "ai-case2-desc": "Optimisez les clusters GPU pour l'inférence temps réel, réduisant les coûts opérationnels tout en maintenant une latence sub-milliseconde.",
                 "ai-case2-savings": "20% de réduction des coûts d'inférence",
                 "ai-case3-title": "Mise à l'Échelle Multi-GPU",
-                "ai-case3-desc": "Distribution intelligente de l'alimentation sur les clusters DGX H100 et les pods A100. Maximisez le débit par watt.",
+                "ai-case3-desc": "Distribution intelligente de puissance sur les clusters DGX H100 et pods A100. Maximisez le débit par watt.",
                 "ai-case3-savings": "15-25% d'économies d'énergie à grande échelle",
-                
-                // Crypto Use Cases
-                "crypto-case1-title": "Minage Bitcoin (SHA-256)",
-                "crypto-case1-desc": "Optimisez les opérations de minage ASIC et GPU pour une efficacité maximale. Parfait pour les grandes fermes de minage.",
-                "crypto-case1-savings": "15-20% de réduction d'énergie",
-                "crypto-case2-title": "Minage Algorithme Scrypt",
-                "crypto-case2-desc": "Performance améliorée pour Litecoin et autres crypto-monnaies basées sur Scrypt. Maintenez les taux de hachage tout en réduisant la consommation.",
-                "crypto-case2-savings": "18-22% d'économies réalisées",
-                "crypto-case3-title": "Pièces de Confidentialité (RandomX)",
-                "crypto-case3-desc": "Optimisation spécialisée pour Monero et le minage axé sur la confidentialité. Améliorations de l'efficacité CPU et GPU.",
-                "crypto-case3-savings": "15-18% de réduction d'énergie",
-                
-                // HPC Use Cases
-                "hpc-case1-title": "Analyse Génomique",
-                "hpc-case1-desc": "Accélérez la découverte de médicaments et la recherche génomique tout en réduisant les coûts de calcul avec l'optimisation NVIDIA Clara.",
-                "hpc-case1-savings": "100-600 TFLOPS d'efficacité",
-                "hpc-case2-title": "Conduite Autonome",
-                "hpc-case2-desc": "Optimisez les simulations NVIDIA DRIVE pour le développement de véhicules autonomes. Traitement en temps réel avec empreinte énergétique réduite.",
-                "hpc-case2-savings": "4x réduction d'énergie",
-                "hpc-case3-title": "Modélisation Climatique",
-                "hpc-case3-desc": "Permettez des simulations climatiques plus étendues avec l'infrastructure existante. 127 GWh économisés annuellement sur les systèmes.",
-                "hpc-case3-savings": "Potentiel d'accélération 50x",
-                
-                // Cloud Use Cases
-                "cloud-case1-title": "GPU-as-a-Service",
-                "cloud-case1-desc": "Réduisez les coûts opérationnels pour les services cloud GPU. Compatible avec les instances GPU AWS, Google Cloud et Azure.",
-                "cloud-case1-savings": "Réduire le TCO de 20%",
-                "cloud-case2-title": "Efficacité du Centre de Données",
-                "cloud-case2-desc": "Atteignez les objectifs de durabilité tout en développant la capacité GPU. Parfait pour les opérations Equinix, Digital Realty.",
-                "cloud-case2-savings": "Améliorer les métriques PUE",
-                "cloud-case3-title": "Empreinte Carbone",
-                "cloud-case3-desc": "Alignez-vous avec les engagements ESG et les initiatives d'énergie renouvelable. Réduisez considérablement les émissions de CO2.",
-                "cloud-case3-savings": "500 tonnes de CO2 économisées",
                 
                 // Calculator
                 "calc-title": "Calculez Votre ROI",
-                "calc-subtitle": "Données de prix en temps réel • Projection d'économies instantanée • Calculs spécifiques à l'industrie",
-                "calc-mode-ai": "Formation IA/LLM",
+                "calc-subtitle": "Données de prix temps réel • Projection d'économies instantanée • Calculs spécifiques à l'industrie",
+                "calc-mode-ai": "Entraînement IA/LLM",
                 "calc-mode-crypto": "Minage Crypto",
-                "calc-mode-custom": "Charge Personnalisée",
+                "calc-mode-custom": "Charge de Travail Personnalisée",
                 "calc-gpu-model": "Modèle GPU",
                 "calc-gpu-count": "Nombre de GPUs",
-                "calc-duration": "Durée de Formation (jours)",
+                "calc-duration": "Durée Entraînement (jours)",
                 "calc-energy-cost": "Coût Énergétique (€/kWh)",
-                "calc-cryptocurrency": "Crypto-monnaie",
+                "calc-cryptocurrency": "Cryptomonnaie",
                 "calc-hashrate": "Taux de Hachage Moyen (TH/s)",
-                "calc-workload-type": "Type de Charge",
+                "calc-workload-type": "Type de Charge de Travail",
                 "calc-custom-config": "Configuration Personnalisée",
                 "calc-total-power": "Puissance GPU Totale (kW)",
-                "calc-operating-hours": "Heures de Fonctionnement/Jour",
+                "calc-operating-hours": "Heures d'Exploitation/Jour",
                 "workload-genomic": "Analyse Génomique",
                 "workload-climate": "Modélisation Climatique",
                 "workload-financial": "Modélisation Financière",
@@ -2213,61 +2816,72 @@
                 "workload-custom": "HPC Personnalisé",
                 
                 // Results
-                "result-base-consumption": "Consommation d'Énergie (Base)",
+                "result-base-consumption": "Consommation Énergétique (Base)",
                 "result-opt-consumption": "Consommation Optimisée",
                 "result-energy-saved": "Énergie Économisée",
                 "result-cost-savings": "Économies de Coûts",
-                "result-co2": "Réduction de CO2",
-                "result-roi": "Période de ROI",
+                "result-co2": "Réduction CO2",
+                "result-roi": "Période ROI",
                 "result-monthly-cost": "Coût Énergétique Mensuel",
                 "result-opt-cost": "Coût Optimisé",
                 "result-monthly-savings": "Économies Mensuelles",
                 "result-annual-savings": "Économies Annuelles",
-                "result-5year": "Économies sur 5 Ans",
+                "result-5year": "Économies 5 Ans",
                 "result-breakeven": "Seuil de Rentabilité",
                 "result-daily-cost": "Coût Énergétique Quotidien",
-                "result-opt-monthly": "Mensuel Optimisé",
-                "result-tco": "Réduction du TCO",
+                "result-opt-monthly": "Optimisé Mensuel",
+                "result-tco": "Réduction TCO",
                 "result-payback": "Période de Remboursement",
                 
                 // Architecture
-                "arch-title": "Stack Technologique de Qualité Entreprise",
+                "arch-title": "Stack Technologique de Niveau Enterprise",
                 "arch-subtitle": "Construit sur des algorithmes ML éprouvés et optimisé pour les environnements de production",
                 "arch-ml-title": "Optimisation Pilotée par ML",
                 "arch-ml-desc": "Les algorithmes auto-apprenants s'adaptent aux modèles de charge de travail en temps réel, améliorant continuellement l'efficacité sans intervention manuelle.",
                 "arch-dvfs-title": "Contrôle DVFS Dynamique",
-                "arch-dvfs-desc": "Ajustements de tension et de fréquence au niveau de la microseconde basés sur les caractéristiques de charge de travail et les conditions thermiques.",
+                "arch-dvfs-desc": "Ajustements de tension et fréquence au niveau microseconde basés sur les caractéristiques de charge de travail et conditions thermiques.",
                 "arch-compat-title": "Compatibilité Universelle",
-                "arch-compat-desc": "Intégration transparente avec l'infrastructure existante. Fonctionne avec tous les principaux modèles GPU et frameworks logiciels.",
-                "arch-analytics-title": "Analytique en Temps Réel",
-                "arch-analytics-desc": "Tableau de bord de surveillance complet avec analyses prédictives et capacités de détection d'anomalies.",
-                "arch-security-title": "Sécurité d'Entreprise",
+                "arch-compat-desc": "Intégration transparente avec l'infrastructure existante. Fonctionne avec tous les modèles GPU majeurs et frameworks logiciels.",
+                "arch-analytics-title": "Analytique Temps Réel",
+                "arch-analytics-desc": "Tableau de bord de surveillance complet avec analytique prédictive et capacités de détection d'anomalies.",
+                "arch-security-title": "Sécurité Enterprise",
                 "arch-security-desc": "Conforme SOC 2 Type II avec chiffrement de bout en bout et contrôle d'accès basé sur les rôles.",
-                "arch-api-title": "Conception API-First",
-                "arch-api-desc": "APIs RESTful et gRPC pour une intégration transparente avec les systèmes d'orchestration et de surveillance existants.",
+                "arch-api-title": "Design API-First",
+                "arch-api-desc": "APIs RESTful et gRPC pour intégration transparente avec les systèmes d'orchestration et de surveillance existants.",
+                
+                // Contact
+                "contact-title": "Optimisons Votre Infrastructure GPU",
+                "contact-subtitle": "Prêt à économiser des millions sur les coûts énergétiques ? Discutons de votre programme pilote.",
+                "contact-email-title": "Email",
+                "contact-phone-title": "Téléphone",
+                "contact-location-title": "Localisation",
+                "company-title": "Enregistrement Officiel de l'Entreprise",
+                "company-reg": "Enregistrement Commercial : 1024585462",
+                "company-founded": "Fondée : 1er juillet 2025",
+                "company-address": "Adresse Enregistrée : Rapertingenstraat 11 bus 4, 3500 Hasselt, Belgique",
+                "company-compliance": "✓ Conforme RGPD • ✓ Prêt EU AI Act • ✓ Éligible Projet Développement VLAIO",
                 
                 // CTA
                 "cta-title": "Transformez Votre Infrastructure GPU Aujourd'hui",
-                "cta-text": "Rejoignez les leaders de l'industrie qui économisent des millions sur les coûts énergétiques tout en faisant progresser l'IA et la recherche computationnelle",
-                "cta-demo": "Planifier une Démo Entreprise →",
-                "cta-calculate": "Calculer le ROI",
+                "cta-text": "Rejoignez les leaders de l'industrie économisant des millions sur les coûts énergétiques tout en faisant progresser la recherche IA et computationnelle",
+                "cta-demo": "Planifier Démo Enterprise →",
+                "cta-calculate": "Calculer ROI",
                 
                 // Footer
-                "footer-desc": "Technologie d'optimisation GPU révolutionnaire offrant 15-25% d'économies d'énergie pour l'IA, le minage de crypto-monnaies et les charges HPC.",
+                "footer-desc": "Technologie révolutionnaire d'optimisation GPU offrant 15-25% d'économies d'énergie pour l'IA, le minage de cryptomonnaies et les charges de travail HPC.",
                 "footer-solutions": "Solutions",
-                "footer-ai": "Formation IA & LLM",
+                "footer-ai": "Entraînement IA & LLM",
                 "footer-crypto": "Minage Crypto",
                 "footer-hpc": "HPC & Recherche",
                 "footer-cloud": "Fournisseurs Cloud",
                 "footer-resources": "Ressources",
-                "footer-docs": "Documentation",
-                "footer-api": "Référence API",
-                "footer-case": "Études de Cas",
+                "footer-docs": "Articles de Recherche",
+                "footer-api": "Guide Technique",
+                "footer-case": "Benchmarks",
                 "footer-whitepaper": "Livre Blanc",
                 "footer-company": "Entreprise",
                 "footer-about": "À Propos",
-                "footer-careers": "Carrières",
-                "footer-partners": "Partenaires",
+                "footer-portfolio": "Portfolio",
                 "footer-contact": "Contact",
                 "footer-copyright": "© 2025 GPU-DVFS Enterprise. Tous droits réservés. | Politique de Confidentialité | Conditions d'Utilisation"
             }
@@ -2532,6 +3146,169 @@
         document.querySelectorAll('section').forEach(section => {
             observer.observe(section);
         });
+
+        // Download Modal Functions
+        function openDownloadModal(documentType) {
+            const modal = document.getElementById('downloadModal');
+            const form = document.getElementById('downloadForm');
+            const documentInfo = {
+                'whitepaper': {
+                    title: 'GPU-DVFS Technical White Paper',
+                    description: 'Comprehensive analysis of GPU-DVFS optimization across Bitcoin, Litecoin, Monero, Ravencoin, and Kaspa with proven 15-25% energy savings.',
+                    filename: 'GPU-DVFSOptimizationWhitepaperTemplate.pdf',
+                    pages: '28 pages',
+                    size: '2.8 MB'
+                },
+                'benchmark': {
+                    title: 'GPU-DVFS Benchmark Report',
+                    description: 'Detailed performance analysis across multiple GPU architectures and workloads with real-world testing data.',
+                    filename: 'GPU-DVFSBenchmarkReportTemplate.pdf',
+                    pages: '15 pages',
+                    size: '1.2 MB'
+                },
+                'security': {
+                    title: 'Security & Safety Report',
+                    description: 'Comprehensive security analysis and safety protocols for enterprise deployment with compliance certifications.',
+                    filename: 'GPU-DVFSSecurity&SafetyReportTemplate.pdf',
+                    pages: '12 pages',
+                    size: '0.9 MB'
+                },
+                'technical': {
+                    title: 'NDA Technical Deep Dive',
+                    description: 'Advanced technical documentation with proprietary algorithm details, ML model architectures, and implementation specifics.',
+                    filename: 'GPU-DVFSEnterpriseNDAWhitepaper-TechnicalDeepDive.pdf',
+                    pages: '35 pages',
+                    size: '4.1 MB'
+                }
+            };
+
+            const doc = documentInfo[documentType];
+            document.getElementById('modalTitle').textContent = doc.title;
+            document.getElementById('modalDescription').textContent = doc.description;
+            document.getElementById('modalFileInfo').innerHTML = `📄 ${doc.pages} • 💾 ${doc.size} • 🔒 SECURE`;
+            document.getElementById('downloadButton').onclick = () => downloadDocument(doc.filename);
+            
+            modal.style.display = 'flex';
+        }
+
+        function closeDownloadModal() {
+            document.getElementById('downloadModal').style.display = 'none';
+            document.getElementById('downloadForm').reset();
+        }
+
+        function downloadDocument(filename) {
+            const form = document.getElementById('downloadForm');
+            const email = form.email.value;
+            const company = form.company.value;
+            const jobTitle = form.jobTitle.value;
+            const useCase = form.useCase.value;
+            const consent = form.consent.checked;
+
+            if (!email || !company) {
+                alert('Please fill in all required fields (Email and Company Name)');
+                return;
+            }
+
+            if (!consent) {
+                alert('Please check the consent box to proceed.');
+                return;
+            }
+
+            // Send email notification (simulated - in real implementation, this would call your backend)
+            const emailData = {
+                to: 'artur.gabrielian@shansconsulting.com',
+                subject: `New Document Download Request: ${filename}`,
+                body: `
+                    New document download request:
+                    
+                    Document: ${filename}
+                    Email: ${email}
+                    Company: ${company}
+                    Job Title: ${jobTitle || 'Not provided'}
+                    Use Case: ${useCase || 'Not provided'}
+                    Timestamp: ${new Date().toLocaleString()}
+                    
+                    Please follow up with this potential client.
+                `
+            };
+
+            // In a real implementation, you would send this to your backend
+            console.log('Email notification sent:', emailData);
+
+            // Download the file
+            const link = document.createElement('a');
+            link.href = `assets/documents/${filename}`;
+            link.download = filename;
+            link.click();
+
+            // Close modal and show success message
+            closeDownloadModal();
+            alert('Document downloaded successfully! We will follow up with you soon.');
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('downloadModal');
+            if (event.target === modal) {
+                closeDownloadModal();
+            }
+        }
     </script>
+
+    <!-- Download Modal -->
+    <div id="downloadModal" style="display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.8); justify-content: center; align-items: center;">
+        <div style="background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%); padding: 2rem; border-radius: 15px; max-width: 500px; width: 90%; border: 2px solid var(--accent); position: relative;">
+            <span onclick="closeDownloadModal()" style="position: absolute; top: 15px; right: 20px; font-size: 28px; font-weight: bold; cursor: pointer; color: #fff;">&times;</span>
+            
+            <h3 id="modalTitle" style="color: var(--accent); margin-bottom: 1rem; font-size: 1.5rem;">Document Title</h3>
+            <p id="modalDescription" style="color: #ccc; margin-bottom: 1rem; line-height: 1.5;">Document description</p>
+            <div id="modalFileInfo" style="background: rgba(0,255,255,0.1); padding: 0.5rem; border-radius: 8px; margin-bottom: 1.5rem; color: var(--accent); text-align: center;">File info</div>
+            
+            <form id="downloadForm">
+                <div style="margin-bottom: 1rem;">
+                    <label style="color: var(--accent); display: block; margin-bottom: 0.5rem;">Business Email *</label>
+                    <input type="email" name="email" required style="width: 100%; padding: 0.75rem; border: 2px solid #444; border-radius: 8px; background: #333; color: #fff; font-size: 1rem;" placeholder="your.email@company.com">
+                </div>
+                
+                <div style="margin-bottom: 1rem;">
+                    <label style="color: var(--accent); display: block; margin-bottom: 0.5rem;">Company Name *</label>
+                    <input type="text" name="company" required style="width: 100%; padding: 0.75rem; border: 2px solid #444; border-radius: 8px; background: #333; color: #fff; font-size: 1rem;" placeholder="Your Company">
+                </div>
+                
+                <div style="margin-bottom: 1rem;">
+                    <label style="color: var(--accent); display: block; margin-bottom: 0.5rem;">Job Title</label>
+                    <input type="text" name="jobTitle" style="width: 100%; padding: 0.75rem; border: 2px solid #444; border-radius: 8px; background: #333; color: #fff; font-size: 1rem;" placeholder="CTO, Data Center Manager, etc.">
+                </div>
+                
+                <div style="margin-bottom: 1rem;">
+                    <label style="color: var(--accent); display: block; margin-bottom: 0.5rem;">Primary Use Case</label>
+                    <select name="useCase" style="width: 100%; padding: 0.75rem; border: 2px solid #444; border-radius: 8px; background: #333; color: #fff; font-size: 1rem;">
+                        <option value="">Please select...</option>
+                        <option value="datacenter">Data Center Operations</option>
+                        <option value="mining">Cryptocurrency Mining</option>
+                        <option value="ai">AI/ML Training</option>
+                        <option value="gaming">Gaming/VR Centers</option>
+                        <option value="research">Research & Development</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                
+                <div style="margin-bottom: 1.5rem;">
+                    <label style="display: flex; align-items: center; color: #ccc; font-size: 0.9rem;">
+                        <input type="checkbox" name="consent" required style="margin-right: 0.5rem;">
+                        I agree to receive follow-up communications about GPU-DVFS Enterprise solutions
+                    </label>
+                </div>
+                
+                <button type="button" id="downloadButton" style="width: 100%; padding: 1rem; background: linear-gradient(135deg, var(--accent) 0%, #00ff88 100%); border: none; border-radius: 8px; color: #000; font-weight: bold; font-size: 1rem; cursor: pointer;">
+                    Download Document
+                </button>
+                
+                <div style="margin-top: 1rem; padding: 0.75rem; background: rgba(255,193,7,0.1); border-radius: 8px; font-size: 0.85rem; color: #ffc107; text-align: center;">
+                    🔒 Your information is protected by GDPR compliance. We never share your data with third parties.
+                </div>
+            </form>
+        </div>
+    </div>
 </body>
 </html>
