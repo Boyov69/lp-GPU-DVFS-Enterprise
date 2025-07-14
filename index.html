@@ -1646,32 +1646,97 @@
             top: 20px;
             right: 20px;
             z-index: 1001;
-            display: flex;
-            gap: 0.5rem;
-            background: rgba(0, 0, 0, 0.8);
-            padding: 0.5rem;
-            border-radius: 30px;
-            backdrop-filter: blur(10px);
         }
 
-        .lang-btn {
+        .lang-dropdown {
+            position: relative;
+        }
+
+        .lang-dropdown-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
             padding: 0.5rem 1rem;
-            background: transparent;
+            background: rgba(0, 0, 0, 0.8);
             border: 1px solid var(--primary);
             color: var(--light);
-            border-radius: 20px;
+            border-radius: 25px;
             cursor: pointer;
             transition: all 0.3s;
             font-size: 0.875rem;
             font-weight: 600;
+            backdrop-filter: blur(10px);
+            min-width: 80px;
         }
 
-        .lang-btn:hover, .lang-btn.active {
+        .lang-dropdown-btn:hover {
+            background: rgba(0, 0, 0, 0.9);
+            border-color: var(--primary-light);
+        }
+
+        .dropdown-arrow {
+            font-size: 0.7rem;
+            transition: transform 0.3s;
+        }
+
+        .lang-dropdown.open .dropdown-arrow {
+            transform: rotate(180deg);
+        }
+
+        .lang-dropdown-menu {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            margin-top: 0.5rem;
+            background: rgba(0, 0, 0, 0.9);
+            border: 1px solid var(--primary);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            min-width: 150px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s;
+        }
+
+        .lang-dropdown.open .lang-dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .lang-option {
+            display: block;
+            width: 100%;
+            padding: 0.75rem 1rem;
+            background: transparent;
+            border: none;
+            color: var(--light);
+            text-align: left;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 0.875rem;
+            border-radius: 0;
+        }
+
+        .lang-option:first-child {
+            border-radius: 15px 15px 0 0;
+        }
+
+        .lang-option:last-child {
+            border-radius: 0 0 15px 15px;
+        }
+
+        .lang-option:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .lang-option.active {
             background: var(--primary);
             color: var(--dark);
         }
 
-        /* Responsive */
+        /* Navigation */
         @media (max-width: 1024px) {
             .hero-container {
                 grid-template-columns: 1fr;
@@ -1817,10 +1882,18 @@
 
     <!-- Language Switcher -->
     <div class="lang-switcher">
-        <button class="lang-btn active" onclick="switchLanguage('en', event)">EN</button>
-        <button class="lang-btn" onclick="switchLanguage('nl', event)">NL</button>
-        <button class="lang-btn" onclick="switchLanguage('de', event)">DE</button>
-        <button class="lang-btn" onclick="switchLanguage('fr', event)">FR</button>
+        <div class="lang-dropdown">
+            <button class="lang-dropdown-btn" onclick="toggleLanguageDropdown()">
+                <span id="current-lang">EN</span>
+                <span class="dropdown-arrow">▼</span>
+            </button>
+            <div class="lang-dropdown-menu" id="lang-dropdown-menu">
+                <button class="lang-option active" onclick="selectLanguage('en', event)">🇺🇸 English</button>
+                <button class="lang-option" onclick="selectLanguage('nl', event)">🇳🇱 Nederlands</button>
+                <button class="lang-option" onclick="selectLanguage('de', event)">🇩🇪 Deutsch</button>
+                <button class="lang-option" onclick="selectLanguage('fr', event)">🇫🇷 Français</button>
+            </div>
+        </div>
     </div>
 
     <!-- Navigation -->
@@ -2724,7 +2797,7 @@
     <section class="about-section" id="about">
         <div class="about-container">
             <div class="section-header">
-                <h2 class="section-title" data-translate="about-title">From Taxi Driver to AI Pioneer</h2>
+                <h2 class="section-title" data-translate="about-title">25 Years of Determination: From Manual Labor to AI Innovation</h2>
                 <p class="section-subtitle" data-translate="about-subtitle">
                     A journey that defies conventional tech narratives - proving innovation has no prerequisites
                 </p>
@@ -2735,51 +2808,81 @@
                     AG
                 </div>
                 <div class="story-content">
-                    <h2 data-translate="founder-title">Artur Gabrielian</h2>
+                    <h2 data-translate="founder-title">The Success Story</h2>
                     <p data-translate="founder-description">
-                        As an Armenian immigrant who worked 15 years as a taxi driver in Belgium, 
-                        I transformed personal adversity into technological breakthrough. When illness forced a career pause, 
-                        it became the catalyst for reinvention.
+                        As an Armenian immigrant who has lived and worked in Belgium since 1999, I've experienced every level of hard work to build a better life for my family. My journey began with manual labor—starting as a garbage collector, physically loading garbage trucks by hand, then working as industrial cleaning staff. In 2010, I transitioned to taxi driving, and after 5 years of dedication, I became a private chauffeur for CEOs and board managers of major companies. Every job, every long hour was driven by one goal: giving my children access to the best possible education in the world. That determination is paying off beautifully. Today, I'm immensely proud of all three of my children: two have already achieved their academic dreams with Master's degrees—one in Diplomacy and another in Social and Political Science. My third child, now 11 and still in high school, has been drawing like a professional artist since she was 6 years old. She aims for art academy, and I'm confident she'll earn her Master's degree in Art as well. Their success and potential gave me the courage to pursue my own transformation. When illness forced a career pause, it became the catalyst for complete reinvention. In just 5 months, I taught myself AI and built 8 working products—entirely self-funded, with zero external investment. This journey led to breakthrough GPU optimization technology that delivers 15-25% energy savings.
                     </p>
                     
                     <div class="journey-timeline">
                         <div class="timeline-item">
                             <div class="timeline-icon">🇦🇲</div>
                             <div>
-                                <strong data-translate="timeline-1-title">Armenian Roots</strong><br>
-                                <span data-translate="timeline-1-desc">Born in Armenia, migrated to Belgium seeking opportunities</span>
+                                <strong data-translate="timeline-1-title">1999: New Beginning</strong><br>
+                                <span data-translate="timeline-1-desc">Arrived in Belgium from Armenia, seeking opportunities for family</span>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-icon">🗑️</div>
+                            <div>
+                                <strong data-translate="timeline-2-title">Manual Labor Years</strong><br>
+                                <span data-translate="timeline-2-desc">Garbage collector, manually loading trucks & industrial cleaning</span>
                             </div>
                         </div>
                         
                         <div class="timeline-item">
                             <div class="timeline-icon">🚖</div>
                             <div>
-                                <strong data-translate="timeline-2-title">15 Years Driving</strong><br>
-                                <span data-translate="timeline-2-desc">Private transport driver, supporting family while dreaming bigger</span>
+                                <strong data-translate="timeline-3-title">2010: Transportation</strong><br>
+                                <span data-translate="timeline-3-desc">Started taxi driving, building toward better opportunities</span>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-icon">🚗</div>
+                            <div>
+                                <strong data-translate="timeline-4-title">2015: Executive Chauffeur</strong><br>
+                                <span data-translate="timeline-4-desc">Private driver for CEOs and board managers of major companies</span>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-icon">🎓</div>
+                            <div>
+                                <strong data-translate="timeline-5-title">Academic Success</strong><br>
+                                <span data-translate="timeline-5-desc">2 children achieved Master's degrees in Diplomacy and Social/Political Science</span>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-icon">🎨</div>
+                            <div>
+                                <strong data-translate="timeline-6-title">Artistic Talent</strong><br>
+                                <span data-translate="timeline-6-desc">Third child (11) drawing professionally since age 6, aiming for art academy</span>
                             </div>
                         </div>
                         
                         <div class="timeline-item">
                             <div class="timeline-icon">🏥</div>
                             <div>
-                                <strong data-translate="timeline-3-title">Health Crisis Catalyst</strong><br>
-                                <span data-translate="timeline-3-desc">Illness forced career pause, became opportunity for reinvention</span>
+                                <strong data-translate="timeline-7-title">2024: Turning Point</strong><br>
+                                <span data-translate="timeline-7-desc">Health challenge became opportunity for career transformation</span>
                             </div>
                         </div>
                         
                         <div class="timeline-item">
                             <div class="timeline-icon">💡</div>
                             <div>
-                                <strong data-translate="timeline-4-title">Self-Taught AI Expert</strong><br>
-                                <span data-translate="timeline-4-desc">5 months from zero to 8 working AI products - solo</span>
+                                <strong data-translate="timeline-8-title">2024-2025: AI Mastery</strong><br>
+                                <span data-translate="timeline-8-desc">5 months from zero to 8 working AI products - completely solo</span>
                             </div>
                         </div>
                         
                         <div class="timeline-item">
                             <div class="timeline-icon">⚡</div>
                             <div>
-                                <strong data-translate="timeline-5-title">GPU Breakthrough</strong><br>
-                                <span data-translate="timeline-5-desc">Developed 15-25% energy optimization technology</span>
+                                <strong data-translate="timeline-9-title">Breakthrough</strong><br>
+                                <span data-translate="timeline-9-desc">Developed revolutionary 15-25% GPU energy optimization technology</span>
                             </div>
                         </div>
                     </div>
@@ -2788,28 +2891,36 @@
 
             <div class="achievements-grid">
                 <div class="achievement-card">
+                    <div class="achievement-number">25</div>
+                    <div class="achievement-label" data-translate="achievement-1-label">Years in Belgium Building Success</div>
+                    <div class="achievement-desc" data-translate="achievement-1-desc">Since 1999</div>
+                </div>
+                
+                <div class="achievement-card">
+                    <div class="achievement-number">3</div>
+                    <div class="achievement-label" data-translate="achievement-2-label">Children Pursuing Excellence</div>
+                    <div class="achievement-desc" data-translate="achievement-2-desc">2 Masters + 1 Future Artist</div>
+                </div>
+                
+                <div class="achievement-card">
                     <div class="achievement-number">8</div>
-                    <div class="achievement-label" data-translate="achievement-1-label">AI Products Built</div>
-                    <div class="achievement-desc" data-translate="achievement-1-desc">In 5 months</div>
+                    <div class="achievement-label" data-translate="achievement-3-label">AI Products Built</div>
+                    <div class="achievement-desc" data-translate="achievement-3-desc">In 5 months</div>
                 </div>
                 
                 <div class="achievement-card">
                     <div class="achievement-number">0</div>
-                    <div class="achievement-label" data-translate="achievement-2-label">External Funding</div>
-                    <div class="achievement-desc" data-translate="achievement-2-desc">Pure bootstrap</div>
+                    <div class="achievement-label" data-translate="achievement-4-label">External Funding</div>
+                    <div class="achievement-desc" data-translate="achievement-4-desc">Pure bootstrap</div>
                 </div>
-                
-                <div class="achievement-card">
-                    <div class="achievement-number">25%</div>
-                    <div class="achievement-label" data-translate="achievement-3-label">Energy Savings</div>
-                    <div class="achievement-desc" data-translate="achievement-3-desc">Proven results</div>
-                </div>
-                
-                <div class="achievement-card">
-                    <div class="achievement-number">1</div>
-                    <div class="achievement-label" data-translate="achievement-4-label">Solo Developer</div>
-                    <div class="achievement-desc" data-translate="achievement-4-desc">No team needed</div>
-                </div>
+            </div>
+            
+            <!-- Special Achievement Section -->
+            <div class="special-achievement">
+                <h3 data-translate="children-title">My Greatest Achievement: Three Exceptional Children</h3>
+                <p data-translate="children-description">
+                    "For any father, there's no greater pride than seeing your children flourish: First child: Master's degree in Diplomacy • Second child: Master's degree in Social and Political Science • Third child: 11-year-old artist who has been drawing professionally since age 6, now aiming for art academy with dreams of her Master's in Art. Every sacrifice, every long work day, every challenge was worth it to see them pursue their passions and achieve their dreams."
+                </p>
             </div>
         </div>
     </section>
@@ -2914,28 +3025,38 @@
                 "btn-research": "View Research",
                 
                 // About Section
-                "about-title": "From Taxi Driver to AI Pioneer",
+                "about-title": "25 Years of Determination: From Manual Labor to AI Innovation",
                 "about-subtitle": "A journey that defies conventional tech narratives - proving innovation has no prerequisites",
-                "founder-title": "Artur Gabrielian",
-                "founder-description": "As an Armenian immigrant who worked 15 years as a taxi driver in Belgium, I transformed personal adversity into technological breakthrough. When illness forced a career pause, it became the catalyst for reinvention.",
-                "timeline-1-title": "Armenian Roots",
-                "timeline-1-desc": "Born in Armenia, migrated to Belgium seeking opportunities",
-                "timeline-2-title": "15 Years Driving",
-                "timeline-2-desc": "Private transport driver, supporting family while dreaming bigger",
-                "timeline-3-title": "Health Crisis Catalyst",
-                "timeline-3-desc": "Illness forced career pause, became opportunity for reinvention",
-                "timeline-4-title": "Self-Taught AI Expert",
-                "timeline-4-desc": "5 months from zero to 8 working AI products - solo",
-                "timeline-5-title": "GPU Breakthrough",
-                "timeline-5-desc": "Developed 15-25% energy optimization technology",
-                "achievement-1-label": "AI Products Built",
-                "achievement-1-desc": "In 5 months",
-                "achievement-2-label": "External Funding",
-                "achievement-2-desc": "Pure bootstrap",
-                "achievement-3-label": "Energy Savings",
-                "achievement-3-desc": "Proven results",
-                "achievement-4-label": "Solo Developer",
-                "achievement-4-desc": "No team needed",
+                "founder-title": "The Success Story",
+                "founder-description": "As an Armenian immigrant who has lived and worked in Belgium since 1999, I've experienced every level of hard work to build a better life for my family. My journey began with manual labor—starting as a garbage collector, physically loading garbage trucks by hand, then working as industrial cleaning staff. In 2010, I transitioned to taxi driving, and after 5 years of dedication, I became a private chauffeur for CEOs and board managers of major companies. Every job, every long hour was driven by one goal: giving my children access to the best possible education in the world. That determination is paying off beautifully. Today, I'm immensely proud of all three of my children: two have already achieved their academic dreams with Master's degrees—one in Diplomacy and another in Social and Political Science. My third child, now 11 and still in high school, has been drawing like a professional artist since she was 6 years old. She aims for art academy, and I'm confident she'll earn her Master's degree in Art as well. Their success and potential gave me the courage to pursue my own transformation. When illness forced a career pause, it became the catalyst for complete reinvention. In just 5 months, I taught myself AI and built 8 working products—entirely self-funded, with zero external investment. This journey led to breakthrough GPU optimization technology that delivers 15-25% energy savings.",
+                "timeline-1-title": "1999: New Beginning",
+                "timeline-1-desc": "Arrived in Belgium from Armenia, seeking opportunities for family",
+                "timeline-2-title": "Manual Labor Years",
+                "timeline-2-desc": "Garbage collector, manually loading trucks & industrial cleaning",
+                "timeline-3-title": "2010: Transportation",
+                "timeline-3-desc": "Started taxi driving, building toward better opportunities",
+                "timeline-4-title": "2015: Executive Chauffeur",
+                "timeline-4-desc": "Private driver for CEOs and board managers of major companies",
+                "timeline-5-title": "Academic Success",
+                "timeline-5-desc": "2 children achieved Master's degrees in Diplomacy and Social/Political Science",
+                "timeline-6-title": "Artistic Talent",
+                "timeline-6-desc": "Third child (11) drawing professionally since age 6, aiming for art academy",
+                "timeline-7-title": "2024: Turning Point",
+                "timeline-7-desc": "Health challenge became opportunity for career transformation",
+                "timeline-8-title": "2024-2025: AI Mastery",
+                "timeline-8-desc": "5 months from zero to 8 working AI products - completely solo",
+                "timeline-9-title": "Breakthrough",
+                "timeline-9-desc": "Developed revolutionary 15-25% GPU energy optimization technology",
+                "achievement-1-label": "Years in Belgium Building Success",
+                "achievement-1-desc": "Since 1999",
+                "achievement-2-label": "Children Pursuing Excellence",
+                "achievement-2-desc": "2 Masters + 1 Future Artist",
+                "achievement-3-label": "AI Products Built",
+                "achievement-3-desc": "In 5 months",
+                "achievement-4-label": "External Funding",
+                "achievement-4-desc": "Pure bootstrap",
+                "children-title": "My Greatest Achievement: Three Exceptional Children",
+                "children-description": "For any father, there's no greater pride than seeing your children flourish: First child: Master's degree in Diplomacy • Second child: Master's degree in Social and Political Science • Third child: 11-year-old artist who has been drawing professionally since age 6, now aiming for art academy with dreams of her Master's in Art. Every sacrifice, every long work day, every challenge was worth it to see them pursue their passions and achieve their dreams.",
                 
                 // Research Section
                 "research-title": "Research & Development",
@@ -3507,28 +3628,38 @@
                 "demo-btn-contact": "Demander une Démo",
                 
                 // About Section
-                "about-title": "Du Chauffeur de Taxi au Pionnier IA",
+                "about-title": "25 Ans de Détermination : Du Travail Manuel à l'Innovation IA",
                 "about-subtitle": "Un parcours qui défie les récits technologiques conventionnels - prouvant que l'innovation n'a pas de prérequis",
-                "founder-title": "Artur Gabrielian",
-                "founder-description": "En tant qu'immigrant arménien ayant travaillé 15 ans comme chauffeur de taxi en Belgique, j'ai transformé l'adversité personnelle en percée technologique. Quand la maladie a forcé une pause de carrière, elle est devenue le catalyseur de la réinvention.",
-                "timeline-1-title": "Racines Arméniennes",
-                "timeline-1-desc": "Né en Arménie, émigré en Belgique à la recherche d'opportunités",
-                "timeline-2-title": "15 Ans de Conduite",
-                "timeline-2-desc": "Chauffeur de transport privé, soutenant la famille tout en rêvant plus grand",
-                "timeline-3-title": "Crise Sanitaire Catalyseur",
-                "timeline-3-desc": "La maladie a forcé une pause de carrière, devenue opportunité de réinvention",
-                "timeline-4-title": "Expert IA Autodidacte",
-                "timeline-4-desc": "5 mois de zéro à 8 produits IA fonctionnels - en solo",
-                "timeline-5-title": "Percée GPU",
-                "timeline-5-desc": "Développé une technologie d'optimisation énergétique de 15-25%",
-                "achievement-1-label": "Produits IA Créés",
-                "achievement-1-desc": "En 5 mois",
-                "achievement-2-label": "Financement Externe",
-                "achievement-2-desc": "Pure bootstrap",
-                "achievement-3-label": "Économies Énergétiques",
-                "achievement-3-desc": "Résultats prouvés",
-                "achievement-4-label": "Développeur Solo",
-                "achievement-4-desc": "Aucune équipe nécessaire",
+                "founder-title": "L'Histoire de Réussite",
+                "founder-description": "En tant qu'immigrant arménien qui vit et travaille en Belgique depuis 1999, j'ai vécu tous les niveaux de travail acharné pour construire une vie meilleure pour ma famille. Mon parcours a commencé par le travail manuel—d'abord éboueur, chargeant physiquement les camions à ordures à la main, puis travaillant comme personnel de nettoyage industriel. En 2010, j'ai fait la transition vers la conduite de taxi, et après 5 ans de dévouement, je suis devenu chauffeur privé pour des PDG et directeurs de grandes entreprises. Chaque emploi, chaque longue heure était motivé par un objectif : donner à mes enfants accès à la meilleure éducation possible au monde. Cette détermination porte ses fruits magnifiquement. Aujourd'hui, je suis immensément fier de mes trois enfants : deux ont déjà réalisé leurs rêves académiques avec des Masters—un en Diplomatie et un autre en Sciences Sociales et Politiques. Mon troisième enfant, maintenant 11 ans et encore au lycée, dessine comme un artiste professionnel depuis l'âge de 6 ans. Elle vise l'académie d'art, et je suis confiant qu'elle obtiendra aussi son Master en Art. Leur succès et potentiel m'ont donné le courage de poursuivre ma propre transformation. Quand la maladie a forcé une pause de carrière, elle est devenue le catalyseur d'une réinvention complète. En seulement 5 mois, je me suis enseigné l'IA et j'ai construit 8 produits fonctionnels—entièrement autofinancé, sans investissement externe. Ce parcours a mené à une technologie révolutionnaire d'optimisation GPU qui offre 15-25% d'économies d'énergie.",
+                "timeline-1-title": "1999 : Nouveau Départ",
+                "timeline-1-desc": "Arrivé en Belgique depuis l'Arménie, cherchant des opportunités pour la famille",
+                "timeline-2-title": "Années de Travail Manuel",
+                "timeline-2-desc": "Éboueur, chargeant manuellement les camions et nettoyage industriel",
+                "timeline-3-title": "2010 : Transport",
+                "timeline-3-desc": "Commencé la conduite de taxi, construisant vers de meilleures opportunités",
+                "timeline-4-title": "2015 : Chauffeur Exécutif",
+                "timeline-4-desc": "Chauffeur privé pour PDG et directeurs de grandes entreprises",
+                "timeline-5-title": "Succès Académique",
+                "timeline-5-desc": "2 enfants ont obtenu des Masters en Diplomatie et Sciences Sociales/Politiques",
+                "timeline-6-title": "Talent Artistique",
+                "timeline-6-desc": "Troisième enfant (11 ans) dessine professionnellement depuis 6 ans, vise l'académie d'art",
+                "timeline-7-title": "2024 : Point Tournant",
+                "timeline-7-desc": "Le défi de santé est devenu une opportunité de transformation de carrière",
+                "timeline-8-title": "2024-2025 : Maîtrise IA",
+                "timeline-8-desc": "5 mois de zéro à 8 produits IA fonctionnels - complètement solo",
+                "timeline-9-title": "Percée",
+                "timeline-9-desc": "Développé une technologie révolutionnaire d'optimisation GPU de 15-25%",
+                "achievement-1-label": "Années en Belgique Construisant le Succès",
+                "achievement-1-desc": "Depuis 1999",
+                "achievement-2-label": "Enfants Poursuivant l'Excellence",
+                "achievement-2-desc": "2 Masters + 1 Future Artiste",
+                "achievement-3-label": "Produits IA Construits",
+                "achievement-3-desc": "En 5 mois",
+                "achievement-4-label": "Financement Externe",
+                "achievement-4-desc": "Pure bootstrap",
+                "children-title": "Mon Plus Grand Accomplissement : Trois Enfants Exceptionnels",
+                "children-description": "Pour tout père, il n'y a pas de plus grande fierté que de voir ses enfants s'épanouir : Premier enfant : Master en Diplomatie • Deuxième enfant : Master en Sciences Sociales et Politiques • Troisième enfant : artiste de 11 ans qui dessine professionnellement depuis l'âge de 6 ans, visant maintenant l'académie d'art avec des rêves de son Master en Art. Chaque sacrifice, chaque longue journée de travail, chaque défi en valait la peine pour les voir poursuivre leurs passions et réaliser leurs rêves.",
                 
                 // Research Section
                 "research-title": "Recherche & Développement",
@@ -3633,15 +3764,49 @@
             }
         };
 
+        // Language dropdown functionality
+        function toggleLanguageDropdown() {
+            const dropdown = document.querySelector('.lang-dropdown');
+            dropdown.classList.toggle('open');
+            
+            // Close dropdown when clicking outside
+            document.addEventListener('click', function closeDropdown(e) {
+                if (!dropdown.contains(e.target)) {
+                    dropdown.classList.remove('open');
+                    document.removeEventListener('click', closeDropdown);
+                }
+            });
+        }
+
+        function selectLanguage(lang, event) {
+            event.stopPropagation();
+            
+            // Update current language display
+            const currentLangSpan = document.getElementById('current-lang');
+            const langMap = {
+                'en': 'EN',
+                'nl': 'NL', 
+                'de': 'DE',
+                'fr': 'FR'
+            };
+            currentLangSpan.textContent = langMap[lang];
+            
+            // Update active state
+            document.querySelectorAll('.lang-option').forEach(option => {
+                option.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            // Close dropdown
+            document.querySelector('.lang-dropdown').classList.remove('open');
+            
+            // Switch language
+            switchLanguage(lang, event);
+        }
+
         // Language switcher (improved)
         function switchLanguage(lang, event) {
             currentLanguage = lang;
-            
-            // Update active language button
-            document.querySelectorAll('.lang-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            event.target.classList.add('active');
             
             // Update content
             updateContent(lang);
@@ -3687,11 +3852,23 @@
             if (supportedLangs.includes(detectedLang)) {
                 currentLanguage = detectedLang;
                 
-                // Update active language button
-                document.querySelectorAll('.lang-btn').forEach(btn => {
-                    btn.classList.remove('active');
-                    if (btn.onclick && btn.onclick.toString().includes(`'${detectedLang}'`)) {
-                        btn.classList.add('active');
+                // Update dropdown display
+                const currentLangSpan = document.getElementById('current-lang');
+                const langMap = {
+                    'en': 'EN',
+                    'nl': 'NL', 
+                    'de': 'DE',
+                    'fr': 'FR'
+                };
+                if (currentLangSpan) {
+                    currentLangSpan.textContent = langMap[detectedLang];
+                }
+                
+                // Update active language option
+                document.querySelectorAll('.lang-option').forEach(option => {
+                    option.classList.remove('active');
+                    if (option.onclick && option.onclick.toString().includes(`'${detectedLang}'`)) {
+                        option.classList.add('active');
                     }
                 });
                 
@@ -4527,14 +4704,26 @@
                         currentLanguage = lang;
                         updateContent(lang);
                         
-                        // Update language button visually
-                        document.querySelectorAll('.lang-btn').forEach(btn => {
-                            btn.classList.remove('active');
+                        // Update dropdown display
+                        const currentLangSpan = document.getElementById('current-lang');
+                        const langMap = {
+                            'en': 'EN',
+                            'nl': 'NL', 
+                            'de': 'DE',
+                            'fr': 'FR'
+                        };
+                        if (currentLangSpan) {
+                            currentLangSpan.textContent = langMap[lang];
+                        }
+                        
+                        // Update language option visually
+                        document.querySelectorAll('.lang-option').forEach(option => {
+                            option.classList.remove('active');
                         });
                         
-                        const langBtn = document.querySelector(`[onclick*="${lang}"]`);
-                        if (langBtn) {
-                            langBtn.classList.add('active');
+                        const langOption = document.querySelector(`[onclick*="${lang}"]`);
+                        if (langOption) {
+                            langOption.classList.add('active');
                         }
                         
                         index++;
@@ -4543,8 +4732,15 @@
                         console.log('Language test complete - returning to English');
                         currentLanguage = 'en';
                         updateContent('en');
-                        document.querySelectorAll('.lang-btn').forEach(btn => {
-                            btn.classList.remove('active');
+                        
+                        // Reset to English
+                        const currentLangSpan = document.getElementById('current-lang');
+                        if (currentLangSpan) {
+                            currentLangSpan.textContent = 'EN';
+                        }
+                        
+                        document.querySelectorAll('.lang-option').forEach(option => {
+                            option.classList.remove('active');
                         });
                         document.querySelector('[onclick*="en"]')?.classList.add('active');
                     }
