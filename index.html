@@ -550,6 +550,439 @@
             margin-top: 0.5rem;
         }
 
+        /* Live Demo Section */
+        .demo-section {
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, #0f1419 0%, #1a1b2e 50%, #0f1419 100%);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .demo-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .demo-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .demo-controls {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 2rem;
+            height: fit-content;
+        }
+
+        .control-group {
+            margin-bottom: 2rem;
+        }
+
+        .control-group:last-child {
+            margin-bottom: 0;
+        }
+
+        .control-group h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: var(--light);
+            font-weight: 700;
+        }
+
+        .algorithm-selector {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .algo-btn {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            color: var(--gray-300);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .algo-btn:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: var(--primary);
+            transform: translateX(5px);
+        }
+
+        .algo-btn.active {
+            background: var(--gradient-primary);
+            color: var(--dark);
+            border-color: transparent;
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+        }
+
+        .algo-icon {
+            font-size: 1.5rem;
+            width: 24px;
+            text-align: center;
+        }
+
+        .optimization-controls {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .opt-btn {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.75rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            color: var(--gray-300);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.875rem;
+        }
+
+        .opt-btn.active {
+            background: var(--gradient-accent);
+            color: var(--dark);
+            border-color: transparent;
+        }
+
+        .optimization-toggle {
+            width: 60px;
+            height: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 0 auto;
+        }
+
+        .optimization-toggle.active {
+            background: var(--gradient-accent);
+        }
+
+        .toggle-slider {
+            width: 26px;
+            height: 26px;
+            background: var(--light);
+            border-radius: 50%;
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .optimization-toggle.active .toggle-slider {
+            transform: translateX(30px);
+        }
+
+        .workload-selector {
+            width: 100%;
+            padding: 0.75rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            color: var(--light);
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        .workload-selector option {
+            background: var(--dark);
+            color: var(--light);
+        }
+
+        .demo-visualization {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 2rem;
+        }
+
+        .gpu-simulator {
+            margin-bottom: 2rem;
+        }
+
+        .gpu-visual {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .gpu-chip {
+            position: relative;
+            width: 200px;
+            height: 120px;
+            background: linear-gradient(145deg, #2a2a3a, #1a1a2a);
+            border-radius: 12px;
+            border: 2px solid var(--primary);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 30px rgba(0, 212, 255, 0.5);
+        }
+
+        .gpu-cores {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 4px;
+            margin-bottom: 0.5rem;
+        }
+
+        .core {
+            width: 12px;
+            height: 12px;
+            background: var(--accent);
+            border-radius: 2px;
+            animation: core-pulse 2s infinite ease-in-out;
+        }
+
+        .core:nth-child(2n) {
+            animation-delay: 0.2s;
+        }
+
+        .core:nth-child(3n) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes core-pulse {
+            0%, 100% { opacity: 0.4; }
+            50% { opacity: 1; }
+        }
+
+        .gpu-label {
+            font-size: 0.875rem;
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .energy-flow {
+            position: absolute;
+            right: -50px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .energy-line {
+            width: 40px;
+            height: 2px;
+            background: var(--accent);
+            border-radius: 1px;
+            animation: energy-flow 1.5s infinite ease-in-out;
+        }
+
+        .energy-line:nth-child(2) {
+            animation-delay: 0.3s;
+        }
+
+        .energy-line:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+
+        @keyframes energy-flow {
+            0%, 100% {
+                opacity: 0.3;
+                transform: scaleX(0.5);
+            }
+            50% {
+                opacity: 1;
+                transform: scaleX(1);
+            }
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .metric-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .metric-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        .metric-icon {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .metric-value {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 0.25rem;
+            font-family: var(--font-mono);
+        }
+
+        .metric-label {
+            font-size: 0.875rem;
+            color: var(--gray-400);
+            margin-bottom: 0.5rem;
+        }
+
+        .metric-change {
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.25rem 0.5rem;
+            border-radius: 20px;
+            background: var(--gradient-accent);
+            color: var(--dark);
+        }
+
+        .real-time-chart {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+        }
+
+        .real-time-chart h4 {
+            color: var(--light);
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+        }
+
+        .chart-container {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .chart-legend {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.875rem;
+            color: var(--gray-300);
+        }
+
+        .legend-color {
+            width: 16px;
+            height: 3px;
+            border-radius: 2px;
+        }
+
+        .legend-color.baseline {
+            background: #ff6b6b;
+        }
+
+        .legend-color.optimized {
+            background: var(--accent);
+        }
+
+        .demo-results {
+            margin-top: 3rem;
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .result-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .result-card:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        .result-card h4 {
+            color: var(--gray-400);
+            font-size: 0.875rem;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .result-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: var(--gradient-accent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.25rem;
+            font-family: var(--font-mono);
+        }
+
+        .result-desc {
+            font-size: 0.875rem;
+            color: var(--gray-400);
+        }
+
+        .demo-cta {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+        }
+
+        .demo-cta h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--light);
+        }
+
+        .demo-cta p {
+            font-size: 1.125rem;
+            color: var(--gray-300);
+            margin-bottom: 2rem;
+        }
+
+        .demo-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
         /* Research Section */
         .research-section {
             padding: 4rem 2rem;
@@ -642,6 +1075,8 @@
             text-decoration: none;
             transition: all 0.3s ease;
             font-size: 0.875rem;
+            border: none;
+            cursor: pointer;
         }
 
         .download-btn:hover {
@@ -1205,6 +1640,37 @@
             color: var(--gray-500);
         }
 
+        /* Language Switcher */
+        .lang-switcher {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1001;
+            display: flex;
+            gap: 0.5rem;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 0.5rem;
+            border-radius: 30px;
+            backdrop-filter: blur(10px);
+        }
+
+        .lang-btn {
+            padding: 0.5rem 1rem;
+            background: transparent;
+            border: 1px solid var(--primary);
+            color: var(--light);
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+
+        .lang-btn:hover, .lang-btn.active {
+            background: var(--primary);
+            color: var(--dark);
+        }
+
         /* Responsive */
         @media (max-width: 1024px) {
             .hero-container {
@@ -1222,6 +1688,10 @@
 
             .achievements-grid {
                 grid-template-columns: repeat(2, 1fr);
+            }
+
+            .demo-wrapper {
+                grid-template-columns: 1fr;
             }
 
             .use-cases {
@@ -1261,6 +1731,18 @@
 
             .achievements-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .metrics-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .results-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .demo-buttons {
+                flex-direction: column;
             }
 
             .patent-badge {
@@ -1320,85 +1802,6 @@
         ::-webkit-scrollbar-thumb:hover {
             background: var(--primary);
         }
-
-        /* Language Switcher */
-        .lang-switcher {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 1001;
-            display: flex;
-            gap: 0.5rem;
-            background: rgba(0, 0, 0, 0.8);
-            padding: 0.5rem;
-            border-radius: 30px;
-            backdrop-filter: blur(10px);
-        }
-
-        .lang-btn {
-            padding: 0.5rem 1rem;
-            background: transparent;
-            border: 1px solid var(--primary);
-            color: var(--light);
-            border-radius: 20px;
-            cursor: pointer;
-            transition: all 0.3s;
-            font-size: 0.875rem;
-            font-weight: 600;
-        }
-
-        .lang-btn:hover, .lang-btn.active {
-            background: var(--primary);
-            color: var(--dark);
-        }
-
-        /* Modal Styles */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 2000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(10px);
-        }
-
-        .modal-content {
-            background: var(--dark);
-            margin: 5% auto;
-            padding: 2rem;
-            border: 1px solid var(--primary);
-            border-radius: 20px;
-            width: 90%;
-            max-width: 600px;
-            position: relative;
-        }
-
-        .close {
-            color: var(--gray-400);
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: color 0.3s;
-        }
-
-        .close:hover {
-            color: var(--primary);
-        }
-
-        .modal h2 {
-            color: var(--primary);
-            margin-bottom: 1rem;
-        }
-
-        .modal p {
-            color: var(--gray-300);
-            line-height: 1.6;
-            margin-bottom: 1rem;
-        }
     </style>
 </head>
 <body>
@@ -1429,12 +1832,13 @@
             </div>
             <ul class="nav-links">
                 <li><a href="#home" data-translate="nav-solutions">Solutions</a></li>
-                <li><a href="#about" data-translate="nav-about">About</a></li>
+                <li><a href="#demo" data-translate="nav-demo-link">Live Demo</a></li>
                 <li><a href="#research" data-translate="nav-research">Research</a></li>
                 <li><a href="#industries" data-translate="nav-industries">Industries</a></li>
                 <li><a href="#calculator" data-translate="nav-calculator">ROI Calculator</a></li>
                 <li><a href="#architecture" data-translate="nav-technology">Technology</a></li>
-                <li><a href="#contact" class="nav-cta" data-translate="nav-demo">Schedule Demo →</a></li>
+                <li><a href="#contact" data-translate="nav-contact">Contact</a></li>
+                <li><a href="#about" class="nav-cta" data-translate="nav-about">About →</a></li>
             </ul>
         </div>
     </nav>
@@ -1488,101 +1892,176 @@
         </div>
     </section>
 
-    <!-- About Section -->
-    <section class="about-section" id="about">
-        <div class="about-container">
+    <!-- Live Demo Section -->
+    <section class="demo-section" id="demo">
+        <div class="demo-container">
             <div class="section-header">
-                <h2 class="section-title" data-translate="about-title">From Taxi Driver to AI Pioneer</h2>
-                <p class="section-subtitle" data-translate="about-subtitle">
-                    A journey that defies conventional tech narratives - proving innovation has no prerequisites
+                <h2 class="section-title" data-translate="demo-title">Live GPU Optimization Demo</h2>
+                <p class="section-subtitle" data-translate="demo-subtitle">
+                    See our ML-driven DVFS algorithms in action with real-time GPU metrics simulation
                 </p>
             </div>
 
-            <div class="founder-story">
-                <div class="founder-image">
-                    AG
+            <div class="demo-wrapper">
+                <div class="demo-controls">
+                    <div class="control-group">
+                        <h3 data-translate="demo-algorithm">Optimization Algorithm</h3>
+                        <div class="algorithm-selector">
+                            <button class="algo-btn active" onclick="switchAlgorithm('dvfs')">
+                                <span class="algo-icon">⚡</span>
+                                <span>Dynamic DVFS</span>
+                            </button>
+                            <button class="algo-btn" onclick="switchAlgorithm('frequency')">
+                                <span class="algo-icon">📊</span>
+                                <span>Frequency Scaling</span>
+                            </button>
+                            <button class="algo-btn" onclick="switchAlgorithm('voltage')">
+                                <span class="algo-icon">🔋</span>
+                                <span>Voltage Control</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <h3 data-translate="demo-optimization">Optimization Status</h3>
+                        <div class="optimization-controls">
+                            <button class="opt-btn" onclick="toggleOptimization(false)">
+                                <span class="status-icon">❌</span>
+                                <span data-translate="demo-disabled">Disabled</span>
+                            </button>
+                            <button class="opt-btn active" onclick="toggleOptimization(true)">
+                                <span class="status-icon">✅</span>
+                                <span data-translate="demo-enabled">Enabled</span>
+                            </button>
+                        </div>
+                        <div class="optimization-toggle active" onclick="toggleOptimization(!demoState.optimization)">
+                            <div class="toggle-slider"></div>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <h3 data-translate="demo-workload">Workload Simulation</h3>
+                        <select class="workload-selector" onchange="changeWorkload(this.value)">
+                            <option value="ai-training">AI Model Training</option>
+                            <option value="crypto-mining">Cryptocurrency Mining</option>
+                            <option value="inference">Real-time Inference</option>
+                            <option value="hpc">HPC Computation</option>
+                        </select>
+                    </div>
                 </div>
-                <div class="story-content">
-                    <h2 data-translate="founder-title">Artur Gabrielian</h2>
-                    <p data-translate="founder-description">
-                        As an Armenian immigrant who worked 15 years as a taxi driver in Belgium, 
-                        I transformed personal adversity into technological breakthrough. When illness forced a career pause, 
-                        it became the catalyst for reinvention.
-                    </p>
-                    
-                    <div class="journey-timeline">
-                        <div class="timeline-item">
-                            <div class="timeline-icon">🇦🇲</div>
-                            <div>
-                                <strong data-translate="timeline-1-title">Armenian Roots</strong><br>
-                                <span data-translate="timeline-1-desc">Born in Armenia, migrated to Belgium seeking opportunities</span>
+
+                <div class="demo-visualization">
+                    <div class="gpu-simulator">
+                        <div class="gpu-visual">
+                            <div class="gpu-chip">
+                                <div class="gpu-cores">
+                                    <div class="core active"></div>
+                                    <div class="core active"></div>
+                                    <div class="core active"></div>
+                                    <div class="core active"></div>
+                                    <div class="core active"></div>
+                                    <div class="core active"></div>
+                                    <div class="core active"></div>
+                                    <div class="core active"></div>
+                                </div>
+                                <div class="gpu-label">RTX 4090</div>
+                            </div>
+                            <div class="energy-flow">
+                                <div class="energy-line"></div>
+                                <div class="energy-line"></div>
+                                <div class="energy-line"></div>
                             </div>
                         </div>
-                        
-                        <div class="timeline-item">
-                            <div class="timeline-icon">🚖</div>
-                            <div>
-                                <strong data-translate="timeline-2-title">15 Years Driving</strong><br>
-                                <span data-translate="timeline-2-desc">Private transport driver, supporting family while dreaming bigger</span>
+
+                        <div class="metrics-grid">
+                            <div class="metric-card">
+                                <div class="metric-icon">⚡</div>
+                                <div class="metric-value" id="demo-power">450W</div>
+                                <div class="metric-label" data-translate="metric-power">Power Consumption</div>
+                                <div class="metric-change" id="power-change">-20%</div>
+                            </div>
+
+                            <div class="metric-card">
+                                <div class="metric-icon">🌡️</div>
+                                <div class="metric-value" id="demo-temperature">72°C</div>
+                                <div class="metric-label" data-translate="metric-temperature">Temperature</div>
+                                <div class="metric-change" id="temp-change">-8%</div>
+                            </div>
+
+                            <div class="metric-card">
+                                <div class="metric-icon">🚀</div>
+                                <div class="metric-value" id="demo-performance">98%</div>
+                                <div class="metric-label" data-translate="metric-performance">Performance</div>
+                                <div class="metric-change" id="perf-change">-2%</div>
+                            </div>
+
+                            <div class="metric-card">
+                                <div class="metric-icon">📈</div>
+                                <div class="metric-value" id="demo-efficiency">118%</div>
+                                <div class="metric-label" data-translate="metric-efficiency">Efficiency</div>
+                                <div class="metric-change" id="eff-change">+18%</div>
                             </div>
                         </div>
-                        
-                        <div class="timeline-item">
-                            <div class="timeline-icon">🏥</div>
-                            <div>
-                                <strong data-translate="timeline-3-title">Health Crisis Catalyst</strong><br>
-                                <span data-translate="timeline-3-desc">Illness forced career pause, became opportunity for reinvention</span>
-                            </div>
+                    </div>
+
+                    <div class="real-time-chart">
+                        <h4 data-translate="demo-realtime">Real-time Power Consumption</h4>
+                        <div class="chart-container">
+                            <canvas id="powerChart" width="400" height="200"></canvas>
                         </div>
-                        
-                        <div class="timeline-item">
-                            <div class="timeline-icon">💡</div>
-                            <div>
-                                <strong data-translate="timeline-4-title">Self-Taught AI Expert</strong><br>
-                                <span data-translate="timeline-4-desc">5 months from zero to 8 working AI products - solo</span>
-                            </div>
-                        </div>
-                        
-                        <div class="timeline-item">
-                            <div class="timeline-icon">⚡</div>
-                            <div>
-                                <strong data-translate="timeline-5-title">GPU Breakthrough</strong><br>
-                                <span data-translate="timeline-5-desc">Developed 15-25% energy optimization technology</span>
-                            </div>
+                        <div class="chart-legend">
+                            <span class="legend-item">
+                                <span class="legend-color baseline"></span>
+                                <span data-translate="legend-baseline">Baseline</span>
+                            </span>
+                            <span class="legend-item">
+                                <span class="legend-color optimized"></span>
+                                <span data-translate="legend-optimized">Optimized</span>
+                            </span>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="achievements-grid">
-                <div class="achievement-card">
-                    <div class="achievement-number">8</div>
-                    <div class="achievement-label" data-translate="achievement-1-label">AI Products Built</div>
-                    <div class="achievement-desc" data-translate="achievement-1-desc">In 5 months</div>
+            <div class="demo-results">
+                <div class="results-grid">
+                    <div class="result-card">
+                        <h4 data-translate="result-energy">Energy Saved</h4>
+                        <div class="result-number" id="demo-energy-saved">22.5%</div>
+                        <div class="result-desc" data-translate="result-energy-desc">Average reduction</div>
+                    </div>
+                    <div class="result-card">
+                        <h4 data-translate="result-cost">Cost Savings</h4>
+                        <div class="result-number" id="demo-cost-saved">€127/day</div>
+                        <div class="result-desc" data-translate="result-cost-desc">Per GPU</div>
+                    </div>
+                    <div class="result-card">
+                        <h4 data-translate="result-performance">Performance</h4>
+                        <div class="result-number" id="demo-performance-impact">98.2%</div>
+                        <div class="result-desc" data-translate="result-performance-desc">Maintained</div>
+                    </div>
+                    <div class="result-card">
+                        <h4 data-translate="result-co2">CO2 Reduction</h4>
+                        <div class="result-number" id="demo-co2-saved">2.1kg/day</div>
+                        <div class="result-desc" data-translate="result-co2-desc">Per GPU</div>
+                    </div>
                 </div>
-                
-                <div class="achievement-card">
-                    <div class="achievement-number">0</div>
-                    <div class="achievement-label" data-translate="achievement-2-label">External Funding</div>
-                    <div class="achievement-desc" data-translate="achievement-2-desc">Pure bootstrap</div>
-                </div>
-                
-                <div class="achievement-card">
-                    <div class="achievement-number">25%</div>
-                    <div class="achievement-label" data-translate="achievement-3-label">Energy Savings</div>
-                    <div class="achievement-desc" data-translate="achievement-3-desc">Proven results</div>
-                </div>
-                
-                <div class="achievement-card">
-                    <div class="achievement-number">1</div>
-                    <div class="achievement-label" data-translate="achievement-4-label">Solo Developer</div>
-                    <div class="achievement-desc" data-translate="achievement-4-desc">No team needed</div>
+            </div>
+
+            <div class="demo-cta">
+                <h3 data-translate="demo-cta-title">Ready to Optimize Your GPU Infrastructure?</h3>
+                <p data-translate="demo-cta-text">Start saving energy costs with our proven ML-driven optimization technology.</p>
+                <div class="demo-buttons">
+                    <a href="#calculator" class="btn btn-primary" data-translate="demo-btn-calculator">
+                        Calculate Your Savings →
+                    </a>
+                    <a href="#contact" class="btn btn-secondary" data-translate="demo-btn-contact">
+                        Request Demo
+                    </a>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Research Section -->
     <section class="research-section" id="research">
         <div class="research-container">
             <div class="section-header">
@@ -2241,6 +2720,100 @@
         </div>
     </section>
 
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <div class="about-container">
+            <div class="section-header">
+                <h2 class="section-title" data-translate="about-title">From Taxi Driver to AI Pioneer</h2>
+                <p class="section-subtitle" data-translate="about-subtitle">
+                    A journey that defies conventional tech narratives - proving innovation has no prerequisites
+                </p>
+            </div>
+
+            <div class="founder-story">
+                <div class="founder-image">
+                    AG
+                </div>
+                <div class="story-content">
+                    <h2 data-translate="founder-title">Artur Gabrielian</h2>
+                    <p data-translate="founder-description">
+                        As an Armenian immigrant who worked 15 years as a taxi driver in Belgium, 
+                        I transformed personal adversity into technological breakthrough. When illness forced a career pause, 
+                        it became the catalyst for reinvention.
+                    </p>
+                    
+                    <div class="journey-timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-icon">🇦🇲</div>
+                            <div>
+                                <strong data-translate="timeline-1-title">Armenian Roots</strong><br>
+                                <span data-translate="timeline-1-desc">Born in Armenia, migrated to Belgium seeking opportunities</span>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-icon">🚖</div>
+                            <div>
+                                <strong data-translate="timeline-2-title">15 Years Driving</strong><br>
+                                <span data-translate="timeline-2-desc">Private transport driver, supporting family while dreaming bigger</span>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-icon">🏥</div>
+                            <div>
+                                <strong data-translate="timeline-3-title">Health Crisis Catalyst</strong><br>
+                                <span data-translate="timeline-3-desc">Illness forced career pause, became opportunity for reinvention</span>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-icon">💡</div>
+                            <div>
+                                <strong data-translate="timeline-4-title">Self-Taught AI Expert</strong><br>
+                                <span data-translate="timeline-4-desc">5 months from zero to 8 working AI products - solo</span>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-icon">⚡</div>
+                            <div>
+                                <strong data-translate="timeline-5-title">GPU Breakthrough</strong><br>
+                                <span data-translate="timeline-5-desc">Developed 15-25% energy optimization technology</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="achievements-grid">
+                <div class="achievement-card">
+                    <div class="achievement-number">8</div>
+                    <div class="achievement-label" data-translate="achievement-1-label">AI Products Built</div>
+                    <div class="achievement-desc" data-translate="achievement-1-desc">In 5 months</div>
+                </div>
+                
+                <div class="achievement-card">
+                    <div class="achievement-number">0</div>
+                    <div class="achievement-label" data-translate="achievement-2-label">External Funding</div>
+                    <div class="achievement-desc" data-translate="achievement-2-desc">Pure bootstrap</div>
+                </div>
+                
+                <div class="achievement-card">
+                    <div class="achievement-number">25%</div>
+                    <div class="achievement-label" data-translate="achievement-3-label">Energy Savings</div>
+                    <div class="achievement-desc" data-translate="achievement-3-desc">Proven results</div>
+                </div>
+                
+                <div class="achievement-card">
+                    <div class="achievement-number">1</div>
+                    <div class="achievement-label" data-translate="achievement-4-label">Solo Developer</div>
+                    <div class="achievement-desc" data-translate="achievement-4-desc">No team needed</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer>
         <div class="footer-container">
@@ -2264,9 +2837,9 @@
                 <h4 data-translate="footer-resources">Resources</h4>
                 <ul class="footer-links">
                     <li><a href="#research" data-translate="footer-docs">Research Papers</a></li>
-                    <li><a href="assets/documents/GPU-DVFSEnterpriseNDAWhitepaper-TechnicalDeepDive.pdf" target="_blank" data-translate="footer-api">Technical Guide</a></li>
-                    <li><a href="assets/documents/GPU-DVFSBenchmarkReportTemplate.pdf" target="_blank" data-translate="footer-case">Benchmarks</a></li>
-                    <li><a href="assets/documents/GPU-DVFSOptimizationWhitepaperTemplate.pdf" target="_blank" data-translate="footer-whitepaper">Whitepaper</a></li>
+                    <li><a href="#" target="_blank" data-translate="footer-api">Technical Guide</a></li>
+                    <li><a href="#" target="_blank" data-translate="footer-case">Benchmarks</a></li>
+                    <li><a href="#" target="_blank" data-translate="footer-whitepaper">Whitepaper</a></li>
                 </ul>
             </div>
             <div class="footer-section">
@@ -2303,7 +2876,33 @@
                 "nav-industries": "Industries",
                 "nav-calculator": "ROI Calculator",
                 "nav-technology": "Technology",
-                "nav-demo": "Schedule Demo →",
+                "nav-demo-link": "Live Demo",
+                "demo-title": "Live GPU Optimization Demo",
+                "demo-subtitle": "See our ML-driven DVFS algorithms in action with real-time GPU metrics simulation",
+                "demo-algorithm": "Optimization Algorithm",
+                "demo-optimization": "Optimization Status",
+                "demo-disabled": "Disabled",
+                "demo-enabled": "Enabled",
+                "demo-workload": "Workload Simulation",
+                "metric-power": "Power Consumption",
+                "metric-temperature": "Temperature",
+                "metric-performance": "Performance",
+                "metric-efficiency": "Efficiency",
+                "demo-realtime": "Real-time Power Consumption",
+                "legend-baseline": "Baseline",
+                "legend-optimized": "Optimized",
+                "result-energy": "Energy Saved",
+                "result-energy-desc": "Average reduction",
+                "result-cost": "Cost Savings",
+                "result-cost-desc": "Per GPU",
+                "result-performance": "Performance",
+                "result-performance-desc": "Maintained",
+                "result-co2": "CO2 Reduction",
+                "result-co2-desc": "Per GPU",
+                "demo-cta-title": "Ready to Optimize Your GPU Infrastructure?",
+                "demo-cta-text": "Start saving energy costs with our proven ML-driven optimization technology.",
+                "demo-btn-calculator": "Calculate Your Savings →",
+                "demo-btn-contact": "Request Demo",
                 
                 // Hero Section
                 "hero-title": "Enterprise GPU Optimization for AI & Crypto Workloads",
@@ -2368,39 +2967,6 @@
                 "ai-case3-title": "Multi-GPU Scaling",
                 "ai-case3-desc": "Intelligent power distribution across DGX H100 clusters and A100 pods. Maximize throughput per watt.",
                 "ai-case3-savings": "15-25% energy savings at scale",
-                
-                // Crypto Use Cases
-                "crypto-case1-title": "Bitcoin Mining (SHA-256)",
-                "crypto-case1-desc": "Optimize ASIC and GPU mining operations for maximum efficiency. Perfect for large-scale mining farms.",
-                "crypto-case1-savings": "15-20% energy reduction",
-                "crypto-case2-title": "Scrypt Algorithm Mining",
-                "crypto-case2-desc": "Enhanced performance for Litecoin and other Scrypt-based cryptocurrencies. Maintain hash rates while cutting power.",
-                "crypto-case2-savings": "18-22% savings achieved",
-                "crypto-case3-title": "Privacy Coins (RandomX)",
-                "crypto-case3-desc": "Specialized optimization for Monero and privacy-focused mining. CPU and GPU efficiency improvements.",
-                "crypto-case3-savings": "15-18% power reduction",
-                
-                // HPC Use Cases
-                "hpc-case1-title": "Genomic Analysis",
-                "hpc-case1-desc": "Accelerate drug discovery and genomic research while reducing computational costs with NVIDIA Clara optimization.",
-                "hpc-case1-savings": "100-600 TFLOPS efficiency",
-                "hpc-case2-title": "Autonomous Driving",
-                "hpc-case2-desc": "Optimize NVIDIA DRIVE simulations for autonomous vehicle development. Real-time processing with lower energy footprint.",
-                "hpc-case2-savings": "4x energy reduction",
-                "hpc-case3-title": "Climate Modeling",
-                "hpc-case3-desc": "Enable more extensive climate simulations with existing infrastructure. 127 GWh saved annually across systems.",
-                "hpc-case3-savings": "50x speedup potential",
-                
-                // Cloud Use Cases
-                "cloud-case1-title": "GPU-as-a-Service",
-                "cloud-case1-desc": "Reduce operational costs for GPU cloud services. Compatible with AWS, Google Cloud, and Azure GPU instances.",
-                "cloud-case1-savings": "Lower TCO by 20%",
-                "cloud-case2-title": "Data Center Efficiency",
-                "cloud-case2-desc": "Meet sustainability goals while expanding GPU capacity. Perfect for Equinix, Digital Realty operations.",
-                "cloud-case2-savings": "Improve PUE metrics",
-                "cloud-case3-title": "Carbon Footprint",
-                "cloud-case3-desc": "Align with ESG commitments and renewable energy initiatives. Reduce CO2 emissions significantly.",
-                "cloud-case3-savings": "500 tonnes CO2 saved",
                 
                 // Calculator
                 "calc-title": "Calculate Your ROI",
@@ -2494,18 +3060,16 @@
                 "footer-contact": "Contact",
                 "footer-copyright": "© 2025 GPU-DVFS Enterprise. All rights reserved. | Privacy Policy | Terms of Service"
             },
-            // Add other languages (nl, de, fr) with same structure...
+            // Add Dutch, German, French translations here (abbreviated for space)
             nl: {
-                // Navigation
                 "nav-solutions": "Oplossingen",
-                "nav-about": "Over Ons",
+                "nav-demo-link": "Live Demo",
                 "nav-research": "Onderzoek",
                 "nav-industries": "Industrieën",
                 "nav-calculator": "ROI Calculator",
                 "nav-technology": "Technologie",
-                "nav-demo": "Demo Plannen →",
-                
-                // Hero Section
+                "nav-contact": "Contact",
+                "nav-about": "Over Ons →",
                 "hero-title": "Enterprise GPU-optimalisatie voor AI & Crypto Workloads",
                 "hero-subtitle": "Revolutionair ML-gestuurd DVFS-framework dat 15-25% energiebesparing levert voor LLM-training, cryptocurrency mining en HPC-workloads.",
                 "stat-energy": "Energievermindering",
@@ -2514,29 +3078,33 @@
                 "btn-calculate": "Bereken Uw Besparingen →",
                 "btn-research": "Bekijk Onderzoek",
                 
-                // About Section
-                "about-title": "Van Taxichauffeur naar AI-pionier",
-                "about-subtitle": "Een reis die conventionele tech-verhalen tart - bewijs dat innovatie geen vereisten heeft",
-                "founder-title": "Artur Gabrielian",
-                "founder-description": "Als Armeense immigrant die 15 jaar als taxichauffeur in België werkte, transformeerde ik persoonlijke tegenspoed in technologische doorbraak. Toen ziekte een carrièrepauze forceerde, werd het de katalysator voor heruitvinding.",
-                "timeline-1-title": "Armeense Wortels",
-                "timeline-1-desc": "Geboren in Armenië, geëmigreerd naar België op zoek naar kansen",
-                "timeline-2-title": "15 Jaar Rijden",
-                "timeline-2-desc": "Privé-transportchauffeur, familie ondersteunen terwijl ik groter droomde",
-                "timeline-3-title": "Gezondheidscrisis Katalysator",
-                "timeline-3-desc": "Ziekte forceerde carrièrepauze, werd kans voor heruitvinding",
-                "timeline-4-title": "Zelfgeleerde AI-expert",
-                "timeline-4-desc": "5 maanden van nul naar 8 werkende AI-producten - solo",
-                "timeline-5-title": "GPU Doorbraak",
-                "timeline-5-desc": "Ontwikkelde 15-25% energie-optimalisatietechnologie",
-                "achievement-1-label": "AI Producten Gebouwd",
-                "achievement-1-desc": "In 5 maanden",
-                "achievement-2-label": "Externe Financiering",
-                "achievement-2-desc": "Pure bootstrap",
-                "achievement-3-label": "Energiebesparing",
-                "achievement-3-desc": "Bewezen resultaten",
-                "achievement-4-label": "Solo Ontwikkelaar",
-                "achievement-4-desc": "Geen team nodig",
+                // Demo Section
+                "demo-title": "Live GPU Optimalisatie Demo",
+                "demo-subtitle": "Zie onze ML-gestuurde DVFS algoritmen in actie met real-time GPU metrics simulatie",
+                "demo-algorithm": "Optimalisatie Algoritme",
+                "demo-optimization": "Optimalisatie Status",
+                "demo-disabled": "Uitgeschakeld",
+                "demo-enabled": "Ingeschakeld",
+                "demo-workload": "Workload Simulatie",
+                "metric-power": "Stroomverbruik",
+                "metric-temperature": "Temperatuur",
+                "metric-performance": "Prestatie",
+                "metric-efficiency": "Efficiëntie",
+                "demo-realtime": "Real-time Stroomverbruik",
+                "legend-baseline": "Baseline",
+                "legend-optimized": "Geoptimaliseerd",
+                "result-energy": "Energie Bespaard",
+                "result-energy-desc": "Gemiddelde reductie",
+                "result-cost": "Kostenbesparingen",
+                "result-cost-desc": "Per GPU",
+                "result-performance": "Prestatie",
+                "result-performance-desc": "Behouden",
+                "result-co2": "CO2 Reductie",
+                "result-co2-desc": "Per GPU",
+                "demo-cta-title": "Klaar om Uw GPU Infrastructuur te Optimaliseren?",
+                "demo-cta-text": "Begin met energiekosten besparen met onze bewezen ML-gestuurde optimalisatietechnologie.",
+                "demo-btn-calculator": "Bereken Uw Besparingen →",
+                "demo-btn-contact": "Vraag Demo Aan",
                 
                 // Research Section
                 "research-title": "Onderzoek & Ontwikkeling",
@@ -2550,20 +3118,158 @@
                 "research-technical-title": "Technische Diepduik",
                 "research-technical-desc": "Diepgaande technische documentatie met implementatiedetails en API-specificaties",
                 
-                // Continue with other translations...
+                // Industry Section
+                "industry-title": "Maatwerk Oplossingen voor Alle Industrieën",
+                "industry-subtitle": "Ons adaptieve framework optimaliseert GPU-prestaties voor diverse computationele workloads",
+                "tab-ai": "AI & LLMs",
+                "tab-crypto": "Crypto Mining",
+                "tab-hpc": "HPC & Onderzoek",
+                "tab-cloud": "Cloud Providers",
+                
+                // AI Use Cases
+                "ai-case1-title": "LLM Training Optimalisatie",
+                "ai-case1-desc": "Verminder energieverbruik voor training van modellen zoals GPT-4, Claude en Llama. Bespaar miljoenen in elektriciteitskosten per training run.",
+                "ai-case1-savings": "Bespaar €42.600-71.000 per GPT-3 run",
+                "ai-case2-title": "Inferentie Versnelling",
+                "ai-case2-desc": "Optimaliseer GPU-clusters voor real-time inferentie, verminder operationele kosten met behoud van sub-milliseconde latentie.",
+                "ai-case2-savings": "20% reductie in inferentiekosten",
+                "ai-case3-title": "Multi-GPU Schaling",
+                "ai-case3-desc": "Intelligente stroomverdeling over DGX H100-clusters en A100-pods. Maximaliseer doorvoer per watt.",
+                "ai-case3-savings": "15-25% energiebesparing op schaal",
+                
+                // Crypto Use Cases
+                "crypto-case1-title": "Bitcoin Mining (SHA-256)",
+                "crypto-case1-desc": "Optimaliseer ASIC en GPU mining operaties voor maximale efficiëntie. Perfect voor grootschalige mining farms.",
+                "crypto-case1-savings": "15-20% energiereductie",
+                "crypto-case2-title": "Scrypt Algoritme Mining",
+                "crypto-case2-desc": "Verbeterde prestatie voor Litecoin en andere Scrypt-gebaseerde cryptocurrencies. Behoud hash rates terwijl je stroom bespaart.",
+                "crypto-case2-savings": "18-22% besparingen behaald",
+                "crypto-case3-title": "Privacy Coins (RandomX)",
+                "crypto-case3-desc": "Gespecialiseerde optimalisatie voor Monero en privacy-gerichte mining. CPU en GPU efficiëntieverbeteringen.",
+                "crypto-case3-savings": "15-18% stroomreductie",
+                
+                // HPC Use Cases
+                "hpc-case1-title": "Genomische Analyse",
+                "hpc-case1-desc": "Versnel medicijnontwikkeling en genomisch onderzoek terwijl je computationele kosten vermindert met NVIDIA Clara optimalisatie.",
+                "hpc-case1-savings": "100-600 TFLOPS efficiëntie",
+                "hpc-case2-title": "Autonome Voertuigen",
+                "hpc-case2-desc": "Optimaliseer NVIDIA DRIVE simulaties voor autonome voertuigontwikkeling. Real-time verwerking met lagere energievoetafdruk.",
+                "hpc-case2-savings": "4x energiereductie",
+                "hpc-case3-title": "Klimaatmodellering",
+                "hpc-case3-desc": "Maak uitgebreidere klimaatsimulaties mogelijk met bestaande infrastructuur. 127 GWh jaarlijks bespaard over systemen.",
+                "hpc-case3-savings": "50x versnelling potentieel",
+                
+                // Cloud Use Cases
+                "cloud-case1-title": "GPU-as-a-Service",
+                "cloud-case1-desc": "Verminder operationele kosten voor GPU cloud services. Compatibel met AWS, Google Cloud en Azure GPU instances.",
+                "cloud-case1-savings": "Verlaag TCO met 20%",
+                "cloud-case2-title": "Datacenter Efficiëntie",
+                "cloud-case2-desc": "Behaal duurzaamheidsdoelen terwijl je GPU-capaciteit uitbreidt. Perfect voor Equinix, Digital Realty operaties.",
+                "cloud-case2-savings": "Verbeter PUE metrics",
+                "cloud-case3-title": "CO2 Voetafdruk",
+                "cloud-case3-desc": "Sluit aan bij ESG-verplichtingen en hernieuwbare energie-initiatieven. Verminder CO2-uitstoot aanzienlijk.",
+                "cloud-case3-savings": "500 ton CO2 bespaard",
+                
+                // Calculator
+                "calc-title": "Bereken Uw ROI",
+                "calc-subtitle": "Real-time prijsdata • Directe besparingsprojectie • Industrie-specifieke berekeningen",
+                "calc-mode-ai": "AI/LLM Training",
+                "calc-mode-crypto": "Crypto Mining",
+                "calc-mode-custom": "Aangepaste Workload",
+                "calc-gpu-model": "GPU Model",
+                "calc-gpu-count": "Aantal GPUs",
+                "calc-duration": "Training Duur (dagen)",
+                "calc-energy-cost": "Energiekosten (€/kWh)",
+                "calc-cryptocurrency": "Cryptocurrency",
+                "calc-hashrate": "Gemiddelde Hash Rate (TH/s)",
+                "calc-workload-type": "Workload Type",
+                "calc-custom-config": "Aangepaste Configuratie",
+                "calc-total-power": "Totaal GPU Vermogen (kW)",
+                "calc-operating-hours": "Bedrijfsuren/Dag",
+                "workload-genomic": "Genomische Analyse",
+                "workload-climate": "Klimaatmodellering",
+                "workload-financial": "Financiële Modellering",
+                "workload-rendering": "Rendering Farm",
+                "workload-custom": "Aangepaste HPC",
+                
+                // Results
+                "result-base-consumption": "Energieverbruik (Basis)",
+                "result-opt-consumption": "Geoptimaliseerd Verbruik",
+                "result-energy-saved": "Energie Bespaard",
+                "result-cost-savings": "Kostenbesparingen",
+                "result-roi": "ROI Periode",
+                "result-monthly-cost": "Maandelijkse Energiekosten",
+                "result-opt-cost": "Geoptimaliseerde Kosten",
+                "result-monthly-savings": "Maandelijkse Besparingen",
+                "result-annual-savings": "Jaarlijkse Besparingen",
+                "result-5year": "5-Jaar Besparingen",
+                "result-breakeven": "Break-Even",
+                "result-daily-cost": "Dagelijkse Energiekosten",
+                "result-opt-monthly": "Geoptimaliseerd Maandelijks",
+                "result-tco": "TCO Reductie",
+                "result-payback": "Terugverdienperiode",
+                
+                // Architecture
+                "arch-title": "Enterprise-Grade Technologie Stack",
+                "arch-subtitle": "Gebouwd op bewezen ML-algoritmen en geoptimaliseerd voor productieomgevingen",
+                "arch-ml-title": "ML-Gestuurde Optimalisatie",
+                "arch-ml-desc": "Zelf-lerende algoritmen passen zich aan workload-patronen aan in real-time, verbeteren continu efficiëntie zonder handmatige interventie.",
+                "arch-dvfs-title": "Dynamische DVFS Controle",
+                "arch-dvfs-desc": "Microseconde-niveau spanning en frequentie aanpassingen gebaseerd op workload-karakteristieken en thermische condities.",
+                "arch-compat-title": "Universele Compatibiliteit",
+                "arch-compat-desc": "Naadloze integratie met bestaande infrastructuur. Werkt met alle belangrijke GPU-modellen en software frameworks.",
+                "arch-analytics-title": "Real-Time Analytics",
+                "arch-analytics-desc": "Uitgebreid monitoring dashboard met voorspellende analytics en anomalie detectie mogelijkheden.",
+                "arch-security-title": "Enterprise Beveiliging",
+                "arch-security-desc": "SOC 2 Type II conform met end-to-end encryptie en rol-gebaseerde toegangscontrole.",
+                "arch-api-title": "API-First Ontwerp",
+                "arch-api-desc": "RESTful en gRPC APIs voor naadloze integratie met bestaande orchestratie en monitoring systemen.",
+                
+                // Contact
+                "contact-title": "Laten We Uw GPU Infrastructuur Optimaliseren",
+                "contact-subtitle": "Klaar om miljoenen te besparen op energiekosten? Laten we uw pilotprogramma bespreken.",
+                "contact-email-title": "Email",
+                "contact-phone-title": "Telefoon",
+                "contact-location-title": "Locatie",
+                "company-title": "Officiële Bedrijfsregistratie",
+                "company-reg": "Bedrijfsregistratie: 1024585462",
+                "company-founded": "Opgericht: 1 juli 2025",
+                "company-address": "Geregistreerd Adres: Rapertingenstraat 11 bus 4, 3500 Hasselt, België",
+                "company-compliance": "✓ GDPR Conform • ✓ EU AI Act Klaar • ✓ VLAIO Ontwikkelingsproject Geschikt",
+                
+                // CTA
+                "cta-title": "Transformeer Uw GPU Infrastructuur Vandaag",
+                "cta-text": "Sluit aan bij industrieleiders die miljoenen besparen op energiekosten terwijl ze AI en computationeel onderzoek vooruitbrengen",
+                "cta-demo": "Plan Enterprise Demo →",
+                "cta-calculate": "Bereken ROI",
+                
+                // Footer
+                "footer-desc": "Revolutionaire GPU-optimalisatietechnologie die 15-25% energiebesparing levert voor AI, cryptocurrency mining en HPC workloads.",
+                "footer-solutions": "Oplossingen",
+                "footer-ai": "AI & LLM Training",
+                "footer-crypto": "Crypto Mining",
+                "footer-hpc": "HPC & Onderzoek",
+                "footer-cloud": "Cloud Providers",
+                "footer-resources": "Resources",
+                "footer-docs": "Onderzoekspapers",
+                "footer-api": "Technische Gids",
+                "footer-case": "Benchmarks",
+                "footer-whitepaper": "Witboek",
+                "footer-company": "Bedrijf",
+                "footer-about": "Over Ons",
+                "footer-portfolio": "Portfolio",
+                "footer-contact": "Contact",
                 "footer-copyright": "© 2025 GPU-DVFS Enterprise. Alle rechten voorbehouden. | Privacybeleid | Servicevoorwaarden"
             },
             de: {
-                // Navigation
                 "nav-solutions": "Lösungen",
-                "nav-about": "Über Uns",
+                "nav-demo-link": "Live Demo",
                 "nav-research": "Forschung",
                 "nav-industries": "Branchen",
                 "nav-calculator": "ROI-Rechner",
                 "nav-technology": "Technologie",
-                "nav-demo": "Demo Planen →",
-                
-                // Hero Section
+                "nav-contact": "Kontakt",
+                "nav-about": "Über Uns →",
                 "hero-title": "Enterprise GPU-Optimierung für KI & Krypto-Workloads",
                 "hero-subtitle": "Revolutionäres ML-gesteuertes DVFS-Framework mit 15-25% Energieeinsparung für LLM-Training, Kryptowährungs-Mining und HPC-Workloads.",
                 "stat-energy": "Energiereduktion",
@@ -2572,29 +3278,33 @@
                 "btn-calculate": "Ihre Einsparungen Berechnen →",
                 "btn-research": "Forschung Ansehen",
                 
-                // About Section
-                "about-title": "Vom Taxifahrer zum KI-Pionier",
-                "about-subtitle": "Eine Reise, die konventionelle Tech-Narrative herausfordert - Beweis, dass Innovation keine Voraussetzungen hat",
-                "founder-title": "Artur Gabrielian",
-                "founder-description": "Als armenischer Immigrant, der 15 Jahre als Taxifahrer in Belgien arbeitete, verwandelte ich persönliche Widrigkeiten in technologischen Durchbruch. Als Krankheit eine Karrierepause erzwang, wurde sie zum Katalysator für Neuerfindung.",
-                "timeline-1-title": "Armenische Wurzeln",
-                "timeline-1-desc": "Geboren in Armenien, nach Belgien ausgewandert auf der Suche nach Möglichkeiten",
-                "timeline-2-title": "15 Jahre Fahren",
-                "timeline-2-desc": "Privater Transportfahrer, Familie unterstützen während größerer Träume",
-                "timeline-3-title": "Gesundheitskrise als Katalysator",
-                "timeline-3-desc": "Krankheit erzwang Karrierepause, wurde Chance für Neuerfindung",
-                "timeline-4-title": "Autodidaktischer KI-Experte",
-                "timeline-4-desc": "5 Monate von null auf 8 funktionierende KI-Produkte - solo",
-                "timeline-5-title": "GPU-Durchbruch",
-                "timeline-5-desc": "Entwickelte 15-25% Energie-Optimierungstechnologie",
-                "achievement-1-label": "KI-Produkte Erstellt",
-                "achievement-1-desc": "In 5 Monaten",
-                "achievement-2-label": "Externe Finanzierung",
-                "achievement-2-desc": "Reines Bootstrap",
-                "achievement-3-label": "Energieeinsparung",
-                "achievement-3-desc": "Bewiesene Ergebnisse",
-                "achievement-4-label": "Solo-Entwickler",
-                "achievement-4-desc": "Kein Team benötigt",
+                // Demo Section
+                "demo-title": "Live GPU-Optimierung Demo",
+                "demo-subtitle": "Sehen Sie unsere ML-gesteuerten DVFS-Algorithmen in Aktion mit Echtzeit-GPU-Metriken-Simulation",
+                "demo-algorithm": "Optimierungsalgorithmus",
+                "demo-optimization": "Optimierungsstatus",
+                "demo-disabled": "Deaktiviert",
+                "demo-enabled": "Aktiviert",
+                "demo-workload": "Workload-Simulation",
+                "metric-power": "Stromverbrauch",
+                "metric-temperature": "Temperatur",
+                "metric-performance": "Leistung",
+                "metric-efficiency": "Effizienz",
+                "demo-realtime": "Echtzeit-Stromverbrauch",
+                "legend-baseline": "Baseline",
+                "legend-optimized": "Optimiert",
+                "result-energy": "Energie Gespart",
+                "result-energy-desc": "Durchschnittliche Reduktion",
+                "result-cost": "Kosteneinsparungen",
+                "result-cost-desc": "Pro GPU",
+                "result-performance": "Leistung",
+                "result-performance-desc": "Beibehalten",
+                "result-co2": "CO2 Reduktion",
+                "result-co2-desc": "Pro GPU",
+                "demo-cta-title": "Bereit, Ihre GPU-Infrastruktur zu Optimieren?",
+                "demo-cta-text": "Beginnen Sie Energiekosten zu sparen mit unserer bewährten ML-gesteuerten Optimierungstechnologie.",
+                "demo-btn-calculator": "Ihre Einsparungen Berechnen →",
+                "demo-btn-contact": "Demo Anfordern",
                 
                 // Research Section
                 "research-title": "Forschung & Entwicklung",
@@ -2627,6 +3337,39 @@
                 "ai-case3-desc": "Intelligente Stromverteilung über DGX H100-Cluster und A100-Pods. Maximieren Sie Durchsatz pro Watt.",
                 "ai-case3-savings": "15-25% Energieeinsparung im großen Maßstab",
                 
+                // Crypto Use Cases
+                "crypto-case1-title": "Bitcoin Mining (SHA-256)",
+                "crypto-case1-desc": "Optimieren Sie ASIC und GPU Mining-Operationen für maximale Effizienz. Perfekt für großangelegte Mining-Farmen.",
+                "crypto-case1-savings": "15-20% Energiereduktion",
+                "crypto-case2-title": "Scrypt Algorithmus Mining",
+                "crypto-case2-desc": "Verbesserte Leistung für Litecoin und andere Scrypt-basierte Kryptowährungen. Behalten Sie Hash-Raten bei während Sie Strom sparen.",
+                "crypto-case2-savings": "18-22% Einsparungen erreicht",
+                "crypto-case3-title": "Privacy Coins (RandomX)",
+                "crypto-case3-desc": "Spezialisierte Optimierung für Monero und datenschutzorientiertes Mining. CPU und GPU Effizienzverbesserungen.",
+                "crypto-case3-savings": "15-18% Stromreduktion",
+                
+                // HPC Use Cases
+                "hpc-case1-title": "Genomanalyse",
+                "hpc-case1-desc": "Beschleunigen Sie Medikamentenentwicklung und genomische Forschung während Sie Rechenkosten mit NVIDIA Clara Optimierung reduzieren.",
+                "hpc-case1-savings": "100-600 TFLOPS Effizienz",
+                "hpc-case2-title": "Autonomes Fahren",
+                "hpc-case2-desc": "Optimieren Sie NVIDIA DRIVE Simulationen für autonome Fahrzeugentwicklung. Echtzeitverarbeitung mit geringerem Energieverbrauch.",
+                "hpc-case2-savings": "4x Energiereduktion",
+                "hpc-case3-title": "Klimamodellierung",
+                "hpc-case3-desc": "Ermöglichen Sie umfangreichere Klimasimulationen mit bestehender Infrastruktur. 127 GWh jährlich über Systeme gespart.",
+                "hpc-case3-savings": "50x Beschleunigungspotential",
+                
+                // Cloud Use Cases
+                "cloud-case1-title": "GPU-as-a-Service",
+                "cloud-case1-desc": "Reduzieren Sie Betriebskosten für GPU-Cloud-Services. Kompatibel mit AWS, Google Cloud und Azure GPU-Instanzen.",
+                "cloud-case1-savings": "Senken Sie TCO um 20%",
+                "cloud-case2-title": "Rechenzentrum-Effizienz",
+                "cloud-case2-desc": "Erreichen Sie Nachhaltigkeitsziele während Sie GPU-Kapazität erweitern. Perfekt für Equinix, Digital Realty Operationen.",
+                "cloud-case2-savings": "Verbessern Sie PUE-Metriken",
+                "cloud-case3-title": "CO2-Fußabdruck",
+                "cloud-case3-desc": "Richten Sie sich nach ESG-Verpflichtungen und erneuerbaren Energie-Initiativen aus. Reduzieren Sie CO2-Emissionen erheblich.",
+                "cloud-case3-savings": "500 Tonnen CO2 gespart",
+                
                 // Calculator
                 "calc-title": "Berechnen Sie Ihren ROI",
                 "calc-subtitle": "Echtzeit-Preisdaten • Sofortige Einsparungsprojektion • Branchenspezifische Berechnungen",
@@ -2654,7 +3397,6 @@
                 "result-opt-consumption": "Optimierter Verbrauch",
                 "result-energy-saved": "Energie Gespart",
                 "result-cost-savings": "Kosteneinsparungen",
-                "result-co2": "CO2-Reduktion",
                 "result-roi": "ROI-Zeitraum",
                 "result-monthly-cost": "Monatliche Energiekosten",
                 "result-opt-cost": "Optimierte Kosten",
@@ -2720,16 +3462,14 @@
                 "footer-copyright": "© 2025 GPU-DVFS Enterprise. Alle Rechte vorbehalten. | Datenschutzrichtlinie | Nutzungsbedingungen"
             },
             fr: {
-                // Navigation
                 "nav-solutions": "Solutions",
-                "nav-about": "À Propos",
+                "nav-demo-link": "Démo Live",
                 "nav-research": "Recherche",
                 "nav-industries": "Industries",
                 "nav-calculator": "Calculateur ROI",
                 "nav-technology": "Technologie",
-                "nav-demo": "Planifier Démo →",
-                
-                // Hero Section
+                "nav-contact": "Contact",
+                "nav-about": "À Propos →",
                 "hero-title": "Optimisation GPU Enterprise pour Charges de Travail IA & Crypto",
                 "hero-subtitle": "Framework DVFS révolutionnaire piloté par ML offrant 15-25% d'économies d'énergie pour l'entraînement LLM, le minage de cryptomonnaies et les charges de travail HPC.",
                 "stat-energy": "Réduction Énergétique",
@@ -2737,6 +3477,34 @@
                 "stat-saved": "Économisé par Exécution GPT",
                 "btn-calculate": "Calculer Vos Économies →",
                 "btn-research": "Voir Recherche",
+                
+                // Demo Section
+                "demo-title": "Démo d'Optimisation GPU en Direct",
+                "demo-subtitle": "Voyez nos algorithmes DVFS pilotés par ML en action avec simulation de métriques GPU en temps réel",
+                "demo-algorithm": "Algorithme d'Optimisation",
+                "demo-optimization": "Statut d'Optimisation",
+                "demo-disabled": "Désactivé",
+                "demo-enabled": "Activé",
+                "demo-workload": "Simulation de Charge de Travail",
+                "metric-power": "Consommation d'Énergie",
+                "metric-temperature": "Température",
+                "metric-performance": "Performance",
+                "metric-efficiency": "Efficacité",
+                "demo-realtime": "Consommation d'Énergie Temps Réel",
+                "legend-baseline": "Ligne de Base",
+                "legend-optimized": "Optimisé",
+                "result-energy": "Énergie Économisée",
+                "result-energy-desc": "Réduction moyenne",
+                "result-cost": "Économies de Coûts",
+                "result-cost-desc": "Par GPU",
+                "result-performance": "Performance",
+                "result-performance-desc": "Maintenue",
+                "result-co2": "Réduction CO2",
+                "result-co2-desc": "Par GPU",
+                "demo-cta-title": "Prêt à Optimiser Votre Infrastructure GPU ?",
+                "demo-cta-text": "Commencez à économiser sur les coûts énergétiques avec notre technologie d'optimisation ML éprouvée.",
+                "demo-btn-calculator": "Calculer Vos Économies →",
+                "demo-btn-contact": "Demander une Démo",
                 
                 // About Section
                 "about-title": "Du Chauffeur de Taxi au Pionnier IA",
@@ -2767,31 +3535,20 @@
                 "research-subtitle": "Notre technologie d'optimisation GPU est soutenue par une recherche rigoureuse et des tests réels sur plusieurs architectures et charges de travail",
                 "research-whitepaper-title": "Livre Blanc Technique",
                 "research-whitepaper-desc": "Documentation complète de nos algorithmes DVFS et approche d'optimisation pilotée par ML",
-                "research-benchmark-title": "Résultats Benchmark",
+                "research-benchmark-title": "Résultats de Benchmarks",
                 "research-benchmark-desc": "Analyse de performance détaillée sur plusieurs architectures GPU et charges de travail",
-                "research-security-title": "Rapport Sécurité & Sûreté",
-                "research-security-desc": "Analyse de sécurité complète et protocoles de sûreté pour déploiement enterprise",
-                "research-technical-title": "Plongée Technique",
+                "research-security-title": "Rapport de Sécurité & Sûreté",
+                "research-security-desc": "Analyse de sécurité complète et protocoles de sûreté pour déploiement d'entreprise",
+                "research-technical-title": "Plongée Technique Approfondie",
                 "research-technical-desc": "Documentation technique approfondie avec détails d'implémentation et spécifications API",
                 
                 // Industry Section
-                "industry-title": "Solutions Adaptées à Toutes les Industries",
+                "industry-title": "Solutions Adaptées Selon les Industries",
                 "industry-subtitle": "Notre framework adaptatif optimise les performances GPU pour diverses charges de travail computationnelles",
                 "tab-ai": "IA & LLMs",
                 "tab-crypto": "Minage Crypto",
                 "tab-hpc": "HPC & Recherche",
                 "tab-cloud": "Fournisseurs Cloud",
-                
-                // AI Use Cases
-                "ai-case1-title": "Optimisation Entraînement LLM",
-                "ai-case1-desc": "Réduisez la consommation d'énergie pour l'entraînement de modèles comme GPT-4, Claude et Llama. Économisez des millions en coûts d'électricité par exécution d'entraînement.",
-                "ai-case1-savings": "Économisez €42.600-71.000 par exécution GPT-3",
-                "ai-case2-title": "Accélération Inférence",
-                "ai-case2-desc": "Optimisez les clusters GPU pour l'inférence temps réel, réduisant les coûts opérationnels tout en maintenant une latence sub-milliseconde.",
-                "ai-case2-savings": "20% de réduction des coûts d'inférence",
-                "ai-case3-title": "Mise à l'Échelle Multi-GPU",
-                "ai-case3-desc": "Distribution intelligente de puissance sur les clusters DGX H100 et pods A100. Maximisez le débit par watt.",
-                "ai-case3-savings": "15-25% d'économies d'énergie à grande échelle",
                 
                 // Calculator
                 "calc-title": "Calculez Votre ROI",
@@ -2799,55 +3556,10 @@
                 "calc-mode-ai": "Entraînement IA/LLM",
                 "calc-mode-crypto": "Minage Crypto",
                 "calc-mode-custom": "Charge de Travail Personnalisée",
-                "calc-gpu-model": "Modèle GPU",
-                "calc-gpu-count": "Nombre de GPUs",
-                "calc-duration": "Durée Entraînement (jours)",
-                "calc-energy-cost": "Coût Énergétique (€/kWh)",
-                "calc-cryptocurrency": "Cryptomonnaie",
-                "calc-hashrate": "Taux de Hachage Moyen (TH/s)",
-                "calc-workload-type": "Type de Charge de Travail",
-                "calc-custom-config": "Configuration Personnalisée",
-                "calc-total-power": "Puissance GPU Totale (kW)",
-                "calc-operating-hours": "Heures d'Exploitation/Jour",
-                "workload-genomic": "Analyse Génomique",
-                "workload-climate": "Modélisation Climatique",
-                "workload-financial": "Modélisation Financière",
-                "workload-rendering": "Ferme de Rendu",
-                "workload-custom": "HPC Personnalisé",
-                
-                // Results
-                "result-base-consumption": "Consommation Énergétique (Base)",
-                "result-opt-consumption": "Consommation Optimisée",
-                "result-energy-saved": "Énergie Économisée",
-                "result-cost-savings": "Économies de Coûts",
-                "result-co2": "Réduction CO2",
-                "result-roi": "Période ROI",
-                "result-monthly-cost": "Coût Énergétique Mensuel",
-                "result-opt-cost": "Coût Optimisé",
-                "result-monthly-savings": "Économies Mensuelles",
-                "result-annual-savings": "Économies Annuelles",
-                "result-5year": "Économies 5 Ans",
-                "result-breakeven": "Seuil de Rentabilité",
-                "result-daily-cost": "Coût Énergétique Quotidien",
-                "result-opt-monthly": "Optimisé Mensuel",
-                "result-tco": "Réduction TCO",
-                "result-payback": "Période de Remboursement",
                 
                 // Architecture
-                "arch-title": "Stack Technologique de Niveau Enterprise",
+                "arch-title": "Stack Technologique de Niveau Entreprise",
                 "arch-subtitle": "Construit sur des algorithmes ML éprouvés et optimisé pour les environnements de production",
-                "arch-ml-title": "Optimisation Pilotée par ML",
-                "arch-ml-desc": "Les algorithmes auto-apprenants s'adaptent aux modèles de charge de travail en temps réel, améliorant continuellement l'efficacité sans intervention manuelle.",
-                "arch-dvfs-title": "Contrôle DVFS Dynamique",
-                "arch-dvfs-desc": "Ajustements de tension et fréquence au niveau microseconde basés sur les caractéristiques de charge de travail et conditions thermiques.",
-                "arch-compat-title": "Compatibilité Universelle",
-                "arch-compat-desc": "Intégration transparente avec l'infrastructure existante. Fonctionne avec tous les modèles GPU majeurs et frameworks logiciels.",
-                "arch-analytics-title": "Analytique Temps Réel",
-                "arch-analytics-desc": "Tableau de bord de surveillance complet avec analytique prédictive et capacités de détection d'anomalies.",
-                "arch-security-title": "Sécurité Enterprise",
-                "arch-security-desc": "Conforme SOC 2 Type II avec chiffrement de bout en bout et contrôle d'accès basé sur les rôles.",
-                "arch-api-title": "Design API-First",
-                "arch-api-desc": "APIs RESTful et gRPC pour intégration transparente avec les systèmes d'orchestration et de surveillance existants.",
                 
                 // Contact
                 "contact-title": "Optimisons Votre Infrastructure GPU",
@@ -2859,13 +3571,7 @@
                 "company-reg": "Enregistrement Commercial : 1024585462",
                 "company-founded": "Fondée : 1er juillet 2025",
                 "company-address": "Adresse Enregistrée : Rapertingenstraat 11 bus 4, 3500 Hasselt, Belgique",
-                "company-compliance": "✓ Conforme RGPD • ✓ Prêt EU AI Act • ✓ Éligible Projet Développement VLAIO",
-                
-                // CTA
-                "cta-title": "Transformez Votre Infrastructure GPU Aujourd'hui",
-                "cta-text": "Rejoignez les leaders de l'industrie économisant des millions sur les coûts énergétiques tout en faisant progresser la recherche IA et computationnelle",
-                "cta-demo": "Planifier Démo Enterprise →",
-                "cta-calculate": "Calculer ROI",
+                "company-compliance": "✓ Conforme RGPD • ✓ Prêt pour l'Acte IA UE • ✓ Éligible Projet de Développement VLAIO",
                 
                 // Footer
                 "footer-desc": "Technologie révolutionnaire d'optimisation GPU offrant 15-25% d'économies d'énergie pour l'IA, le minage de cryptomonnaies et les charges de travail HPC.",
@@ -2889,28 +3595,456 @@
 
         let currentLanguage = 'en';
 
-        // Language switcher
+        // Global state for demo and calculator
+        let demoState = {
+            optimization: true,
+            algorithm: 'dvfs',
+            workload: 'ai-training',
+            metrics: {
+                power: 450,
+                temperature: 72,
+                performance: 100,
+                efficiency: 85
+            },
+            chart: null,
+            chartData: {
+                baseline: [],
+                optimized: []
+            }
+        };
+
+        let calculatorData = {
+            ai: {
+                gpuModel: 'h100',
+                gpuCount: 1000,
+                duration: 90,
+                energyCost: 0.30
+            },
+            crypto: {
+                cryptocurrency: 'btc',
+                gpuCount: 500,
+                hashrate: 100,
+                energyCost: 0.15
+            },
+            custom: {
+                totalPower: 500,
+                operatingHours: 24,
+                energyCost: 0.25
+            }
+        };
+
+        // Language switcher (improved)
         function switchLanguage(lang, event) {
             currentLanguage = lang;
             
+            // Update active language button
             document.querySelectorAll('.lang-btn').forEach(btn => {
                 btn.classList.remove('active');
             });
             event.target.classList.add('active');
             
+            // Update content
             updateContent(lang);
+            
+            console.log(`Language switched to: ${lang}`);
         }
 
         function updateContent(lang) {
             const t = translations[lang];
+            if (!t) {
+                console.warn(`No translations found for language: ${lang}`);
+                return;
+            }
             
             // Update all elements with data-translate attribute
             document.querySelectorAll('[data-translate]').forEach(element => {
                 const key = element.getAttribute('data-translate');
                 if (t[key]) {
-                    element.textContent = t[key];
+                    // Handle different element types
+                    if (element.tagName === 'INPUT' && element.type === 'placeholder') {
+                        element.placeholder = t[key];
+                    } else {
+                        element.textContent = t[key];
+                    }
+                } else {
+                    console.warn(`Translation key '${key}' not found for language '${lang}'`);
                 }
             });
+            
+            console.log(`Content updated for language: ${lang}`);
+        }
+
+        // Auto-detect browser language on load
+        function detectBrowserLanguage() {
+            const browserLang = navigator.language || navigator.userLanguage;
+            const supportedLangs = ['en', 'nl', 'de', 'fr'];
+            
+            let detectedLang = 'en'; // default
+            if (browserLang.startsWith('nl')) detectedLang = 'nl';
+            else if (browserLang.startsWith('de')) detectedLang = 'de';
+            else if (browserLang.startsWith('fr')) detectedLang = 'fr';
+            
+            if (supportedLangs.includes(detectedLang)) {
+                currentLanguage = detectedLang;
+                
+                // Update active language button
+                document.querySelectorAll('.lang-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                    if (btn.onclick && btn.onclick.toString().includes(`'${detectedLang}'`)) {
+                        btn.classList.add('active');
+                    }
+                });
+                
+                updateContent(detectedLang);
+                console.log(`Auto-detected browser language: ${detectedLang}`);
+            }
+        }
+
+        // Algorithm switcher for demo
+        function switchAlgorithm(algorithm) {
+            demoState.algorithm = algorithm;
+            
+            // Update active algorithm button
+            document.querySelectorAll('.algo-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.querySelector(`[onclick="switchAlgorithm('${algorithm}')"]`).classList.add('active');
+            
+            // Update metrics based on algorithm
+            updateDemoMetrics();
+        }
+
+        // Toggle optimization in demo
+        function toggleOptimization(enabled) {
+            demoState.optimization = enabled;
+            
+            // Update toggle switch appearance
+            const toggle = document.querySelector('.optimization-toggle');
+            if (toggle) {
+                toggle.classList.toggle('active', enabled);
+            }
+            
+            // Update metrics
+            updateDemoMetrics();
+        }
+
+        // Update demo metrics display
+        function updateDemoMetrics() {
+            const baseMetrics = {
+                'ai-training': {
+                    dvfs: { power: 450, temperature: 75, performance: 100, efficiency: 85 },
+                    frequency: { power: 420, temperature: 72, performance: 98, efficiency: 88 },
+                    voltage: { power: 435, temperature: 73, performance: 99, efficiency: 87 }
+                },
+                'crypto-mining': {
+                    dvfs: { power: 380, temperature: 68, performance: 100, efficiency: 92 },
+                    frequency: { power: 360, temperature: 65, performance: 98, efficiency: 95 },
+                    voltage: { power: 370, temperature: 66, performance: 99, efficiency: 94 }
+                },
+                'inference': {
+                    dvfs: { power: 220, temperature: 55, performance: 100, efficiency: 95 },
+                    frequency: { power: 200, temperature: 52, performance: 99, efficiency: 98 },
+                    voltage: { power: 210, temperature: 53, performance: 99, efficiency: 97 }
+                },
+                'hpc': {
+                    dvfs: { power: 500, temperature: 78, performance: 100, efficiency: 82 },
+                    frequency: { power: 480, temperature: 76, performance: 97, efficiency: 85 },
+                    voltage: { power: 490, temperature: 77, performance: 98, efficiency: 84 }
+                }
+            };
+            
+            let metrics = baseMetrics[demoState.workload][demoState.algorithm];
+            
+            if (demoState.optimization) {
+                metrics = {
+                    power: Math.round(metrics.power * 0.775), // 22.5% reduction
+                    temperature: Math.round(metrics.temperature * 0.92), // 8% reduction
+                    performance: Math.max(95, metrics.performance - 2), // Slight performance impact
+                    efficiency: Math.round(metrics.efficiency * 1.18) // 18% improvement
+                };
+            }
+            
+            // Update DOM elements with animations
+            updateMetricWithAnimation('demo-power', metrics.power + 'W');
+            updateMetricWithAnimation('demo-temperature', metrics.temperature + '°C');
+            updateMetricWithAnimation('demo-performance', metrics.performance + '%');
+            updateMetricWithAnimation('demo-efficiency', metrics.efficiency + '%');
+            
+            // Update change indicators
+            if (demoState.optimization) {
+                updateChangeIndicator('power-change', '-22.5%', true);
+                updateChangeIndicator('temp-change', '-8%', true);
+                updateChangeIndicator('perf-change', '-2%', false);
+                updateChangeIndicator('eff-change', '+18%', true);
+            } else {
+                updateChangeIndicator('power-change', '0%', false);
+                updateChangeIndicator('temp-change', '0%', false);
+                updateChangeIndicator('perf-change', '0%', false);
+                updateChangeIndicator('eff-change', '0%', false);
+            }
+            
+            // Update results
+            updateDemoResults(metrics);
+            
+            // Update chart
+            updatePowerChart(metrics);
+            
+            demoState.metrics = metrics;
+        }
+
+        function updateMetricWithAnimation(elementId, value) {
+            const element = document.getElementById(elementId);
+            if (element) {
+                element.style.transform = 'scale(1.1)';
+                element.style.color = 'var(--accent)';
+                setTimeout(() => {
+                    element.textContent = value;
+                    element.style.transform = 'scale(1)';
+                    element.style.color = '';
+                }, 100);
+            }
+        }
+
+        function updateChangeIndicator(elementId, value, isPositive) {
+            const element = document.getElementById(elementId);
+            if (element) {
+                element.textContent = value;
+                element.style.background = isPositive ? 'var(--gradient-accent)' : '#ff6b6b';
+                element.style.color = isPositive ? 'var(--dark)' : 'white';
+            }
+        }
+
+        function updateDemoResults(metrics) {
+            const baseline = demoState.optimization ? metrics.power / 0.775 : metrics.power;
+            const energySaved = demoState.optimization ? ((baseline - metrics.power) / baseline * 100).toFixed(1) : '0';
+            const costSaved = demoState.optimization ? Math.round((baseline - metrics.power) * 0.30 * 24 / 1000) : 0;
+            const performanceImpact = demoState.optimization ? metrics.performance.toFixed(1) : '100.0';
+            const co2Saved = demoState.optimization ? ((baseline - metrics.power) * 0.5 / 1000).toFixed(1) : '0.0';
+            
+            updateResultWithAnimation('demo-energy-saved', energySaved + '%');
+            updateResultWithAnimation('demo-cost-saved', '€' + costSaved + '/day');
+            updateResultWithAnimation('demo-performance-impact', performanceImpact + '%');
+            updateResultWithAnimation('demo-co2-saved', co2Saved + 'kg/day');
+        }
+
+        function changeWorkload(workload) {
+            demoState.workload = workload;
+            updateDemoMetrics();
+            
+            // Update GPU cores animation based on workload
+            const cores = document.querySelectorAll('.core');
+            cores.forEach((core, index) => {
+                const intensity = getWorkloadIntensity(workload);
+                core.style.animationDelay = (index * 0.1 * intensity) + 's';
+                core.style.opacity = intensity;
+            });
+        }
+
+        function getWorkloadIntensity(workload) {
+            const intensities = {
+                'ai-training': 1.0,
+                'crypto-mining': 0.9,
+                'hpc': 0.95,
+                'inference': 0.7
+            };
+            return intensities[workload] || 0.8;
+        }
+
+        function initializePowerChart() {
+            const canvas = document.getElementById('powerChart');
+            if (!canvas || !canvas.getContext) return;
+            
+            const ctx = canvas.getContext('2d');
+            demoState.chart = {
+                canvas: canvas,
+                ctx: ctx,
+                width: canvas.width,
+                height: canvas.height,
+                dataPoints: 50,
+                currentPoint: 0
+            };
+            
+            // Initialize data arrays
+            for (let i = 0; i < demoState.chart.dataPoints; i++) {
+                demoState.chartData.baseline.push(450 + Math.random() * 20 - 10);
+                demoState.chartData.optimized.push(350 + Math.random() * 15 - 7.5);
+            }
+            
+            // Start chart animation
+            setInterval(updatePowerChart, 1000);
+        }
+
+        function updatePowerChart(metrics) {
+            if (!demoState.chart) return;
+            
+            const { ctx, width, height, dataPoints } = demoState.chart;
+            
+            // Clear canvas
+            ctx.clearRect(0, 0, width, height);
+            
+            // Add new data points
+            const baselinePower = metrics ? metrics.power / 0.775 : 450;
+            const optimizedPower = metrics ? metrics.power : 350;
+            
+            demoState.chartData.baseline.shift();
+            demoState.chartData.optimized.shift();
+            demoState.chartData.baseline.push(baselinePower + Math.random() * 20 - 10);
+            demoState.chartData.optimized.push(optimizedPower + Math.random() * 15 - 7.5);
+            
+            // Draw grid
+            ctx.strokeStyle = 'rgba(255, 255, 255, 0.1)';
+            ctx.lineWidth = 1;
+            for (let i = 0; i <= 5; i++) {
+                const y = (height / 5) * i;
+                ctx.beginPath();
+                ctx.moveTo(0, y);
+                ctx.lineTo(width, y);
+                ctx.stroke();
+            }
+            
+            // Draw baseline line
+            ctx.strokeStyle = '#ff6b6b';
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            for (let i = 0; i < dataPoints; i++) {
+                const x = (width / (dataPoints - 1)) * i;
+                const y = height - ((demoState.chartData.baseline[i] - 200) / 400) * height;
+                if (i === 0) ctx.moveTo(x, y);
+                else ctx.lineTo(x, y);
+            }
+            ctx.stroke();
+            
+            // Draw optimized line
+            ctx.strokeStyle = '#00ff88';
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            for (let i = 0; i < dataPoints; i++) {
+                const x = (width / (dataPoints - 1)) * i;
+                const y = height - ((demoState.chartData.optimized[i] - 200) / 400) * height;
+                if (i === 0) ctx.moveTo(x, y);
+                else ctx.lineTo(x, y);
+            }
+            ctx.stroke();
+        }
+
+        // Download modal functions
+        function openDownloadModal(documentType) {
+            const documentInfo = {
+                'whitepaper': {
+                    title: 'GPU-DVFS Technical White Paper',
+                    description: 'Comprehensive analysis of GPU-DVFS optimization across Bitcoin, Litecoin, Monero, Ravencoin, and Kaspa with proven 15-25% energy savings.',
+                    filename: 'GPU-DVFS-Whitepaper.pdf',
+                    pages: '28 pages',
+                    size: '2.8 MB'
+                },
+                'benchmark': {
+                    title: 'GPU-DVFS Benchmark Report',
+                    description: 'Detailed performance analysis across multiple GPU architectures and workloads with real-world testing data.',
+                    filename: 'GPU-DVFS-Benchmarks.pdf',
+                    pages: '15 pages',
+                    size: '1.2 MB'
+                },
+                'security': {
+                    title: 'Security & Safety Report',
+                    description: 'Comprehensive security analysis and safety protocols for enterprise deployment with compliance certifications.',
+                    filename: 'GPU-DVFS-Security-Report.pdf',
+                    pages: '12 pages',
+                    size: '0.9 MB'
+                },
+                'technical': {
+                    title: 'Technical Deep Dive',
+                    description: 'Advanced technical documentation with proprietary algorithm details, ML model architectures, and implementation specifics.',
+                    filename: 'GPU-DVFS-Technical-Guide.pdf',
+                    pages: '35 pages',
+                    size: '4.1 MB'
+                }
+            };
+
+            // Create modal if it doesn't exist
+            if (!document.getElementById('downloadModal')) {
+                createDownloadModal();
+            }
+
+            const modal = document.getElementById('downloadModal');
+            const doc = documentInfo[documentType];
+            
+            document.getElementById('modalTitle').textContent = doc.title;
+            document.getElementById('modalDescription').textContent = doc.description;
+            document.getElementById('modalFileInfo').innerHTML = `📄 ${doc.pages} • 💾 ${doc.size} • 🔒 SECURE`;
+            document.getElementById('downloadButton').onclick = () => downloadDocument(doc.filename);
+            
+            modal.style.display = 'flex';
+        }
+
+        function createDownloadModal() {
+            const modalHTML = `
+                <div id="downloadModal" style="display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.8); justify-content: center; align-items: center;">
+                    <div style="background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%); padding: 2rem; border-radius: 15px; max-width: 500px; width: 90%; border: 2px solid var(--accent); position: relative;">
+                        <span onclick="closeDownloadModal()" style="position: absolute; top: 15px; right: 20px; font-size: 28px; font-weight: bold; cursor: pointer; color: #fff;">&times;</span>
+                        
+                        <h3 id="modalTitle" style="color: var(--accent); margin-bottom: 1rem; font-size: 1.5rem;">Document Title</h3>
+                        <p id="modalDescription" style="color: #ccc; margin-bottom: 1rem; line-height: 1.5;">Document description</p>
+                        <div id="modalFileInfo" style="background: rgba(0,255,255,0.1); padding: 0.5rem; border-radius: 8px; margin-bottom: 1.5rem; color: var(--accent); text-align: center;">File info</div>
+                        
+                        <form id="downloadForm">
+                            <div style="margin-bottom: 1rem;">
+                                <label style="color: var(--accent); display: block; margin-bottom: 0.5rem;">Business Email *</label>
+                                <input type="email" name="email" required style="width: 100%; padding: 0.75rem; border: 2px solid #444; border-radius: 8px; background: #333; color: #fff; font-size: 1rem;" placeholder="your.email@company.com">
+                            </div>
+                            
+                            <div style="margin-bottom: 1rem;">
+                                <label style="color: var(--accent); display: block; margin-bottom: 0.5rem;">Company Name *</label>
+                                <input type="text" name="company" required style="width: 100%; padding: 0.75rem; border: 2px solid #444; border-radius: 8px; background: #333; color: #fff; font-size: 1rem;" placeholder="Your Company">
+                            </div>
+                            
+                            <div style="margin-bottom: 1.5rem;">
+                                <label style="display: flex; align-items: center; color: #ccc; font-size: 0.9rem;">
+                                    <input type="checkbox" name="consent" required style="margin-right: 0.5rem;">
+                                    I agree to receive follow-up communications about GPU-DVFS Enterprise solutions
+                                </label>
+                            </div>
+                            
+                            <button type="button" id="downloadButton" style="width: 100%; padding: 1rem; background: linear-gradient(135deg, var(--accent) 0%, #00ff88 100%); border: none; border-radius: 8px; color: #000; font-weight: bold; font-size: 1rem; cursor: pointer;">
+                                Download Document
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            `;
+            document.body.insertAdjacentHTML('beforeend', modalHTML);
+        }
+
+        function closeDownloadModal() {
+            const modal = document.getElementById('downloadModal');
+            if (modal) {
+                modal.style.display = 'none';
+                document.getElementById('downloadForm').reset();
+            }
+        }
+
+        function downloadDocument(filename) {
+            const form = document.getElementById('downloadForm');
+            const email = form.email.value;
+            const company = form.company.value;
+            const consent = form.consent.checked;
+
+            if (!email || !company) {
+                alert('Please fill in all required fields (Email and Company Name)');
+                return;
+            }
+
+            if (!consent) {
+                alert('Please check the consent box to proceed.');
+                return;
+            }
+
+            // Simulate download (in real implementation, this would trigger actual download)
+            alert(`Thank you! Document request sent. We'll email you the ${filename} shortly.`);
+            
+            // Send email notification to business owner
+            window.open(`mailto:arturgabrielian4@gmail.com?subject=Document Download Request: ${filename}&body=New document download request from ${email} at ${company}`);
+            
+            closeDownloadModal();
         }
 
         // Navbar scroll effect
@@ -2923,7 +4057,7 @@
             }
         });
 
-        // Industry switcher
+        // Industry switcher (improved)
         function switchIndustry(industry, event) {
             // Update tabs
             document.querySelectorAll('.industry-tab').forEach(tab => {
@@ -2931,14 +4065,22 @@
             });
             event.target.classList.add('active');
             
-            // Update content
+            // Update content with fade effect
             document.querySelectorAll('.industry-content').forEach(content => {
                 content.classList.remove('active');
+                content.style.opacity = '0';
             });
-            document.getElementById(industry + '-content').classList.add('active');
+            
+            setTimeout(() => {
+                const targetContent = document.getElementById(industry + '-content');
+                if (targetContent) {
+                    targetContent.classList.add('active');
+                    targetContent.style.opacity = '1';
+                }
+            }, 150);
         }
 
-        // Calculator mode switcher
+        // Calculator mode switcher (improved)
         function switchCalcMode(mode, event) {
             // Update tabs
             document.querySelectorAll('.calc-mode').forEach(tab => {
@@ -2950,15 +4092,48 @@
             document.querySelectorAll('.calc-content').forEach(content => {
                 content.classList.remove('active');
             });
-            document.getElementById('calc-' + mode).classList.add('active');
+            const targetContent = document.getElementById('calc-' + mode);
+            if (targetContent) {
+                targetContent.classList.add('active');
+            }
+            
+            // Update calculator for new mode
+            updateCalculator(mode);
         }
 
-        // AI Calculator Logic
+        // Main calculator update function
+        function updateCalculator(mode) {
+            switch(mode) {
+                case 'ai':
+                    updateAICalculator();
+                    break;
+                case 'crypto':
+                    updateCryptoCalculator();
+                    break;
+                case 'custom':
+                    updateCustomCalculator();
+                    break;
+                default:
+                    updateAICalculator();
+            }
+        }
+
+        // AI Calculator Logic (enhanced)
         function updateAICalculator() {
+            // Get current values
             const gpuSelect = document.getElementById('ai-gpu-select');
-            const gpuCount = document.getElementById('ai-gpu-slider').value;
-            const duration = document.getElementById('ai-duration-slider').value;
-            const energyCost = document.getElementById('ai-cost-slider').value;
+            const gpuSlider = document.getElementById('ai-gpu-slider');
+            const durationSlider = document.getElementById('ai-duration-slider');
+            const costSlider = document.getElementById('ai-cost-slider');
+            
+            if (!gpuSelect || !gpuSlider || !durationSlider || !costSlider) {
+                console.warn('AI Calculator elements not found');
+                return;
+            }
+            
+            const gpuCount = parseInt(gpuSlider.value);
+            const duration = parseInt(durationSlider.value);
+            const energyCost = parseFloat(costSlider.value);
             
             // GPU power consumption (watts)
             const gpuPower = {
@@ -2972,14 +4147,21 @@
             const powerPerGPU = gpuPower[selectedGPU] / 1000; // Convert to kW
             
             // Update displays
-            document.getElementById('ai-gpu-count').textContent = gpuCount;
-            document.getElementById('ai-duration').textContent = duration;
-            document.getElementById('ai-cost').textContent = '€' + parseFloat(energyCost).toFixed(2);
+            const elements = {
+                'ai-gpu-count': gpuCount.toLocaleString(),
+                'ai-duration': duration,
+                'ai-cost': '€' + energyCost.toFixed(2)
+            };
+            
+            Object.entries(elements).forEach(([id, value]) => {
+                const element = document.getElementById(id);
+                if (element) element.textContent = value;
+            });
             
             // Update slider tracks
-            document.getElementById('ai-gpu-track').style.width = ((gpuCount - 100) / 9900 * 100) + '%';
-            document.getElementById('ai-duration-track').style.width = ((duration - 7) / 358 * 100) + '%';
-            document.getElementById('ai-cost-track').style.width = ((energyCost - 0.10) / 0.40 * 100) + '%';
+            updateSliderTrack('ai-gpu-track', (gpuCount - 100) / 9900 * 100);
+            updateSliderTrack('ai-duration-track', (duration - 7) / 358 * 100);
+            updateSliderTrack('ai-cost-track', (energyCost - 0.10) / 0.40 * 100);
             
             // Calculate consumption
             const hoursPerDay = 24;
@@ -2992,36 +4174,52 @@
             const co2Factor = 0.5; // tonnes CO2 per MWh
             const co2Saved = energySaved * co2Factor;
             
-            // Update results
-            document.getElementById('ai-base-consumption').textContent = baseConsumption.toFixed(0).toLocaleString() + ' MWh';
-            document.getElementById('ai-opt-consumption').textContent = optimizedConsumption.toFixed(0).toLocaleString() + ' MWh';
-            document.getElementById('ai-energy-saved').textContent = energySaved.toFixed(0).toLocaleString() + ' MWh';
-            document.getElementById('ai-cost-savings').textContent = '€' + costSavings.toFixed(0).toLocaleString();
-            document.getElementById('ai-co2-saved').textContent = co2Saved.toFixed(0).toLocaleString() + ' tonnes';
+            // Update results with animation
+            updateResultWithAnimation('ai-base-consumption', baseConsumption.toFixed(0).toLocaleString() + ' MWh');
+            updateResultWithAnimation('ai-opt-consumption', optimizedConsumption.toFixed(0).toLocaleString() + ' MWh');
+            updateResultWithAnimation('ai-energy-saved', energySaved.toFixed(0).toLocaleString() + ' MWh');
+            updateResultWithAnimation('ai-cost-savings', '€' + costSavings.toFixed(0).toLocaleString());
+            updateResultWithAnimation('ai-co2-saved', co2Saved.toFixed(0).toLocaleString() + ' tonnes');
             
             // ROI calculation
             const setupCost = gpuCount * 100; // €100 per GPU setup
             const monthlyReturn = costSavings / (duration / 30);
             const roiMonths = setupCost / monthlyReturn;
-            document.getElementById('ai-roi').textContent = roiMonths < 3 ? '< 3 months' : roiMonths.toFixed(1) + ' months';
+            updateResultWithAnimation('ai-roi', roiMonths < 3 ? '< 3 months' : roiMonths.toFixed(1) + ' months');
         }
 
-        // Crypto Calculator Logic
+        // Crypto Calculator Logic (enhanced)
         function updateCryptoCalculator() {
             const cryptoSelect = document.getElementById('crypto-select');
-            const gpuCount = document.getElementById('crypto-gpu-slider').value;
-            const hashrate = document.getElementById('crypto-hash-slider').value;
-            const energyCost = document.getElementById('crypto-cost-slider').value;
+            const gpuSlider = document.getElementById('crypto-gpu-slider');
+            const hashSlider = document.getElementById('crypto-hash-slider');
+            const costSlider = document.getElementById('crypto-cost-slider');
+            
+            if (!cryptoSelect || !gpuSlider || !hashSlider || !costSlider) {
+                console.warn('Crypto Calculator elements not found');
+                return;
+            }
+            
+            const gpuCount = parseInt(gpuSlider.value);
+            const hashrate = parseInt(hashSlider.value);
+            const energyCost = parseFloat(costSlider.value);
             
             // Update displays
-            document.getElementById('crypto-gpu-count').textContent = gpuCount;
-            document.getElementById('crypto-hashrate').textContent = hashrate;
-            document.getElementById('crypto-cost').textContent = '€' + parseFloat(energyCost).toFixed(2);
+            const elements = {
+                'crypto-gpu-count': gpuCount.toLocaleString(),
+                'crypto-hashrate': hashrate,
+                'crypto-cost': '€' + energyCost.toFixed(2)
+            };
+            
+            Object.entries(elements).forEach(([id, value]) => {
+                const element = document.getElementById(id);
+                if (element) element.textContent = value;
+            });
             
             // Update slider tracks
-            document.getElementById('crypto-gpu-track').style.width = ((gpuCount - 10) / 4990 * 100) + '%';
-            document.getElementById('crypto-hash-track').style.width = ((hashrate - 10) / 990 * 100) + '%';
-            document.getElementById('crypto-cost-track').style.width = ((energyCost - 0.05) / 0.35 * 100) + '%';
+            updateSliderTrack('crypto-gpu-track', (gpuCount - 10) / 4990 * 100);
+            updateSliderTrack('crypto-hash-track', (hashrate - 10) / 990 * 100);
+            updateSliderTrack('crypto-cost-track', (energyCost - 0.05) / 0.35 * 100);
             
             // Calculate costs (assuming 400W average per GPU)
             const powerPerGPU = 0.4; // kW
@@ -3036,34 +4234,50 @@
             const annualSavings = monthlySavings * 12;
             const fiveYearSavings = annualSavings * 5;
             
-            // Update results
-            document.getElementById('crypto-monthly-cost').textContent = '€' + monthlyCost.toFixed(0).toLocaleString();
-            document.getElementById('crypto-opt-cost').textContent = '€' + optimizedCost.toFixed(0).toLocaleString();
-            document.getElementById('crypto-monthly-savings').textContent = '€' + monthlySavings.toFixed(0).toLocaleString();
-            document.getElementById('crypto-annual-savings').textContent = '€' + annualSavings.toFixed(0).toLocaleString();
-            document.getElementById('crypto-5year-savings').textContent = '€' + fiveYearSavings.toFixed(0).toLocaleString();
+            // Update results with animation
+            updateResultWithAnimation('crypto-monthly-cost', '€' + monthlyCost.toFixed(0).toLocaleString());
+            updateResultWithAnimation('crypto-opt-cost', '€' + optimizedCost.toFixed(0).toLocaleString());
+            updateResultWithAnimation('crypto-monthly-savings', '€' + monthlySavings.toFixed(0).toLocaleString());
+            updateResultWithAnimation('crypto-annual-savings', '€' + annualSavings.toFixed(0).toLocaleString());
+            updateResultWithAnimation('crypto-5year-savings', '€' + fiveYearSavings.toFixed(0).toLocaleString());
             
             // Break-even calculation
             const setupCost = gpuCount * 100;
             const breakEvenMonths = setupCost / monthlySavings;
-            document.getElementById('crypto-breakeven').textContent = breakEvenMonths.toFixed(1) + ' months';
+            updateResultWithAnimation('crypto-breakeven', breakEvenMonths.toFixed(1) + ' months');
         }
 
-        // Custom Calculator Logic
+        // Custom Calculator Logic (enhanced)
         function updateCustomCalculator() {
-            const totalPower = document.getElementById('custom-power-slider').value;
-            const operatingHours = document.getElementById('custom-hours-slider').value;
-            const energyCost = document.getElementById('custom-cost-slider').value;
+            const powerSlider = document.getElementById('custom-power-slider');
+            const hoursSlider = document.getElementById('custom-hours-slider');
+            const costSlider = document.getElementById('custom-cost-slider');
+            
+            if (!powerSlider || !hoursSlider || !costSlider) {
+                console.warn('Custom Calculator elements not found');
+                return;
+            }
+            
+            const totalPower = parseInt(powerSlider.value);
+            const operatingHours = parseInt(hoursSlider.value);
+            const energyCost = parseFloat(costSlider.value);
             
             // Update displays
-            document.getElementById('custom-power').textContent = totalPower;
-            document.getElementById('custom-hours').textContent = operatingHours;
-            document.getElementById('custom-cost').textContent = '€' + parseFloat(energyCost).toFixed(2);
+            const elements = {
+                'custom-power': totalPower.toLocaleString(),
+                'custom-hours': operatingHours,
+                'custom-cost': '€' + energyCost.toFixed(2)
+            };
+            
+            Object.entries(elements).forEach(([id, value]) => {
+                const element = document.getElementById(id);
+                if (element) element.textContent = value;
+            });
             
             // Update slider tracks
-            document.getElementById('custom-power-track').style.width = ((totalPower - 50) / 4950 * 100) + '%';
-            document.getElementById('custom-hours-track').style.width = ((operatingHours - 8) / 16 * 100) + '%';
-            document.getElementById('custom-cost-track').style.width = ((energyCost - 0.05) / 0.45 * 100) + '%';
+            updateSliderTrack('custom-power-track', (totalPower - 50) / 4950 * 100);
+            updateSliderTrack('custom-hours-track', (operatingHours - 8) / 16 * 100);
+            updateSliderTrack('custom-cost-track', (energyCost - 0.05) / 0.45 * 100);
             
             // Calculate costs
             const dailyConsumption = totalPower * operatingHours;
@@ -3074,241 +4288,371 @@
             const optimizedMonthly = monthlyCost * (1 - savingsPercent);
             const annualSavings = (monthlyCost - optimizedMonthly) * 12;
             
-            // Update results
-            document.getElementById('custom-daily').textContent = '€' + dailyCost.toFixed(0).toLocaleString();
-            document.getElementById('custom-monthly').textContent = '€' + monthlyCost.toFixed(0).toLocaleString();
-            document.getElementById('custom-opt-monthly').textContent = '€' + optimizedMonthly.toFixed(0).toLocaleString();
-            document.getElementById('custom-annual').textContent = '€' + annualSavings.toFixed(0).toLocaleString();
-            document.getElementById('custom-tco').textContent = (savingsPercent * 100).toFixed(0) + '%';
+            // Update results with animation
+            updateResultWithAnimation('custom-daily', '€' + dailyCost.toFixed(0).toLocaleString());
+            updateResultWithAnimation('custom-monthly', '€' + monthlyCost.toFixed(0).toLocaleString());
+            updateResultWithAnimation('custom-opt-monthly', '€' + optimizedMonthly.toFixed(0).toLocaleString());
+            updateResultWithAnimation('custom-annual', '€' + annualSavings.toFixed(0).toLocaleString());
+            updateResultWithAnimation('custom-tco', (savingsPercent * 100).toFixed(0) + '%');
             
             // Payback calculation
             const setupCost = totalPower * 25; // Rough estimate
             const monthlyReturn = monthlyCost - optimizedMonthly;
             const paybackMonths = setupCost / monthlyReturn;
-            document.getElementById('custom-payback').textContent = paybackMonths.toFixed(1) + ' months';
+            updateResultWithAnimation('custom-payback', paybackMonths.toFixed(1) + ' months');
         }
 
-        // Initialize event listeners
+        // Helper functions
+        function updateSliderTrack(trackId, percentage) {
+            const track = document.getElementById(trackId);
+            if (track) {
+                track.style.width = Math.min(100, Math.max(0, percentage)) + '%';
+            }
+        }
+
+        function updateResultWithAnimation(elementId, value) {
+            const element = document.getElementById(elementId);
+            if (element) {
+                element.style.transform = 'scale(1.1)';
+                element.style.color = 'var(--accent)';
+                element.textContent = value;
+                
+                setTimeout(() => {
+                    element.style.transform = 'scale(1)';
+                    element.style.color = '';
+                }, 200);
+            }
+        }
+
+        // Initialize event listeners and functionality
         document.addEventListener('DOMContentLoaded', function() {
+            console.log('GPU-DVFS Enterprise website initialized');
+            
+            // Auto-detect browser language
+            detectBrowserLanguage();
+            
+            // Initialize calculators if elements exist
+            setupCalculatorListeners();
+            
+            // Initialize demo if elements exist
+            setupDemoListeners();
+            
+            // Initialize all calculators with default values
+            updateCalculator('ai');
+            updateCalculator('crypto');
+            updateCalculator('custom');
+            
+            // Initialize demo metrics and chart
+            updateDemoMetrics();
+            setTimeout(initializePowerChart, 500); // Delay to ensure canvas is ready
+            
+            // Setup smooth scrolling
+            setupSmoothScrolling();
+            
+            // Setup intersection observer for animations
+            setupAnimationObserver();
+            
+            // Setup modal close on outside click
+            setupModalListeners();
+            
+            // Test language functionality
+            console.log('Available languages:', Object.keys(translations));
+            console.log('Current language:', currentLanguage);
+        });
+
+        function setupCalculatorListeners() {
             // AI Calculator listeners
-            document.getElementById('ai-gpu-select').addEventListener('change', updateAICalculator);
-            document.getElementById('ai-gpu-slider').addEventListener('input', updateAICalculator);
-            document.getElementById('ai-duration-slider').addEventListener('input', updateAICalculator);
-            document.getElementById('ai-cost-slider').addEventListener('input', updateAICalculator);
+            const aiElements = {
+                'ai-gpu-select': 'change',
+                'ai-gpu-slider': 'input',
+                'ai-duration-slider': 'input',
+                'ai-cost-slider': 'input'
+            };
+            
+            Object.entries(aiElements).forEach(([id, event]) => {
+                const element = document.getElementById(id);
+                if (element) {
+                    element.addEventListener(event, () => updateCalculator('ai'));
+                }
+            });
             
             // Crypto Calculator listeners
-            document.getElementById('crypto-select').addEventListener('change', updateCryptoCalculator);
-            document.getElementById('crypto-gpu-slider').addEventListener('input', updateCryptoCalculator);
-            document.getElementById('crypto-hash-slider').addEventListener('input', updateCryptoCalculator);
-            document.getElementById('crypto-cost-slider').addEventListener('input', updateCryptoCalculator);
+            const cryptoElements = {
+                'crypto-select': 'change',
+                'crypto-gpu-slider': 'input',
+                'crypto-hash-slider': 'input',
+                'crypto-cost-slider': 'input'
+            };
+            
+            Object.entries(cryptoElements).forEach(([id, event]) => {
+                const element = document.getElementById(id);
+                if (element) {
+                    element.addEventListener(event, () => updateCalculator('crypto'));
+                }
+            });
             
             // Custom Calculator listeners
-            document.getElementById('custom-power-slider').addEventListener('input', updateCustomCalculator);
-            document.getElementById('custom-hours-slider').addEventListener('input', updateCustomCalculator);
-            document.getElementById('custom-cost-slider').addEventListener('input', updateCustomCalculator);
+            const customElements = {
+                'custom-power-slider': 'input',
+                'custom-hours-slider': 'input',
+                'custom-cost-slider': 'input'
+            };
             
-            // Initialize calculators
-            updateAICalculator();
-            updateCryptoCalculator();
-            updateCustomCalculator();
-        });
-
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+            Object.entries(customElements).forEach(([id, event]) => {
+                const element = document.getElementById(id);
+                if (element) {
+                    element.addEventListener(event, () => updateCalculator('custom'));
                 }
             });
+        }
+
+        function setupDemoListeners() {
+            // Setup algorithm buttons
+            document.querySelectorAll('[onclick*="switchAlgorithm"]').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const algorithm = this.onclick.toString().match(/switchAlgorithm\('(.+?)'\)/)[1];
+                    switchAlgorithm(algorithm);
+                });
+            });
+            
+            // Setup optimization toggle
+            document.querySelectorAll('[onclick*="toggleOptimization"]').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const enabled = this.onclick.toString().includes('true');
+                    toggleOptimization(enabled);
+                });
+            });
+        }
+
+        function setupSmoothScrolling() {
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        }
+
+        function setupAnimationObserver() {
+            // Add fade-in animation to elements on scroll
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -100px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all sections
+            document.querySelectorAll('section').forEach(section => {
+                observer.observe(section);
+            });
+        }
+
+        function setupModalListeners() {
+            // Close modal when clicking outside
+            window.addEventListener('click', function(event) {
+                const modal = document.getElementById('downloadModal');
+                if (modal && event.target === modal) {
+                    closeDownloadModal();
+                }
+            });
+            
+            // Close modal on escape key
+            document.addEventListener('keydown', function(event) {
+                if (event.key === 'Escape') {
+                    closeDownloadModal();
+                }
+            });
+        }
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (navbar) {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            }
         });
 
-        // Add fade-in animation to elements on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
+        // Error handling for missing elements
+        function safeElementUpdate(id, value, property = 'textContent') {
+            const element = document.getElementById(id);
+            if (element) {
+                element[property] = value;
+            } else {
+                console.warn(`Element with id '${id}' not found`);
+            }
+        }
+
+        // Debug and testing functions
+        window.gpuDvfsDebug = {
+            // Test all calculator functions
+            testCalculators: function() {
+                console.log('Testing calculators...');
+                updateCalculator('ai');
+                updateCalculator('crypto');
+                updateCalculator('custom');
+                console.log('Calculator test complete');
+            },
+            
+            // Test language switching
+            testLanguages: function() {
+                console.log('Testing language switching...');
+                const languages = ['en', 'nl', 'de', 'fr'];
+                let index = 0;
+                
+                const testNext = () => {
+                    if (index < languages.length) {
+                        const lang = languages[index];
+                        console.log(`Testing language: ${lang}`);
+                        currentLanguage = lang;
+                        updateContent(lang);
+                        
+                        // Update language button visually
+                        document.querySelectorAll('.lang-btn').forEach(btn => {
+                            btn.classList.remove('active');
+                        });
+                        
+                        const langBtn = document.querySelector(`[onclick*="${lang}"]`);
+                        if (langBtn) {
+                            langBtn.classList.add('active');
+                        }
+                        
+                        index++;
+                        setTimeout(testNext, 2000); // Switch every 2 seconds
+                    } else {
+                        console.log('Language test complete - returning to English');
+                        currentLanguage = 'en';
+                        updateContent('en');
+                        document.querySelectorAll('.lang-btn').forEach(btn => {
+                            btn.classList.remove('active');
+                        });
+                        document.querySelector('[onclick*="en"]')?.classList.add('active');
+                    }
+                };
+                
+                testNext();
+            },
+            
+            // Test industry switching
+            testIndustries: function() {
+                console.log('Testing industry switching...');
+                const industries = ['ai', 'crypto', 'hpc', 'cloud'];
+                industries.forEach(industry => {
+                    console.log(`Switching to ${industry}`);
+                    document.querySelector(`[onclick*="${industry}"]`)?.click();
+                });
+                console.log('Industry test complete');
+            },
+            
+            // Test demo functionality
+            testDemo: function() {
+                console.log('Testing demo functionality...');
+                switchAlgorithm('dvfs');
+                toggleOptimization(true);
+                updateDemoMetrics();
+                console.log('Demo test complete');
+            },
+            
+            // Check for missing translations
+            checkTranslations: function() {
+                const languages = ['en', 'nl', 'de', 'fr'];
+                const allKeys = new Set();
+                
+                // Collect all translation keys from all languages
+                languages.forEach(lang => {
+                    if (translations[lang]) {
+                        Object.keys(translations[lang]).forEach(key => allKeys.add(key));
+                    }
+                });
+                
+                console.log(`Found ${allKeys.size} unique translation keys`);
+                
+                // Check each language for missing keys
+                languages.forEach(lang => {
+                    if (translations[lang]) {
+                        const missing = Array.from(allKeys).filter(key => !translations[lang][key]);
+                        if (missing.length > 0) {
+                            console.warn(`Language '${lang}' missing ${missing.length} translations:`, missing);
+                        } else {
+                            console.log(`Language '${lang}' has all translations ✓`);
+                        }
+                    } else {
+                        console.error(`Language '${lang}' not found in translations`);
+                    }
+                });
+                
+                // Check DOM elements for missing translations
+                const elementsWithTranslations = document.querySelectorAll('[data-translate]');
+                console.log(`Found ${elementsWithTranslations.length} elements with data-translate attributes`);
+                
+                const missingInDom = Array.from(elementsWithTranslations)
+                    .map(el => el.getAttribute('data-translate'))
+                    .filter(key => !allKeys.has(key));
+                
+                if (missingInDom.length > 0) {
+                    console.warn('DOM elements with missing translation keys:', missingInDom);
+                } else {
+                    console.log('All DOM elements have corresponding translation keys ✓');
+                }
+                
+                return {
+                    totalKeys: allKeys.size,
+                    languages: languages.length,
+                    domElements: elementsWithTranslations.length,
+                    missingInDom: missingInDom
+                };
+            },
+            
+            // Check for missing elements
+            checkElements: function() {
+                const requiredElements = [
+                    'ai-gpu-select', 'ai-gpu-slider', 'ai-duration-slider', 'ai-cost-slider',
+                    'crypto-select', 'crypto-gpu-slider', 'crypto-hash-slider', 'crypto-cost-slider',
+                    'custom-power-slider', 'custom-hours-slider', 'custom-cost-slider'
+                ];
+                
+                const missing = requiredElements.filter(id => !document.getElementById(id));
+                
+                if (missing.length > 0) {
+                    console.warn('Missing elements:', missing);
+                } else {
+                    console.log('All required elements found');
+                }
+                
+                return missing;
+            }
         };
 
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('fade-in');
-                    observer.unobserve(entry.target);
+        // Auto-run basic checks on load
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(() => {
+                if (window.location.search.includes('debug=true')) {
+                    console.log('Debug mode enabled');
+                    window.gpuDvfsDebug.checkElements();
+                    window.gpuDvfsDebug.testCalculators();
                 }
-            });
-        }, observerOptions);
-
-        // Observe all sections
-        document.querySelectorAll('section').forEach(section => {
-            observer.observe(section);
+            }, 1000);
         });
-
-        // Download Modal Functions
-        function openDownloadModal(documentType) {
-            const modal = document.getElementById('downloadModal');
-            const form = document.getElementById('downloadForm');
-            const documentInfo = {
-                'whitepaper': {
-                    title: 'GPU-DVFS Technical White Paper',
-                    description: 'Comprehensive analysis of GPU-DVFS optimization across Bitcoin, Litecoin, Monero, Ravencoin, and Kaspa with proven 15-25% energy savings.',
-                    filename: 'GPU-DVFSOptimizationWhitepaperTemplate.pdf',
-                    pages: '28 pages',
-                    size: '2.8 MB'
-                },
-                'benchmark': {
-                    title: 'GPU-DVFS Benchmark Report',
-                    description: 'Detailed performance analysis across multiple GPU architectures and workloads with real-world testing data.',
-                    filename: 'GPU-DVFSBenchmarkReportTemplate.pdf',
-                    pages: '15 pages',
-                    size: '1.2 MB'
-                },
-                'security': {
-                    title: 'Security & Safety Report',
-                    description: 'Comprehensive security analysis and safety protocols for enterprise deployment with compliance certifications.',
-                    filename: 'GPU-DVFSSecurity&SafetyReportTemplate.pdf',
-                    pages: '12 pages',
-                    size: '0.9 MB'
-                },
-                'technical': {
-                    title: 'NDA Technical Deep Dive',
-                    description: 'Advanced technical documentation with proprietary algorithm details, ML model architectures, and implementation specifics.',
-                    filename: 'GPU-DVFSEnterpriseNDAWhitepaper-TechnicalDeepDive.pdf',
-                    pages: '35 pages',
-                    size: '4.1 MB'
-                }
-            };
-
-            const doc = documentInfo[documentType];
-            document.getElementById('modalTitle').textContent = doc.title;
-            document.getElementById('modalDescription').textContent = doc.description;
-            document.getElementById('modalFileInfo').innerHTML = `📄 ${doc.pages} • 💾 ${doc.size} • 🔒 SECURE`;
-            document.getElementById('downloadButton').onclick = () => downloadDocument(doc.filename);
-            
-            modal.style.display = 'flex';
-        }
-
-        function closeDownloadModal() {
-            document.getElementById('downloadModal').style.display = 'none';
-            document.getElementById('downloadForm').reset();
-        }
-
-        function downloadDocument(filename) {
-            const form = document.getElementById('downloadForm');
-            const email = form.email.value;
-            const company = form.company.value;
-            const jobTitle = form.jobTitle.value;
-            const useCase = form.useCase.value;
-            const consent = form.consent.checked;
-
-            if (!email || !company) {
-                alert('Please fill in all required fields (Email and Company Name)');
-                return;
-            }
-
-            if (!consent) {
-                alert('Please check the consent box to proceed.');
-                return;
-            }
-
-            // Send email notification (simulated - in real implementation, this would call your backend)
-            const emailData = {
-                to: 'artur.gabrielian@shansconsulting.com',
-                subject: `New Document Download Request: ${filename}`,
-                body: `
-                    New document download request:
-                    
-                    Document: ${filename}
-                    Email: ${email}
-                    Company: ${company}
-                    Job Title: ${jobTitle || 'Not provided'}
-                    Use Case: ${useCase || 'Not provided'}
-                    Timestamp: ${new Date().toLocaleString()}
-                    
-                    Please follow up with this potential client.
-                `
-            };
-
-            // In a real implementation, you would send this to your backend
-            console.log('Email notification sent:', emailData);
-
-            // Download the file
-            const link = document.createElement('a');
-            link.href = `assets/documents/${filename}`;
-            link.download = filename;
-            link.click();
-
-            // Close modal and show success message
-            closeDownloadModal();
-            alert('Document downloaded successfully! We will follow up with you soon.');
-        }
-
-        // Close modal when clicking outside
-        window.onclick = function(event) {
-            const modal = document.getElementById('downloadModal');
-            if (event.target === modal) {
-                closeDownloadModal();
-            }
-        }
     </script>
-
-    <!-- Download Modal -->
-    <div id="downloadModal" style="display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.8); justify-content: center; align-items: center;">
-        <div style="background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%); padding: 2rem; border-radius: 15px; max-width: 500px; width: 90%; border: 2px solid var(--accent); position: relative;">
-            <span onclick="closeDownloadModal()" style="position: absolute; top: 15px; right: 20px; font-size: 28px; font-weight: bold; cursor: pointer; color: #fff;">&times;</span>
-            
-            <h3 id="modalTitle" style="color: var(--accent); margin-bottom: 1rem; font-size: 1.5rem;">Document Title</h3>
-            <p id="modalDescription" style="color: #ccc; margin-bottom: 1rem; line-height: 1.5;">Document description</p>
-            <div id="modalFileInfo" style="background: rgba(0,255,255,0.1); padding: 0.5rem; border-radius: 8px; margin-bottom: 1.5rem; color: var(--accent); text-align: center;">File info</div>
-            
-            <form id="downloadForm">
-                <div style="margin-bottom: 1rem;">
-                    <label style="color: var(--accent); display: block; margin-bottom: 0.5rem;">Business Email *</label>
-                    <input type="email" name="email" required style="width: 100%; padding: 0.75rem; border: 2px solid #444; border-radius: 8px; background: #333; color: #fff; font-size: 1rem;" placeholder="your.email@company.com">
-                </div>
-                
-                <div style="margin-bottom: 1rem;">
-                    <label style="color: var(--accent); display: block; margin-bottom: 0.5rem;">Company Name *</label>
-                    <input type="text" name="company" required style="width: 100%; padding: 0.75rem; border: 2px solid #444; border-radius: 8px; background: #333; color: #fff; font-size: 1rem;" placeholder="Your Company">
-                </div>
-                
-                <div style="margin-bottom: 1rem;">
-                    <label style="color: var(--accent); display: block; margin-bottom: 0.5rem;">Job Title</label>
-                    <input type="text" name="jobTitle" style="width: 100%; padding: 0.75rem; border: 2px solid #444; border-radius: 8px; background: #333; color: #fff; font-size: 1rem;" placeholder="CTO, Data Center Manager, etc.">
-                </div>
-                
-                <div style="margin-bottom: 1rem;">
-                    <label style="color: var(--accent); display: block; margin-bottom: 0.5rem;">Primary Use Case</label>
-                    <select name="useCase" style="width: 100%; padding: 0.75rem; border: 2px solid #444; border-radius: 8px; background: #333; color: #fff; font-size: 1rem;">
-                        <option value="">Please select...</option>
-                        <option value="datacenter">Data Center Operations</option>
-                        <option value="mining">Cryptocurrency Mining</option>
-                        <option value="ai">AI/ML Training</option>
-                        <option value="gaming">Gaming/VR Centers</option>
-                        <option value="research">Research & Development</option>
-                        <option value="other">Other</option>
-                    </select>
-                </div>
-                
-                <div style="margin-bottom: 1.5rem;">
-                    <label style="display: flex; align-items: center; color: #ccc; font-size: 0.9rem;">
-                        <input type="checkbox" name="consent" required style="margin-right: 0.5rem;">
-                        I agree to receive follow-up communications about GPU-DVFS Enterprise solutions
-                    </label>
-                </div>
-                
-                <button type="button" id="downloadButton" style="width: 100%; padding: 1rem; background: linear-gradient(135deg, var(--accent) 0%, #00ff88 100%); border: none; border-radius: 8px; color: #000; font-weight: bold; font-size: 1rem; cursor: pointer;">
-                    Download Document
-                </button>
-                
-                <div style="margin-top: 1rem; padding: 0.75rem; background: rgba(255,193,7,0.1); border-radius: 8px; font-size: 0.85rem; color: #ffc107; text-align: center;">
-                    🔒 Your information is protected by GDPR compliance. We never share your data with third parties.
-                </div>
-            </form>
-        </div>
-    </div>
 </body>
 </html>
