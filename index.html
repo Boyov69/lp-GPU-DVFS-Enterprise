@@ -8,10 +8,29 @@
     <title>GPU-DVFS Enterprise | AI-Driven Energy Optimization for LLMs, Mining & HPC</title>
     
     <!-- Open Graph -->
-    <meta property="og:title" content="GPU-DVFS Enterprise | 15-25% Energy Savings for AI & Crypto">
+    <meta property="og:title" content="GPU-DVFS Enterprise | 15-35% Energy Savings for AI & Crypto">
     <meta property="og:description" content="Revolutionary ML-driven GPU optimization for enterprise AI, LLM training, and mining operations">
     <meta property="og:type" content="website">
-    
+
+    <!-- Enhanced Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+
+    <!-- EmailJS for form submissions -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        // Initialize EmailJS with your public key
+        emailjs.init("YOUR_PUBLIC_KEY");
+    </script>
+
+    <!-- Enhanced Download System -->
+    <script src="js/download-system.js"></script>
+
     <style>
         * {
             margin: 0;
@@ -1462,82 +1481,232 @@
             font-weight: 500;
         }
 
-        /* Contact Section */
-        .contact-section {
-            padding: 4rem 2rem;
-            background: rgba(255, 255, 255, 0.02);
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        /* Resources Section */
+        .resources {
+            padding: 6rem 2rem;
+            background: var(--gradient-dark);
         }
 
-        .contact-container {
-            max-width: 1200px;
+        .resources .container {
+            max-width: 1400px;
             margin: 0 auto;
-            text-align: center;
         }
 
-        .contact-grid {
+        .resources-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
         }
 
-        .contact-item {
+        .resource-card {
             background: rgba(255, 255, 255, 0.03);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 16px;
+            border-radius: 20px;
             padding: 2rem;
             transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
         }
 
-        .contact-item:hover {
+        .resource-card:hover {
             background: rgba(255, 255, 255, 0.05);
             border-color: var(--primary);
             transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 212, 255, 0.2);
         }
 
-        .contact-icon {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 1rem;
+        .resource-card.premium {
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(123, 97, 255, 0.1));
+            border: 2px solid var(--secondary);
         }
 
-        .contact-item h3 {
+        .premium-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--secondary);
+            color: var(--dark);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+
+        .resource-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-primary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .resource-card h3 {
             font-size: 1.25rem;
-            margin-bottom: 0.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
             color: var(--light);
         }
 
-        .contact-item p {
+        .resource-card p {
             color: var(--gray-300);
-            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            min-height: 4.8em;
         }
 
-        .company-registration {
-            margin-top: 3rem;
-            padding: 2rem;
-            background: rgba(0, 168, 255, 0.1);
-            border-radius: 16px;
-            border: 1px solid var(--primary);
+        .resource-meta {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
         }
 
-        .company-registration h3 {
-            color: var(--primary);
-            margin-bottom: 1rem;
+        .resource-meta span {
+            font-size: 0.875rem;
+            color: var(--gray-400);
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
         }
 
-        .company-registration p {
-            margin: 0.5rem 0;
-            color: var(--gray-300);
+        .resource-card .btn {
+            width: 100%;
+            justify-content: center;
+        }
+
+        .resource-card.premium .btn-secondary {
+            border-color: var(--secondary);
+            color: var(--secondary);
+        }
+
+        .resource-card.premium .btn-secondary:hover {
+            background: var(--secondary);
+            color: var(--dark);
         }
 
         /* CTA Section */
         .cta-section {
-            padding: 6rem 2rem;
             background: var(--gradient-primary);
+            padding: 4rem 0;
             text-align: center;
             position: relative;
             overflow: hidden;
+        }
+
+        /* Resources Section */
+        .resources {
+            padding: 5rem 0;
+            background: var(--gradient-dark);
+            position: relative;
+        }
+
+        .resources::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--gradient-mesh);
+            opacity: 0.3;
+            pointer-events: none;
+        }
+
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .resource-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .resource-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--gradient-primary);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .resource-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2);
+        }
+
+        .resource-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .resource-card.premium {
+            border-color: var(--secondary);
+            background: rgba(123, 97, 255, 0.05);
+        }
+
+        .premium-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--secondary);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .resource-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .resource-card h3 {
+            color: var(--light);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .resource-card p {
+            color: var(--gray-300);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .resource-meta {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .resource-meta span {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: var(--gray-400);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .cta-content {
@@ -2947,10 +3116,10 @@
             <div class="footer-section">
                 <h4 data-translate="footer-resources">Resources</h4>
                 <ul class="footer-links">
-                    <li><a href="#research" data-translate="footer-docs">Research Papers</a></li>
-                    <li><a href="#" target="_blank" data-translate="footer-api">Technical Guide</a></li>
-                    <li><a href="#" target="_blank" data-translate="footer-case">Benchmarks</a></li>
-                    <li><a href="#" target="_blank" data-translate="footer-whitepaper">Whitepaper</a></li>
+                    <li><a href="#" data-translate="footer-docs">Documentation</a></li>
+                    <li><a href="#" data-translate="footer-api">API Reference</a></li>
+                    <li><a href="#" data-translate="footer-case">Case Studies</a></li>
+                    <li><a href="#resources" data-translate="footer-whitepaper">Whitepaper</a></li>
                 </ul>
             </div>
             <div class="footer-section">
@@ -3162,7 +3331,21 @@
                 "cta-text": "Join industry leaders saving millions on energy costs while advancing AI and computational research",
                 "cta-demo": "Schedule Enterprise Demo →",
                 "cta-calculate": "Calculate ROI",
-                
+
+                // Resources Section
+                "resources-title": "Enterprise Resources & Documentation",
+                "resources-subtitle": "Access technical whitepapers, benchmark reports, and detailed documentation",
+                "resource-whitepaper-title": "Technical Whitepaper",
+                "resource-whitepaper-desc": "Comprehensive overview of our ML-driven GPU optimization technology, algorithms, and implementation strategies.",
+                "resource-benchmark-title": "Benchmark Report",
+                "resource-benchmark-desc": "Real-world performance data from H100, A100, and RTX 4090 deployments across mining and AI workloads.",
+                "resource-security-title": "Security & Compliance",
+                "resource-security-desc": "Enterprise security features, compliance certifications, and third-party audit results.",
+                "resource-nda-title": "Technical Deep Dive",
+                "resource-nda-desc": "Proprietary algorithms, source code samples, and detailed implementation guides for enterprise deployments.",
+                "btn-download": "Download →",
+                "btn-request-access": "Request Access →",
+
                 // Footer
                 "footer-desc": "Revolutionary GPU optimization technology delivering 15-25% energy savings for AI, cryptocurrency mining, and HPC workloads.",
                 "footer-solutions": "Solutions",
@@ -3189,8 +3372,28 @@
                 "nav-industries": "Industrieën",
                 "nav-calculator": "ROI Calculator",
                 "nav-technology": "Technologie",
+<<<<<<< HEAD
+                "nav-demo": "Demo Plannen →",
+
+                // Resources Section
+                "resources-title": "Enterprise Bronnen & Documentatie",
+                "resources-subtitle": "Toegang tot technische whitepapers, benchmarkrapporten en gedetailleerde documentatie",
+                "resource-whitepaper-title": "Technische Whitepaper",
+                "resource-whitepaper-desc": "Uitgebreid overzicht van onze ML-gestuurde GPU-optimalisatietechnologie, algoritmen en implementatiestrategieën.",
+                "resource-benchmark-title": "Benchmark Rapport",
+                "resource-benchmark-desc": "Real-world prestatiegegevens van H100, A100 en RTX 4090 implementaties voor mining en AI-workloads.",
+                "resource-security-title": "Beveiliging & Compliance",
+                "resource-security-desc": "Enterprise beveiligingsfuncties, compliance certificeringen en externe auditresultaten.",
+                "resource-nda-title": "Technische Deep Dive",
+                "resource-nda-desc": "Propriëtaire algoritmen, broncode voorbeelden en gedetailleerde implementatiegidsen voor enterprise implementaties.",
+                "btn-download": "Download →",
+                "btn-request-access": "Vraag Toegang Aan →",
+                
+                // Hero Section
+=======
                 "nav-contact": "Contact",
                 "nav-about": "Over Ons →",
+>>>>>>> 9f2f9d317551fdb04851697ed2ffb78c9b81c5f5
                 "hero-title": "Enterprise GPU-optimalisatie voor AI & Crypto Workloads",
                 "hero-subtitle": "Revolutionair ML-gestuurd DVFS-framework dat 15-25% energiebesparing levert voor LLM-training, cryptocurrency mining en HPC-workloads.",
                 "stat-energy": "Energievermindering",
@@ -3389,8 +3592,23 @@
                 "nav-industries": "Branchen",
                 "nav-calculator": "ROI-Rechner",
                 "nav-technology": "Technologie",
-                "nav-contact": "Kontakt",
-                "nav-about": "Über Uns →",
+                "nav-demo": "Demo Planen →",
+
+                // Resources Section
+                "resources-title": "Enterprise-Ressourcen & Dokumentation",
+                "resources-subtitle": "Zugriff auf technische Whitepapers, Benchmark-Berichte und detaillierte Dokumentation",
+                "resource-whitepaper-title": "Technisches Whitepaper",
+                "resource-whitepaper-desc": "Umfassender Überblick über unsere ML-gesteuerte GPU-Optimierungstechnologie, Algorithmen und Implementierungsstrategien.",
+                "resource-benchmark-title": "Benchmark-Bericht",
+                "resource-benchmark-desc": "Real-World-Leistungsdaten von H100-, A100- und RTX 4090-Implementierungen für Mining- und AI-Workloads.",
+                "resource-security-title": "Sicherheit & Compliance",
+                "resource-security-desc": "Enterprise-Sicherheitsfunktionen, Compliance-Zertifizierungen und Ergebnisse externer Audits.",
+                "resource-nda-title": "Technischer Deep Dive",
+                "resource-nda-desc": "Proprietäre Algorithmen, Quellcode-Beispiele und detaillierte Implementierungsleitfäden für Enterprise-Bereitstellungen.",
+                "btn-download": "Herunterladen →",
+                "btn-request-access": "Zugang Anfordern →",
+                
+                // Hero Section
                 "hero-title": "Enterprise GPU-Optimierung für KI & Krypto-Workloads",
                 "hero-subtitle": "Revolutionäres ML-gesteuertes DVFS-Framework mit 15-25% Energieeinsparung für LLM-Training, Kryptowährungs-Mining und HPC-Workloads.",
                 "stat-energy": "Energiereduktion",
@@ -3589,12 +3807,27 @@
                 "nav-industries": "Industries",
                 "nav-calculator": "Calculateur ROI",
                 "nav-technology": "Technologie",
-                "nav-contact": "Contact",
-                "nav-about": "À Propos →",
-                "hero-title": "Optimisation GPU Enterprise pour Charges de Travail IA & Crypto",
-                "hero-subtitle": "Framework DVFS révolutionnaire piloté par ML offrant 15-25% d'économies d'énergie pour l'entraînement LLM, le minage de cryptomonnaies et les charges de travail HPC.",
-                "stat-energy": "Réduction Énergétique",
-                "stat-performance": "Impact Performance",
+                "nav-demo": "Planifier une Démo →",
+
+                // Resources Section
+                "resources-title": "Ressources et Documentation d'Entreprise",
+                "resources-subtitle": "Accédez aux livres blancs techniques, rapports de référence et documentation détaillée",
+                "resource-whitepaper-title": "Livre Blanc Technique",
+                "resource-whitepaper-desc": "Aperçu complet de notre technologie d'optimisation GPU pilotée par ML, algorithmes et stratégies d'implémentation.",
+                "resource-benchmark-title": "Rapport de Référence",
+                "resource-benchmark-desc": "Données de performance réelles des déploiements H100, A100 et RTX 4090 pour les charges de travail de minage et d'IA.",
+                "resource-security-title": "Sécurité et Conformité",
+                "resource-security-desc": "Fonctionnalités de sécurité d'entreprise, certifications de conformité et résultats d'audits externes.",
+                "resource-nda-title": "Plongée Technique Approfondie",
+                "resource-nda-desc": "Algorithmes propriétaires, exemples de code source et guides d'implémentation détaillés pour les déploiements d'entreprise.",
+                "btn-download": "Télécharger →",
+                "btn-request-access": "Demander l'Accès →",
+                
+                // Hero Section
+                "hero-title": "Optimisation GPU d'Entreprise pour l'IA et les Charges Crypto",
+                "hero-subtitle": "Framework DVFS révolutionnaire piloté par ML offrant 15-25% d'économies d'énergie pour la formation LLM, le minage de crypto-monnaies et les charges HPC.",
+                "stat-energy": "Réduction d'Énergie",
+                "stat-performance": "Impact sur les Performances",
                 "stat-saved": "Économisé par Exécution GPT",
                 "btn-calculate": "Calculer Vos Économies →",
                 "btn-research": "Voir Recherche",
